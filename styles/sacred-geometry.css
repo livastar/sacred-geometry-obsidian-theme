@@ -1,0 +1,68 @@
+/*
+ * Sacred geometry pattern helpers for the DS‑Light theme.
+ *
+ * These optional utility classes allow authors to include
+ * geometry‑inspired backgrounds and decorations in their notes. The
+ * patterns are designed with CSS gradients rather than images to
+ * minimise asset size and improve scalability. Use these classes in
+ * conjunction with templates or HTML blocks to create visually rich
+ * Atlas pages.
+ */
+
+/* Flower of Life pattern: overlapping circles arranged in a hexagonal
+   lattice. This uses multiple radial gradients to approximate the
+   pattern. Adjust --sg-grid-size to scale. */
+.sg-flower-of-life {
+  --sg-grid-size: 60px;
+  background-image:
+    radial-gradient(circle at 25% 25%, var(--sg-ink-lighter) 2px, transparent 3px),
+    radial-gradient(circle at 75% 25%, var(--sg-ink-lighter) 2px, transparent 3px),
+    radial-gradient(circle at 25% 75%, var(--sg-ink-lighter) 2px, transparent 3px),
+    radial-gradient(circle at 75% 75%, var(--sg-ink-lighter) 2px, transparent 3px);
+  background-size: var(--sg-grid-size) var(--sg-grid-size);
+  opacity: 0.05;
+}
+
+/* Radial ring pattern: concentric circles radiating from the centre. Use
+   for sections that represent nests or cycles. */
+.sg-rings {
+  background-image: radial-gradient(circle,
+    var(--sg-ink-lighter) 1px,
+    transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.08;
+}
+
+/* Golden spiral overlay: a subtle spiral path following the golden
+   ratio. This uses a conic gradient to hint at growth and flow. */
+.sg-spiral {
+  background-image: conic-gradient(
+    from -90deg,
+    var(--sg-ink-lighter) 0deg 5deg,
+    transparent 5deg 45deg,
+    var(--sg-ink-lighter) 45deg 50deg,
+    transparent 50deg 90deg,
+    var(--sg-ink-lighter) 90deg 95deg,
+    transparent 95deg 135deg,
+    var(--sg-ink-lighter) 135deg 140deg,
+    transparent 140deg 180deg,
+    var(--sg-ink-lighter) 180deg 185deg,
+    transparent 185deg 225deg,
+    var(--sg-ink-lighter) 225deg 230deg,
+    transparent 230deg 270deg,
+    var(--sg-ink-lighter) 270deg 275deg,
+    transparent 275deg 315deg,
+    var(--sg-ink-lighter) 315deg 320deg,
+    transparent 320deg 360deg
+  );
+  opacity: 0.04;
+}
+
+/* Circular token: create a simple circle element that can be used to
+   represent nodes or checkpoints. Adjust width/height via custom
+   properties or inline style. */
+.sg-circle {
+  border-radius: 50%;
+  border: 2px solid var(--sg-gold);
+  background-color: color-mix(in srgb, var(--sg-gold) 10%, transparent);
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Sacred Geometry DS-Light",
+  "id": "sacred-geometry-ds-light",
+  "description": "A calm, accessible Obsidian theme that applies sacred geometry principles to Canvas and notes. It uses concentric rings, consent gates, research lattices and future bands with a restrained palette inspired by gold, teal, rose, ink and parchment. Built from the DS‑Light blueprint.",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "author": "Stas",
+  "authorUrl": "https://github.com/livastar",
+  "isDark": false,
+  "repoURL": "https://github.com/livastar/sacred-geometry-ds-light",
+  "theme": "obsidian.css"
+}

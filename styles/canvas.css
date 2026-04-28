@@ -1,0 +1,77 @@
+/*
+ * Canvas styling module for the Sacred Geometry DS‑Light theme.
+ *
+ * This file contains CSS variables and rules that customise the appearance
+ * of Obsidian’s Canvas view. Cards are designed with gentle curves and a
+ * parchment‑like backdrop inspired by sacred geometry practices. Edges use
+ * teal for trustworthy flow and gold to highlight focus. Hover and focus
+ * states are clearly signposted for accessibility. Adjust the variables
+ * defined in `tokens.css` to tweak colours or sizes globally.
+ */
+
+/* Base variables for Canvas. These override Obsidian’s built‑in
+   variables and integrate the sacred geometry palette. */
+:root {
+  --canvas-color-node: var(--sg-parchment-light);
+  --canvas-color-node-border: var(--sg-ink-lighter);
+  --canvas-color-node-focused: var(--sg-gold);
+  --canvas-color-node-hover: var(--sg-teal);
+  --canvas-color-line: var(--sg-teal);
+  --canvas-color-line-highlight: var(--sg-gold);
+  --canvas-node-radius: var(--sg-card-radius);
+  --canvas-node-padding: 0.75rem;
+}
+
+/* Card styling: background, border, radius and elevation */
+.canvas-node {
+  border-radius: var(--canvas-node-radius);
+  background-color: var(--canvas-color-node);
+  border: 1px solid var(--canvas-color-node-border);
+  padding: var(--canvas-node-padding);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover state: subtle lift and teal border */
+.canvas-node:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: var(--canvas-color-node-hover);
+}
+
+/* Focused state: gold highlight ring for clear emphasis */
+.canvas-node.is-focused {
+  border-color: var(--canvas-color-node-focused);
+  box-shadow: 0 0 0 2px var(--canvas-color-node-focused);
+}
+
+/* Text within cards inherits typography defined in typography.css */
+.canvas-node .canvas-text {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--sg-ink);
+}
+
+/* Edge styling: teal as default, gold for highlighted or consent flows */
+.canvas-edge {
+  stroke: var(--canvas-color-line);
+  stroke-width: 2px;
+}
+
+.canvas-edge.is-active {
+  stroke: var(--canvas-color-line-highlight);
+}
+
+/* Support for risk flows using rose. Add the `risk` class to an edge to mark boundaries. */
+.canvas-edge.risk {
+  stroke: var(--sg-rose);
+}
+
+/* Corner handles and edge markers respect the colour palette */
+.canvas-edge-handle {
+  background-color: var(--canvas-color-line);
+}
+
+.canvas-edge-marker {
+  fill: var(--canvas-color-line);
+}

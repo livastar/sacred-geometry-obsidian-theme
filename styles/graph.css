@@ -1,0 +1,53 @@
+/*
+ * Graph view styling module for the Sacred Geometry DS‑Light theme.
+ *
+ * The graph view visualises relationships between notes. We set
+ * variables controlling node and edge colours to map onto the sacred
+ * geometry palette. These variables are supported by Obsidian’s graph
+ * engine (as of v1.5) and can be overridden here to ensure that
+ * graphs remain calm and legible. Nodes representing the centre of
+ * attention are gold, general nodes are teal on parchment, and
+ * boundary or error states can opt into rose. Edges follow similar
+ * colour semantics.
+ */
+
+/* Global graph colour variables */
+body {
+  --graph-line-color: var(--sg-teal);
+  --graph-node-fill: var(--sg-parchment-light);
+  --graph-node-fill-hover: var(--sg-gold);
+  --graph-node-fill-selected: var(--sg-gold);
+  --graph-node-fill-tag: var(--sg-rose);
+  --graph-node-stroke-width: 1.5px;
+  --graph-node-border-color: var(--sg-ink-lighter);
+  --graph-edge-width: 1px;
+}
+
+/* Tweak node appearance in the legacy graph view */
+.graph-view .graph-node {
+  fill: var(--graph-node-fill);
+  stroke: var(--graph-node-border-color);
+  stroke-width: var(--graph-node-stroke-width);
+}
+.graph-view .graph-node:hover,
+.graph-view .graph-node.current {
+  fill: var(--graph-node-fill-hover);
+}
+
+/* Tag nodes (when graph colouring by tag) */
+.graph-view .graph-node.tag {
+  fill: var(--graph-node-fill-tag);
+}
+
+/* Edge colours */
+.graph-view .graph-line {
+  stroke: var(--graph-line-color);
+  stroke-width: var(--graph-edge-width);
+  opacity: 0.6;
+}
+
+.graph-view .graph-line:hover,
+.graph-view .graph-line.active {
+  stroke: var(--sg-gold);
+  opacity: 1;
+}

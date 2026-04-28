@@ -1,0 +1,65 @@
+/*
+ * Callout styling module for the Sacred Geometry DS‑Light theme.
+ *
+ * Callouts are contextual boxes that draw attention to special content.
+ * This stylesheet defines consistent colours and borders for standard
+ * callout types (tip, info, warning, danger). The palette maps to
+ * teal for tips (trustworthy guidance), gold for info (focus), and
+ * rose for warnings/danger (boundary conditions). A parchment
+ * background ties them back to the overall atlas aesthetic.
+ */
+
+/* Shared base styles for all callouts */
+.callout {
+  border-left: 4px solid var(--sg-ink-lighter);
+  background-color: var(--sg-parchment);
+  border-radius: var(--sg-card-radius);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  color: var(--sg-ink);
+}
+
+/* Tip callout – supportive guidance or best practice */
+.callout[data-callout="tip"] {
+  border-color: var(--sg-teal);
+}
+.callout[data-callout="tip"] > .callout-title {
+  color: var(--sg-teal);
+}
+
+/* Info callout – highlighted information, neutral tone */
+.callout[data-callout="info"] {
+  border-color: var(--sg-gold);
+}
+.callout[data-callout="info"] > .callout-title {
+  color: var(--sg-gold);
+}
+
+/* Warning callout – cautionary or risk state */
+.callout[data-callout="warning"] {
+  border-color: var(--sg-rose);
+  background-color: color-mix(in srgb, var(--sg-rose) 3%, var(--sg-parchment) 97%);
+}
+.callout[data-callout="warning"] > .callout-title {
+  color: var(--sg-rose);
+}
+
+/* Danger callout – critical boundary or error */
+.callout[data-callout="danger"] {
+  border-color: var(--sg-rose);
+  background-color: color-mix(in srgb, var(--sg-rose) 6%, var(--sg-parchment) 94%);
+}
+.callout[data-callout="danger"] > .callout-title {
+  color: var(--sg-rose);
+}
+
+/* General callout title styling */
+.callout-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* Content spacing within callouts */
+.callout-content > p:last-child {
+  margin-bottom: 0;
+}

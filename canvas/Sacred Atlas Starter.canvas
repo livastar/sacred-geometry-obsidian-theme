@@ -1,0 +1,15 @@
+{
+	"type":"canvas",
+	"version":"0.2.1",
+	"nodes":[
+		{"id":"research","type":"text","text":"Research Band\n\nCollect questions, sources and exploratory ideas here.","x":420,"y":-200,"width":280,"height":140},
+		{"id":"production","type":"text","text":"Production Ring\n\nTrack tasks, experiments or prototypes you are actively building.","x":-420,"y":-200,"width":280,"height":160},
+		{"id":"future","type":"text","text":"Future Band\n\nCapture visions, potentials and long‑term considerations.","x":10,"y":340,"width":280,"height":120},
+		{"id":"center","type":"text","text":"Center of Work\n\nUse this node to orient your map. It represents the central focus of your current project or inquiry.","x":0,"y":20,"width":300,"height":160}
+	],
+	"edges":[
+		{"id":"e1","fromPort":1,"toPort":1,"fromNode":"center","fromSide":"top","toNode":"research","toSide":"bottom"},
+		{"id":"e2","fromPort":1,"toPort":1,"fromNode":"center","fromSide":"left","toNode":"production","toSide":"bottom"},
+		{"id":"e3","fromPort":1,"toPort":1,"fromNode":"center","fromSide":"bottom","toNode":"future","toSide":"top"}
+	]
+}

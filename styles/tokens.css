@@ -1,0 +1,37 @@
+/*
+ * Token definitions for the Sacred Geometry DS‑Light theme.
+ *
+ * All variables are prefixed with `--sg-` to avoid collisions with
+ * Obsidian core variables or other themes.  Colors are chosen to
+ * correspond with the recommended palette: ink (deep navy), gold,
+ * teal, rose, and parchment.  Variants provide lighter and darker
+ * shades for subtle layering.  A golden ratio constant is defined
+ * to guide proportional relationships throughout the theme.
+ */
+
+:root {
+  /* Base palette */
+  --sg-ink: #041e42;
+  --sg-gold: #d4af37;
+  --sg-teal: #1a9176;
+  --sg-rose: #c04c7d;
+  --sg-parchment: #faf4e5;
+
+  /* Light/dark variants */
+  --sg-ink-light: #0c2e58;
+  --sg-gold-light: #e7c869;
+  --sg-teal-light: #3eb190;
+  --sg-rose-light: #d782a0;
+  --sg-parchment-dark: #f0e5d1;
+
+  /* Geometry constants */
+  --sg-golden-ratio: 1.618;
+  --sg-radius-small: 4px;
+  --sg-radius-medium: 8px;
+  --sg-radius-large: 12px;
+
+  /* Typography scale based on the golden ratio */
+  --sg-font-size-base: 16px;
+  --sg-font-size-small: calc(var(--sg-font-size-base) / var(--sg-golden-ratio));
+  --sg-font-size-large: calc(var(--sg-font-size-base) * var(--sg-golden-ratio));
+}

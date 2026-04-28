@@ -1,0 +1,61 @@
+/*
+ * Sacred Geometry DS‑Light Theme
+ *
+ * This file aggregates all modular styles for the theme.  It imports
+ * foundational tokens and component layers in a predictable order.  Obsidian
+ * will automatically load this file when the theme is enabled.  See
+ * README.md for an overview of the design principles.
+ */
+
+@import url('styles/tokens.css');
+@import url('styles/typography.css');
+@import url('styles/canvas.css');
+@import url('styles/callouts.css');
+@import url('styles/graph.css');
+@import url('styles/sacred-geometry.css');
+
+body {
+  background-color: var(--sg-parchment);
+  color: var(--sg-ink);
+  font-size: var(--sg-font-size-base);
+  line-height: 1.618;
+  font-family: system-ui, -apple-system, "Inter", sans-serif;
+  /* Smooth edges help echo the circular motifs of sacred geometry */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links are teal by default and warm gold on hover to convey trust and focus. */
+a {
+  color: var(--sg-teal);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--sg-gold);
+}
+
+/* Strong emphasis uses the gold accent instead of pure black. */
+strong, b {
+  color: var(--sg-ink);
+  font-weight: 600;
+}
+
+em, i {
+  color: var(--sg-ink);
+  font-style: italic;
+}
+
+/* Code blocks and inline code adopt the ink palette and a subtle background. */
+code, pre {
+  font-family: "Fira Code", "JetBrains Mono", monospace;
+  background-color: rgba(4, 30, 66, 0.05);
+  color: var(--sg-ink);
+  border-radius: var(--sg-radius-small);
+  padding: 0.1rem 0.25rem;
+}
+
+pre {
+  padding: 0.75rem;
+  overflow: auto;
+}

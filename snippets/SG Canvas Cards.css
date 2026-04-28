@@ -1,0 +1,34 @@
+/*
+ * SG Canvas Cards snippet
+ *
+ * This snippet can be loaded via Settings → Appearance → CSS snippets
+ * to further customise Canvas card appearance beyond the theme defaults.
+ * It demonstrates how you can create variant card styles for different
+ * semantic purposes (e.g. focus vs boundary) without modifying the
+ * core theme. Use class names on nodes in the Canvas editor such as
+ * `.node-focus` or `.node-risk` to activate these styles.
+ */
+
+/* Focus card: emphasises a central concept using gold */
+.canvas-node.node-focus {
+  border-color: var(--sg-gold);
+  background-color: color-mix(in srgb, var(--sg-gold) 5%, var(--sg-parchment) 95%);
+}
+
+/* Flow card: indicates trustworthy or process‑oriented content using teal */
+.canvas-node.node-flow {
+  border-color: var(--sg-teal);
+  background-color: color-mix(in srgb, var(--sg-teal) 5%, var(--sg-parchment) 95%);
+}
+
+/* Risk card: highlights boundaries or considerations using rose */
+.canvas-node.node-risk {
+  border-color: var(--sg-rose);
+  background-color: color-mix(in srgb, var(--sg-rose) 5%, var(--sg-parchment) 95%);
+}
+
+/* Card header for better contrast */
+.canvas-node .canvas-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}

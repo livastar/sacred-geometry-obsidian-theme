@@ -1,0 +1,56 @@
+/*
+ * Typography scale and headings for DS‑Light.
+ *
+ * This file defines a typographic hierarchy based on the golden ratio.  The
+ * largest headings use the gold accent to draw the eye to centers and
+ * important sections, while secondary headings adopt the teal accent to
+ * indicate trustworthy flows.  Paragraphs and body text remain in the ink
+ * palette for maximum readability on the parchment background.
+ */
+
+h1 {
+  font-size: calc(var(--sg-font-size-base) * var(--sg-golden-ratio) * 1.2);
+  line-height: 1.2;
+  color: var(--sg-gold);
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+}
+
+h2 {
+  font-size: calc(var(--sg-font-size-base) * var(--sg-golden-ratio));
+  line-height: 1.25;
+  color: var(--sg-teal);
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+}
+
+h3 {
+  font-size: calc(var(--sg-font-size-base) * 1.3);
+  line-height: 1.3;
+  color: var(--sg-ink-light);
+  margin-top: 1em;
+  margin-bottom: 0.25em;
+}
+
+h4, h5, h6 {
+  font-size: var(--sg-font-size-base);
+  font-weight: 600;
+  color: var(--sg-ink);
+  margin-top: 0.8em;
+  margin-bottom: 0.2em;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.8em;
+  font-size: var(--sg-font-size-base);
+  line-height: 1.618;
+  color: var(--sg-ink);
+}
+
+blockquote {
+  padding-left: 1em;
+  border-left: 3px solid var(--sg-teal);
+  color: var(--sg-ink-light);
+  margin: 0.8em 0;
+}

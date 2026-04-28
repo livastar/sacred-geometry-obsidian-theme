@@ -1,0 +1,189 @@
+{
+  "main": {
+    "id": "c5fd981216da5957",
+    "type": "split",
+    "children": [
+      {
+        "id": "a5920686c84202a1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3405da303b0b5c89",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b0680cd4d2d196e8",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c2f1b8eaf08865c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1e7b4720716f6192",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "7a53bfacdaafc6ac",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5164a80b9cab56cc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ffffed9cd19ea080",
+    "type": "split",
+    "children": [
+      {
+        "id": "dc9cee4ca3fbf7df",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e3463be898d8f71b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "canvas/Sacred Atlas Starter.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Sacred Atlas Starter"
+            }
+          },
+          {
+            "id": "2979104e3cb069cf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "canvas/Sacred Atlas Starter.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Sacred Atlas Starter"
+            }
+          },
+          {
+            "id": "cf52ac86b79ea7b1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "066597e3faaa47c6",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "c26a288379022eea",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "canvas/Sacred Atlas Starter.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Sacred Atlas Starter"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "1e7b4720716f6192",
+  "lastOpenFiles": [
+    "README.md",
+    "CHANGELOG.md",
+    "templates/map-node.md",
+    "canvas/Sacred Atlas Starter.canvas"
+  ]
+}
