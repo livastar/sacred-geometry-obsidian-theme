@@ -1,9 +1,8 @@
 /*
  * Obsidian Theme Entry Point
  *
- * This file tells Obsidian to load the DS‑Light theme.  It simply imports
- * the aggregated theme stylesheet.  Keep this file minimal so that the
- * manifest can reference it directly as the theme.
+ * Obsidian loads this file from the manifest. The actual theme is kept in
+ * modular CSS files imported by theme.css.
  */
 
 @import url('./theme.css');

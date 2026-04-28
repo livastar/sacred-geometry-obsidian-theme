@@ -1,12 +1,16 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+## 0.2.0 - 2026-04-29
 
-## 0.1.0 – 2026‑04‑28
+- Regenerated the public brand from Sacred Geometry DS-Light to Sacred Geometry Systems.
+- Added `BRAND_BOOK.md` as the source-of-truth brand book.
+- Rebuilt the CSS token system around obsidian, ivory, gold, copper, deep indigo, and signal cyan.
+- Converted the theme to dark mode and refreshed notes, Canvas, callouts, graph view, and geometry helpers.
+- Reworked Canvas snippets, the starter Canvas, and the map-node template around agent ecosystems, flow tracing, knowledge clusters, decisions, and outcomes.
+- Documented SacraMap as a future commercial plugin concept only.
 
-- Initial release of **Sacred Geometry DS‑Light** theme for Obsidian.
-  - Provides a calm, restrained palette of gold, teal, rose, ink and parchment inspired by sacred geometry principles.
-  - Includes modular CSS files for tokens, typography, Canvas styling, callouts, graph view and a subtle sacred‑geometry background.
-  - Supplies a default `manifest.json` for the Obsidian theme registry.
-  - Includes a starter Canvas file and a node template for map cards.
-  - Ships with an example snippet for enhancing Canvas cards with concentric rings.
+## 0.1.0
+
+- Initial release of Sacred Geometry DS-Light.
+- Included modular CSS files for tokens, typography, Canvas styling, callouts, graph view, and sacred-geometry helper classes.
+- Included a starter Canvas file and a node template for map cards.

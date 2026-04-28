@@ -1,10 +1,8 @@
 /*
- * Sacred Geometry DS‑Light Theme
+ * Sacred Geometry Systems Theme
  *
- * This file aggregates all modular styles for the theme.  It imports
- * foundational tokens and component layers in a predictable order.  Obsidian
- * will automatically load this file when the theme is enabled.  See
- * README.md for an overview of the design principles.
+ * Aggregates the modular theme layers and sets Obsidian's core variables to
+ * the dark brand palette.
  */
 
 @import url('styles/tokens.css');
@@ -14,48 +12,121 @@
 @import url('styles/graph.css');
 @import url('styles/sacred-geometry.css');
 
+body,
+body.theme-dark {
+  --background-primary: var(--sg-obsidian);
+  --background-primary-alt: var(--sg-obsidian-soft);
+  --background-secondary: var(--sg-obsidian-soft);
+  --background-secondary-alt: var(--sg-obsidian-panel);
+  --background-modifier-border: var(--sg-border);
+  --background-modifier-hover: color-mix(in srgb, var(--sg-signal-cyan) 8%, transparent);
+  --background-modifier-active-hover: color-mix(in srgb, var(--sg-gold) 12%, transparent);
+  --background-modifier-form-field: var(--sg-card);
+  --text-normal: var(--sg-text);
+  --text-muted: var(--sg-text-muted);
+  --text-faint: var(--sg-text-faint);
+  --text-accent: var(--sg-signal-cyan);
+  --text-accent-hover: var(--sg-gold-bright);
+  --text-on-accent: var(--sg-obsidian);
+  --interactive-normal: var(--sg-card);
+  --interactive-hover: color-mix(in srgb, var(--sg-signal-cyan) 12%, var(--sg-card));
+  --interactive-accent: var(--sg-signal-cyan);
+  --interactive-accent-hover: var(--sg-gold);
+  --titlebar-background: var(--sg-obsidian);
+  --titlebar-background-focused: var(--sg-obsidian);
+  --divider-color: var(--sg-border);
+  --tab-outline-color: var(--sg-border);
+  --radius-s: var(--sg-radius-small);
+  --radius-m: var(--sg-radius-medium);
+  --radius-l: var(--sg-radius-large);
+}
+
 body {
-  background-color: var(--sg-parchment);
-  color: var(--sg-ink);
+  background-color: var(--sg-obsidian);
+  color: var(--sg-text);
   font-size: var(--sg-font-size-base);
-  line-height: 1.618;
-  font-family: system-ui, -apple-system, "Inter", sans-serif;
-  /* Smooth edges help echo the circular motifs of sacred geometry */
+  line-height: 1.6;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Links are teal by default and warm gold on hover to convey trust and focus. */
-a {
-  color: var(--sg-teal);
+.workspace,
+.workspace-split.mod-root,
+.workspace-leaf-content,
+.markdown-source-view,
+.markdown-preview-view {
+  background-color: var(--sg-obsidian);
+  color: var(--sg-text);
+}
+
+.workspace-leaf-content[data-type="markdown"] {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--sg-gold) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--sg-signal-cyan) 5%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.view-header,
+.status-bar,
+.side-dock-ribbon,
+.workspace-tab-header-container {
+  background-color: var(--sg-obsidian-soft);
+  border-color: var(--sg-border);
+}
+
+a,
+.markdown-preview-view a,
+.cm-hmd-internal-link,
+.cm-link {
+  color: var(--sg-signal-cyan);
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
-}
-a:hover {
-  color: var(--sg-gold);
+  transition: color 160ms ease, text-shadow 160ms ease;
 }
 
-/* Strong emphasis uses the gold accent instead of pure black. */
-strong, b {
-  color: var(--sg-ink);
-  font-weight: 600;
+a:hover,
+.markdown-preview-view a:hover {
+  color: var(--sg-gold-bright);
+  text-shadow: 0 0 12px var(--sg-glow-soft);
 }
 
-em, i {
-  color: var(--sg-ink);
-  font-style: italic;
+strong,
+b {
+  color: var(--sg-gold-bright);
+  font-weight: 650;
 }
 
-/* Code blocks and inline code adopt the ink palette and a subtle background. */
-code, pre {
-  font-family: "Fira Code", "JetBrains Mono", monospace;
-  background-color: rgba(4, 30, 66, 0.05);
-  color: var(--sg-ink);
+em,
+i {
+  color: var(--sg-ivory);
+}
+
+code,
+pre {
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background-color: color-mix(in srgb, var(--sg-deep-indigo) 72%, var(--sg-obsidian));
+  color: var(--sg-signal-cyan-soft);
+  border: 1px solid var(--sg-border-cyan);
   border-radius: var(--sg-radius-small);
-  padding: 0.1rem 0.25rem;
+}
+
+code {
+  padding: 0.08rem 0.28rem;
 }
 
 pre {
-  padding: 0.75rem;
+  padding: 0.9rem;
   overflow: auto;
+  box-shadow: 0 10px 28px var(--sg-shadow);
+}
+
+button,
+.clickable-icon,
+.modal-button-container button {
+  border-radius: var(--sg-radius-small);
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--sg-signal-cyan) 34%, transparent);
+  color: var(--sg-ivory);
 }

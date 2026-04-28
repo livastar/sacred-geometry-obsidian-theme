@@ -1,0 +1,56 @@
+/*
+ * Optional Style Settings block for Sacred Geometry Systems.
+ * Add only after testing with the Style Settings plugin.
+ */
+
+/* @settings
+name: Sacred Geometry Systems
+id: sacred-geometry-systems
+settings:
+  -
+    id: sgs-info
+    title: Sacred Geometry Systems
+    description: Dark theme controls for Canvas-first systems maps.
+    type: info-text
+    markdown: true
+  -
+    id: sgs-colors
+    title: Colors
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: sg-gold
+    title: Structure gold
+    type: variable-color
+    format: hex
+    default: '#d8a84f'
+  -
+    id: sg-signal-cyan
+    title: Signal cyan
+    type: variable-color
+    format: hex
+    default: '#16c7e8'
+  -
+    id: sg-copper
+    title: Boundary copper
+    type: variable-color
+    format: hex
+    default: '#b87345'
+  -
+    id: sgs-canvas
+    title: Canvas
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: sgs-disable-canvas-grid
+    title: Disable Canvas grid texture
+    type: class-toggle
+    default: false
+  -
+    id: sgs-reduce-glow
+    title: Reduce glow intensity
+    type: class-toggle
+    default: false
+*/

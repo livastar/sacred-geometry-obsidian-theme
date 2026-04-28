@@ -1,34 +1,59 @@
 /*
- * SG Canvas Cards snippet
+ * Sacred Geometry Systems Canvas Cards
  *
- * This snippet can be loaded via Settings → Appearance → CSS snippets
- * to further customise Canvas card appearance beyond the theme defaults.
- * It demonstrates how you can create variant card styles for different
- * semantic purposes (e.g. focus vs boundary) without modifying the
- * core theme. Use class names on nodes in the Canvas editor such as
- * `.node-focus` or `.node-risk` to activate these styles.
+ * Enable this snippet to add semantic card roles on top of the base theme.
  */
 
-/* Focus card: emphasises a central concept using gold */
-.canvas-node.node-focus {
+.canvas-node.node-focus,
+.canvas-node.node-system {
+  border-color: var(--sg-gold-bright);
+  background-color: color-mix(in srgb, var(--sg-gold) 9%, var(--sg-card));
+  box-shadow: 0 0 20px var(--sg-glow-soft);
+}
+
+.canvas-node.node-flow,
+.canvas-node.node-agent,
+.canvas-node.node-live {
+  border-color: var(--sg-signal-cyan);
+  background-color: color-mix(in srgb, var(--sg-signal-cyan) 8%, var(--sg-card));
+  box-shadow: 0 0 18px var(--sg-cyan-glow-soft);
+}
+
+.canvas-node.node-risk,
+.canvas-node.node-decision {
+  border-color: var(--sg-copper);
+  background-color: color-mix(in srgb, var(--sg-copper) 10%, var(--sg-card));
+}
+
+.canvas-node.node-knowledge {
+  border-color: var(--sg-orbit-violet);
+  background-color: color-mix(in srgb, var(--sg-orbit-violet) 9%, var(--sg-card));
+}
+
+.canvas-node.node-resource {
+  border-color: color-mix(in srgb, var(--sg-ivory) 42%, var(--sg-gold));
+  background-color: color-mix(in srgb, var(--sg-ivory) 6%, var(--sg-card));
+}
+
+.canvas-node.node-outcome {
   border-color: var(--sg-gold);
-  background-color: color-mix(in srgb, var(--sg-gold) 5%, var(--sg-parchment) 95%);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--sg-gold) 14%, transparent), transparent 46%),
+    var(--sg-card);
 }
 
-/* Flow card: indicates trustworthy or process‑oriented content using teal */
-.canvas-node.node-flow {
-  border-color: var(--sg-teal);
-  background-color: color-mix(in srgb, var(--sg-teal) 5%, var(--sg-parchment) 95%);
+.canvas-node .canvas-title,
+.canvas-node .canvas-node-label {
+  color: var(--sg-gold-bright);
+  font-weight: 650;
 }
 
-/* Risk card: highlights boundaries or considerations using rose */
-.canvas-node.node-risk {
-  border-color: var(--sg-rose);
-  background-color: color-mix(in srgb, var(--sg-rose) 5%, var(--sg-parchment) 95%);
-}
-
-/* Card header for better contrast */
-.canvas-node .canvas-title {
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+@media (prefers-reduced-motion: reduce) {
+  .canvas-node.node-focus,
+  .canvas-node.node-system,
+  .canvas-node.node-flow,
+  .canvas-node.node-agent,
+  .canvas-node.node-live {
+    box-shadow: 0 0 0 1px currentColor;
+  }
 }

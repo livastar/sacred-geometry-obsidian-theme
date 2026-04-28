@@ -1,0 +1,52 @@
+/*
+ * Sacred Geometry Systems optional Obsidian Publish theme.
+ * Keep this separate from app theme CSS and test before advertising Publish support.
+ */
+
+.published-container {
+  --sg-obsidian: #03080d;
+  --sg-obsidian-soft: #07121a;
+  --sg-obsidian-panel: #0b151d;
+  --sg-ivory: #f5ead6;
+  --sg-ivory-muted: #cdbf9f;
+  --sg-gold: #d8a84f;
+  --sg-copper: #b87345;
+  --sg-deep-indigo: #12122d;
+  --sg-signal-cyan: #16c7e8;
+
+  --background-primary: var(--sg-obsidian);
+  --background-secondary: var(--sg-obsidian-soft);
+  --text-normal: var(--sg-ivory);
+  --text-muted: var(--sg-ivory-muted);
+  --text-accent: var(--sg-signal-cyan);
+  --link-color: var(--sg-signal-cyan);
+  --link-color-hover: var(--sg-gold);
+
+  background: var(--sg-obsidian);
+  color: var(--sg-ivory);
+}
+
+.published-container a {
+  color: var(--sg-signal-cyan);
+}
+
+.published-container a:hover {
+  color: var(--sg-gold);
+}
+
+.published-container h1,
+.published-container h2 {
+  color: var(--sg-gold);
+}
+
+.published-container code,
+.published-container pre {
+  background: var(--sg-deep-indigo);
+  color: var(--sg-ivory);
+}
+
+.published-container blockquote {
+  border-left: 3px solid var(--sg-signal-cyan);
+  background: var(--sg-obsidian-panel);
+  color: var(--sg-ivory-muted);
+}

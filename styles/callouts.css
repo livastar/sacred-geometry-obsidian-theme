@@ -1,65 +1,70 @@
 /*
- * Callout styling module for the Sacred Geometry DS‑Light theme.
- *
- * Callouts are contextual boxes that draw attention to special content.
- * This stylesheet defines consistent colours and borders for standard
- * callout types (tip, info, warning, danger). The palette maps to
- * teal for tips (trustworthy guidance), gold for info (focus), and
- * rose for warnings/danger (boundary conditions). A parchment
- * background ties them back to the overall atlas aesthetic.
+ * Callout styling for Sacred Geometry Systems.
  */
 
-/* Shared base styles for all callouts */
 .callout {
-  border-left: 4px solid var(--sg-ink-lighter);
-  background-color: var(--sg-parchment);
+  color: var(--sg-text);
+  background-color: color-mix(in srgb, var(--sg-card) 86%, var(--sg-deep-indigo));
+  border: 1px solid var(--sg-border);
+  border-left: 4px solid var(--sg-gold);
   border-radius: var(--sg-card-radius);
-  padding: 0.5rem 1rem;
-  margin: 1rem 0;
-  color: var(--sg-ink);
+  box-shadow: 0 10px 26px var(--sg-shadow);
 }
 
-/* Tip callout – supportive guidance or best practice */
-.callout[data-callout="tip"] {
-  border-color: var(--sg-teal);
-}
-.callout[data-callout="tip"] > .callout-title {
-  color: var(--sg-teal);
-}
-
-/* Info callout – highlighted information, neutral tone */
-.callout[data-callout="info"] {
-  border-color: var(--sg-gold);
-}
-.callout[data-callout="info"] > .callout-title {
-  color: var(--sg-gold);
-}
-
-/* Warning callout – cautionary or risk state */
-.callout[data-callout="warning"] {
-  border-color: var(--sg-rose);
-  background-color: color-mix(in srgb, var(--sg-rose) 3%, var(--sg-parchment) 97%);
-}
-.callout[data-callout="warning"] > .callout-title {
-  color: var(--sg-rose);
-}
-
-/* Danger callout – critical boundary or error */
-.callout[data-callout="danger"] {
-  border-color: var(--sg-rose);
-  background-color: color-mix(in srgb, var(--sg-rose) 6%, var(--sg-parchment) 94%);
-}
-.callout[data-callout="danger"] > .callout-title {
-  color: var(--sg-rose);
-}
-
-/* General callout title styling */
 .callout-title {
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+  color: var(--sg-gold-bright);
+  font-weight: 650;
 }
 
-/* Content spacing within callouts */
+.callout-content {
+  color: var(--sg-text);
+}
+
 .callout-content > p:last-child {
   margin-bottom: 0;
+}
+
+.callout[data-callout="tip"],
+.callout[data-callout="success"],
+.callout[data-callout="flow"] {
+  border-left-color: var(--sg-signal-cyan);
+}
+
+.callout[data-callout="tip"] > .callout-title,
+.callout[data-callout="success"] > .callout-title,
+.callout[data-callout="flow"] > .callout-title {
+  color: var(--sg-signal-cyan-soft);
+}
+
+.callout[data-callout="info"],
+.callout[data-callout="map"],
+.callout[data-callout="agent"] {
+  border-left-color: var(--sg-gold);
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="decision"] {
+  border-left-color: var(--sg-copper);
+  background-color: color-mix(in srgb, var(--sg-copper) 10%, var(--sg-card));
+}
+
+.callout[data-callout="warning"] > .callout-title,
+.callout[data-callout="decision"] > .callout-title {
+  color: var(--sg-copper-bright);
+}
+
+.callout[data-callout="danger"],
+.callout[data-callout="failure"] {
+  border-left-color: var(--sg-copper-bright);
+  background-color: color-mix(in srgb, var(--sg-copper) 16%, var(--sg-card));
+}
+
+.callout[data-callout="quote"],
+.callout[data-callout="knowledge"] {
+  border-left-color: var(--sg-orbit-violet);
+}
+
+.callout[data-callout="quote"] > .callout-title,
+.callout[data-callout="knowledge"] > .callout-title {
+  color: color-mix(in srgb, var(--sg-orbit-violet) 74%, var(--sg-ivory));
 }

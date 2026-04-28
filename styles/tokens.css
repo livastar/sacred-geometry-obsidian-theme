@@ -1,37 +1,73 @@
 /*
- * Token definitions for the Sacred Geometry DS‑Light theme.
+ * Token definitions for the Sacred Geometry Systems theme.
  *
- * All variables are prefixed with `--sg-` to avoid collisions with
- * Obsidian core variables or other themes.  Colors are chosen to
- * correspond with the recommended palette: ink (deep navy), gold,
- * teal, rose, and parchment.  Variants provide lighter and darker
- * shades for subtle layering.  A golden ratio constant is defined
- * to guide proportional relationships throughout the theme.
+ * The stable public palette is taken from the brand book: obsidian, ivory,
+ * gold, copper, deep indigo, and signal cyan. Semantic aliases describe
+ * system behavior so Canvas snippets can style intent instead of raw color.
  */
 
 :root {
-  /* Base palette */
-  --sg-ink: #041e42;
-  --sg-gold: #d4af37;
-  --sg-teal: #1a9176;
-  --sg-rose: #c04c7d;
-  --sg-parchment: #faf4e5;
+  /* Brand palette */
+  --sg-obsidian: #03080d;
+  --sg-obsidian-soft: #07121a;
+  --sg-obsidian-panel: #0b151d;
+  --sg-ivory: #f5ead6;
+  --sg-ivory-muted: #cdbf9f;
+  --sg-gold: #d8a84f;
+  --sg-gold-bright: #f2cf82;
+  --sg-copper: #b87345;
+  --sg-copper-bright: #d28a50;
+  --sg-deep-indigo: #12122d;
+  --sg-deep-indigo-light: #1b1d42;
+  --sg-signal-cyan: #16c7e8;
+  --sg-signal-cyan-soft: #66e7ff;
+  --sg-orbit-violet: #8f67ff;
 
-  /* Light/dark variants */
-  --sg-ink-light: #0c2e58;
-  --sg-gold-light: #e7c869;
-  --sg-teal-light: #3eb190;
-  --sg-rose-light: #d782a0;
-  --sg-parchment-dark: #f0e5d1;
+  /* Semantic aliases */
+  --sg-glow: var(--sg-gold-bright);
+  --sg-pulse: var(--sg-signal-cyan);
+  --sg-orbit: var(--sg-orbit-violet);
+  --sg-flow: var(--sg-signal-cyan);
+  --sg-boundary: var(--sg-copper);
+  --sg-card: var(--sg-obsidian-panel);
+  --sg-card-muted: color-mix(in srgb, var(--sg-obsidian-panel) 88%, var(--sg-deep-indigo) 12%);
+  --sg-card-raised: color-mix(in srgb, var(--sg-obsidian-panel) 96%, var(--sg-ivory) 4%);
+  --sg-border: color-mix(in srgb, var(--sg-gold) 42%, transparent);
+  --sg-border-cyan: color-mix(in srgb, var(--sg-signal-cyan) 48%, transparent);
+  --sg-text: var(--sg-ivory);
+  --sg-text-muted: var(--sg-ivory-muted);
+  --sg-text-faint: color-mix(in srgb, var(--sg-ivory-muted) 70%, transparent);
+  --sg-shadow: rgba(0, 0, 0, 0.42);
+  --sg-shadow-strong: rgba(0, 0, 0, 0.68);
+  --sg-glow-soft: color-mix(in srgb, var(--sg-gold) 32%, transparent);
+  --sg-cyan-glow-soft: color-mix(in srgb, var(--sg-signal-cyan) 28%, transparent);
+
+  /* Backward-compatible aliases from DS-Light */
+  --sg-ink: var(--sg-text);
+  --sg-ink-light: var(--sg-text-muted);
+  --sg-ink-lighter: var(--sg-border);
+  --sg-teal: var(--sg-signal-cyan);
+  --sg-teal-light: var(--sg-signal-cyan-soft);
+  --sg-rose: var(--sg-copper);
+  --sg-rose-light: var(--sg-copper-bright);
+  --sg-parchment: var(--sg-card);
+  --sg-parchment-light: var(--sg-card-raised);
+  --sg-parchment-dark: var(--sg-obsidian-soft);
+  --sg-center-color: var(--sg-gold-bright);
 
   /* Geometry constants */
   --sg-golden-ratio: 1.618;
   --sg-radius-small: 4px;
   --sg-radius-medium: 8px;
-  --sg-radius-large: 12px;
+  --sg-radius-large: 8px;
+  --sg-card-radius: 8px;
+  --sg-line-thin: 1px;
+  --sg-line-medium: 1.5px;
+  --sg-ring-size: 64px;
+  --sg-grid-size: 60px;
 
-  /* Typography scale based on the golden ratio */
+  /* Typography scale */
   --sg-font-size-base: 16px;
-  --sg-font-size-small: calc(var(--sg-font-size-base) / var(--sg-golden-ratio));
-  --sg-font-size-large: calc(var(--sg-font-size-base) * var(--sg-golden-ratio));
+  --sg-font-size-small: 0.875rem;
+  --sg-font-size-large: 1.618rem;
 }

@@ -1,77 +1,156 @@
 /*
- * Canvas styling module for the Sacred Geometry DS‑Light theme.
+ * Canvas styling for Sacred Geometry Systems.
  *
- * This file contains CSS variables and rules that customise the appearance
- * of Obsidian’s Canvas view. Cards are designed with gentle curves and a
- * parchment‑like backdrop inspired by sacred geometry practices. Edges use
- * teal for trustworthy flow and gold to highlight focus. Hover and focus
- * states are clearly signposted for accessibility. Adjust the variables
- * defined in `tokens.css` to tweak colours or sizes globally.
+ * Cards read as nested system panels. Gold marks focus and structure, cyan
+ * marks live flow, copper marks decision boundaries.
  */
 
-/* Base variables for Canvas. These override Obsidian’s built‑in
-   variables and integrate the sacred geometry palette. */
 :root {
-  --canvas-color-node: var(--sg-parchment-light);
-  --canvas-color-node-border: var(--sg-ink-lighter);
-  --canvas-color-node-focused: var(--sg-gold);
-  --canvas-color-node-hover: var(--sg-teal);
-  --canvas-color-line: var(--sg-teal);
+  --canvas-color-node: var(--sg-card);
+  --canvas-color-node-border: var(--sg-border);
+  --canvas-color-node-focused: var(--sg-gold-bright);
+  --canvas-color-node-hover: var(--sg-signal-cyan);
+  --canvas-color-line: var(--sg-flow);
   --canvas-color-line-highlight: var(--sg-gold);
   --canvas-node-radius: var(--sg-card-radius);
   --canvas-node-padding: 0.75rem;
 }
 
-/* Card styling: background, border, radius and elevation */
+.canvas-wrapper,
+.canvas,
+.canvas-viewport {
+  background-color: var(--sg-obsidian);
+}
+
+.canvas-wrapper {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--sg-gold) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--sg-signal-cyan) 5%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.canvas-controls,
+.canvas-card-menu,
+.canvas-menu {
+  background-color: color-mix(in srgb, var(--sg-obsidian-panel) 88%, var(--sg-deep-indigo));
+  border: 1px solid var(--sg-border);
+  border-radius: var(--sg-radius-medium);
+  box-shadow: 0 10px 28px var(--sg-shadow);
+}
+
 .canvas-node {
   border-radius: var(--canvas-node-radius);
   background-color: var(--canvas-color-node);
   border: 1px solid var(--canvas-color-node-border);
-  padding: var(--canvas-node-padding);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 12px 30px var(--sg-shadow);
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
-/* Hover state: subtle lift and teal border */
+.canvas-node-container,
+.canvas-node-content,
+.canvas-node-label {
+  border-radius: var(--canvas-node-radius);
+}
+
+.canvas-node-content {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--sg-gold) 8%, transparent), transparent 36%),
+    var(--sg-card);
+  color: var(--sg-text);
+}
+
 .canvas-node:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
   border-color: var(--canvas-color-node-hover);
+  box-shadow:
+    0 0 0 1px var(--sg-border-cyan),
+    0 14px 34px var(--sg-shadow-strong);
 }
 
-/* Focused state: gold highlight ring for clear emphasis */
 .canvas-node.is-focused {
   border-color: var(--canvas-color-node-focused);
-  box-shadow: 0 0 0 2px var(--canvas-color-node-focused);
+  box-shadow:
+    0 0 0 1px var(--sg-gold-bright),
+    0 0 22px var(--sg-glow-soft),
+    0 16px 38px var(--sg-shadow-strong);
 }
 
-/* Text within cards inherits typography defined in typography.css */
-.canvas-node .canvas-text {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: var(--sg-ink);
+.canvas-node .canvas-text,
+.canvas-node-content,
+.canvas-node-label {
+  color: var(--sg-text);
+  font-size: 0.95rem;
+  line-height: 1.45;
 }
 
-/* Edge styling: teal as default, gold for highlighted or consent flows */
+.canvas-node .canvas-node-label {
+  color: var(--sg-gold-bright);
+  font-weight: 650;
+}
+
+.canvas-edges path,
+.canvas-path,
 .canvas-edge {
   stroke: var(--canvas-color-line);
   stroke-width: 2px;
+  filter: drop-shadow(0 0 6px var(--sg-cyan-glow-soft));
 }
 
+.canvas-edges path.is-active,
+.canvas-path.is-active,
 .canvas-edge.is-active {
   stroke: var(--canvas-color-line-highlight);
+  filter: drop-shadow(0 0 8px var(--sg-glow-soft));
 }
 
-/* Support for risk flows using rose. Add the `risk` class to an edge to mark boundaries. */
-.canvas-edge.risk {
-  stroke: var(--sg-rose);
+.canvas-edge.risk,
+.canvas-path.risk {
+  stroke: var(--sg-boundary);
 }
 
-/* Corner handles and edge markers respect the colour palette */
-.canvas-edge-handle {
-  background-color: var(--canvas-color-line);
+.canvas-edge-label {
+  color: var(--sg-text-muted);
+  background-color: var(--sg-obsidian-soft);
+  border: 1px solid var(--sg-border);
+  border-radius: var(--sg-radius-small);
+}
+
+.canvas-edge-handle,
+.canvas-node-connection-point {
+  background-color: var(--sg-signal-cyan);
+  box-shadow: 0 0 10px var(--sg-cyan-glow-soft);
 }
 
 .canvas-edge-marker {
-  fill: var(--canvas-color-line);
+  fill: var(--sg-signal-cyan);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .canvas-node.is-focused {
+    animation: sg-focus-pulse 4s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas-node,
+  .canvas-node:hover,
+  .canvas-node.is-focused {
+    transition: none;
+    animation: none;
+  }
+}
+
+@keyframes sg-focus-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px var(--sg-gold-bright),
+      0 0 16px var(--sg-glow-soft),
+      0 16px 38px var(--sg-shadow-strong);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px var(--sg-gold-bright),
+      0 0 28px var(--sg-glow-soft),
+      0 16px 38px var(--sg-shadow-strong);
+  }
 }

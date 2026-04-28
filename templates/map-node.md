@@ -1,59 +1,59 @@
 ---
 title: ""
-type: "map-node"
+type: "systems-map-node"
 geometry:
-  pattern: center # options: center, ring, lattice, band
-  ring: 0         # numeric ring level, 0 for centre
+  form: "flower-of-life" # vesica-piscis, seed-of-life, flower-of-life, metatron-cube, fibonacci-spiral, torus
+  layer: "core"          # mission, core, agent, resource, interaction, knowledge, decision, outcome
+  ring: 0                # 0 = center, larger numbers move outward
+map:
+  role: "core-system"
+  flow_state: "observing" # observing, active, blocked, evolving
+  priority: "normal"      # low, normal, high
 summary: >
-  A short, high‑level summary of this node’s purpose. Keep it to one or two
-  sentences so it remains visible in the overview.
+  One or two sentences that remain readable from Canvas overview scale.
 links:
   - example/linked-note.md
 tags:
-  - atlas
-  - sacred-geometry
+  - sacred-geometry-systems
+  - living-map
 ---
 
 # {{title}}
 
-<!--
-This template is intended for nodes on your Sacred Atlas maps. It provides
-a consistent frontmatter structure and some guidance on how to organise
-content.
+## Core Intention
 
-Fields:
-* `geometry.pattern` — choose a map pattern: `center`, `ring`, `lattice`,
-  or `band`. This informs your Canvas maps and provides context for future
-  automation.
-* `geometry.ring` — numeric index of the ring this node sits on (0 = centre).
-* `summary` — keep this short. It will be rendered on the card in the Canvas.
-* `links` — list of other notes or nodes that this node is related to. Use
-  relative paths.
-* `tags` — add tags to help filter and search the Atlas.
+State what this node reveals, organizes, or moves forward.
 
-Within the body of the note, use headings (##, ###) to structure
-information. Consider including:
-* **Objective** — what this node represents or why it exists.
-* **Insights** — key findings or takeaways.
-* **Next Steps** — actions or questions that arise from this node.
-* **References** — links to source material.
--->
+## System Role
 
-## Objective
+Describe how this node participates in the map:
 
-Describe the purpose of this node in detail. Clarify the intent and any
-constraints that apply.
+- Agent role
+- Resource
+- Interaction
+- Knowledge cluster
+- Decision path
+- Outcome
 
-## Insights
+## Signals
 
-Summarise key ideas, findings or observations related to this node. Use
-bullets for clarity if needed.
+Track the current live-map cues.
 
-## Next Steps
+- Pulse:
+- Glow:
+- Orbit:
+- Flow:
+- Zoom:
+- Playback:
 
-Outline actionable steps, questions or research directions stemming from
-this node.
+## Relationships
+
+List the nodes this one depends on, influences, or routes through.
+
+## Decisions And Outcomes
+
+Record meaningful choice points, expected outcomes, and feedback loops.
 
 ## References
 
-List any relevant sources, citations or linked notes.
+Link notes, files, sources, or previous maps that support this node.

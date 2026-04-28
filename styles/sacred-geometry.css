@@ -1,68 +1,99 @@
 /*
- * Sacred geometry pattern helpers for the DS‑Light theme.
- *
- * These optional utility classes allow authors to include
- * geometry‑inspired backgrounds and decorations in their notes. The
- * patterns are designed with CSS gradients rather than images to
- * minimise asset size and improve scalability. Use these classes in
- * conjunction with templates or HTML blocks to create visually rich
- * Atlas pages.
+ * Sacred geometry helpers for notes, Canvas cards, and demo content.
  */
 
-/* Flower of Life pattern: overlapping circles arranged in a hexagonal
-   lattice. This uses multiple radial gradients to approximate the
-   pattern. Adjust --sg-grid-size to scale. */
+.sg-panel {
+  background-color: var(--sg-card);
+  border: 1px solid var(--sg-border);
+  border-radius: var(--sg-card-radius);
+  box-shadow: 0 12px 30px var(--sg-shadow);
+  color: var(--sg-text);
+}
+
+.sg-geometry-frame {
+  position: relative;
+  border: 1px solid var(--sg-border);
+  border-radius: var(--sg-card-radius);
+  overflow: hidden;
+}
+
+.sg-geometry-frame::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--sg-gold) 34%, transparent);
+  border-radius: var(--sg-radius-medium);
+}
+
 .sg-flower-of-life {
   --sg-grid-size: 60px;
   background-image:
-    radial-gradient(circle at 25% 25%, var(--sg-ink-lighter) 2px, transparent 3px),
-    radial-gradient(circle at 75% 25%, var(--sg-ink-lighter) 2px, transparent 3px),
-    radial-gradient(circle at 25% 75%, var(--sg-ink-lighter) 2px, transparent 3px),
-    radial-gradient(circle at 75% 75%, var(--sg-ink-lighter) 2px, transparent 3px);
+    radial-gradient(circle at 25% 25%, color-mix(in srgb, var(--sg-gold) 38%, transparent) 1px, transparent 2px),
+    radial-gradient(circle at 75% 25%, color-mix(in srgb, var(--sg-gold) 38%, transparent) 1px, transparent 2px),
+    radial-gradient(circle at 25% 75%, color-mix(in srgb, var(--sg-signal-cyan) 28%, transparent) 1px, transparent 2px),
+    radial-gradient(circle at 75% 75%, color-mix(in srgb, var(--sg-signal-cyan) 28%, transparent) 1px, transparent 2px);
   background-size: var(--sg-grid-size) var(--sg-grid-size);
-  opacity: 0.05;
 }
 
-/* Radial ring pattern: concentric circles radiating from the centre. Use
-   for sections that represent nests or cycles. */
 .sg-rings {
-  background-image: radial-gradient(circle,
-    var(--sg-ink-lighter) 1px,
-    transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.08;
+  background-image:
+    repeating-radial-gradient(circle, color-mix(in srgb, var(--sg-gold) 28%, transparent) 0 1px, transparent 1px 18px);
 }
 
-/* Golden spiral overlay: a subtle spiral path following the golden
-   ratio. This uses a conic gradient to hint at growth and flow. */
 .sg-spiral {
   background-image: conic-gradient(
     from -90deg,
-    var(--sg-ink-lighter) 0deg 5deg,
-    transparent 5deg 45deg,
-    var(--sg-ink-lighter) 45deg 50deg,
-    transparent 50deg 90deg,
-    var(--sg-ink-lighter) 90deg 95deg,
-    transparent 95deg 135deg,
-    var(--sg-ink-lighter) 135deg 140deg,
-    transparent 140deg 180deg,
-    var(--sg-ink-lighter) 180deg 185deg,
-    transparent 185deg 225deg,
-    var(--sg-ink-lighter) 225deg 230deg,
-    transparent 230deg 270deg,
-    var(--sg-ink-lighter) 270deg 275deg,
-    transparent 275deg 315deg,
-    var(--sg-ink-lighter) 315deg 320deg,
-    transparent 320deg 360deg
+    color-mix(in srgb, var(--sg-gold) 30%, transparent) 0deg 4deg,
+    transparent 4deg 42deg,
+    color-mix(in srgb, var(--sg-signal-cyan) 24%, transparent) 42deg 46deg,
+    transparent 46deg 90deg,
+    color-mix(in srgb, var(--sg-gold) 30%, transparent) 90deg 94deg,
+    transparent 94deg 138deg,
+    color-mix(in srgb, var(--sg-copper) 30%, transparent) 138deg 142deg,
+    transparent 142deg 360deg
   );
-  opacity: 0.04;
 }
 
-/* Circular token: create a simple circle element that can be used to
-   represent nodes or checkpoints. Adjust width/height via custom
-   properties or inline style. */
 .sg-circle {
   border-radius: 50%;
-  border: 2px solid var(--sg-gold);
-  background-color: color-mix(in srgb, var(--sg-gold) 10%, transparent);
+  border: 1px solid var(--sg-gold);
+  background-color: color-mix(in srgb, var(--sg-gold) 12%, transparent);
+  box-shadow: 0 0 14px var(--sg-glow-soft);
+}
+
+.sg-live-flow {
+  border-color: var(--sg-signal-cyan);
+  box-shadow: 0 0 18px var(--sg-cyan-glow-soft);
+}
+
+.sg-priority-glow {
+  border-color: var(--sg-gold-bright);
+  box-shadow: 0 0 20px var(--sg-glow-soft);
+}
+
+.sg-boundary {
+  border-color: var(--sg-copper);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sg-pulse {
+    animation: sg-pulse 3.6s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sg-pulse {
+    animation: none;
+  }
+}
+
+@keyframes sg-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 10px var(--sg-cyan-glow-soft);
+  }
+  50% {
+    box-shadow: 0 0 22px var(--sg-cyan-glow-soft);
+  }
 }
