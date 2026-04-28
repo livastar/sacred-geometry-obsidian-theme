@@ -29,7 +29,7 @@ Only after testing:
 ```json
 {
   "name": "Sacred Geometry Systems",
-  "author": "Stas",
+  "author": "Stanislav Ivanov",
   "repo": "livastar/sacred-geometry-obsidian-theme",
   "screenshot": "assets/screenshot-catalog.png",
   "modes": [

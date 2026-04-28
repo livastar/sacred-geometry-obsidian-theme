@@ -1,5 +1,7 @@
 # Sacred Geometry Systems Theme for Obsidian
 
+![Sacred Geometry Systems preview](assets/screenshot-catalog.png)
+
 **Sacred Geometry Systems** is a dark Obsidian theme for complex knowledge maps, Canvas systems, and agent ecosystems. It turns the language of sacred geometry into a practical interface grammar: intersections, origins, ecosystems, architecture, progression, and feedback loops.
 
 This repo contains the theme, a maintainable brand book, Canvas starter material, a map-node template, and semantic Canvas snippets.
@@ -73,6 +75,13 @@ Backward-compatible aliases from the original DS-Light theme remain available so
 ## Accessibility
 
 The theme keeps body text high contrast on dark surfaces, uses state color with borders instead of color alone where practical, and disables decorative motion when the user requests reduced motion.
+
+## Compatibility
+
+- Theme version: `0.2.0`
+- Minimum Obsidian version: `1.5.0`
+- Mode: dark only
+- Obsidian Publish: not currently advertised
 
 ## Roadmap
 

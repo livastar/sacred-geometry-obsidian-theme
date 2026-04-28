@@ -66,7 +66,7 @@ Run this before opening a catalog PR or publishing a release.
 ## Catalog Entry
 
 - [ ] Uses `name: "Sacred Geometry Systems"`.
-- [ ] Uses `author: "Stas"`.
+- [ ] Uses `author: "Stanislav Ivanov"`.
 - [ ] Uses `repo: "livastar/sacred-geometry-obsidian-theme"`.
 - [ ] Uses `screenshot: "assets/screenshot-catalog.png"`.
 - [ ] Uses `modes: ["dark"]`.

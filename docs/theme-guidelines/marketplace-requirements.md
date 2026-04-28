@@ -25,7 +25,7 @@ The release manifest should use official theme metadata fields:
   "name": "Sacred Geometry Systems",
   "version": "0.2.0",
   "minAppVersion": "1.5.0",
-  "author": "Stas",
+  "author": "Stanislav Ivanov",
   "authorUrl": "https://github.com/livastar"
 }
 ```
@@ -71,7 +71,7 @@ The entry to append to `community-css-themes.json` should be:
 ```json
 {
   "name": "Sacred Geometry Systems",
-  "author": "Stas",
+  "author": "Stanislav Ivanov",
   "repo": "livastar/sacred-geometry-obsidian-theme",
   "screenshot": "assets/screenshot-catalog.png",
   "modes": [
