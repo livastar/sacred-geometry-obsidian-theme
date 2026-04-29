@@ -16,7 +16,7 @@ body {
 
 .graph-view.color-fill,
 .graph-view {
-  background-color: var(--sg-obsidian);
+  background-color: var(--sg-bg);
 }
 
 .graph-view .graph-node {

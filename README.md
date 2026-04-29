@@ -2,7 +2,7 @@
 
 ![Sacred Geometry Systems preview](assets/screenshot-catalog.png)
 
-**Sacred Geometry Systems** is a dark Obsidian theme for complex knowledge maps, Canvas systems, and agent ecosystems. It turns the language of sacred geometry into a practical interface grammar: intersections, origins, ecosystems, architecture, progression, and feedback loops.
+**Sacred Geometry Systems** is a dark and light Obsidian theme for complex knowledge maps, Canvas systems, and agent ecosystems. It turns the language of sacred geometry into a practical interface grammar: intersections, origins, ecosystems, architecture, progression, and feedback loops.
 
 This repo contains the theme, a maintainable brand book, Canvas starter material, a map-node template, and semantic Canvas snippets.
 
@@ -37,7 +37,7 @@ The source of truth lives in [BRAND_BOOK.md](BRAND_BOOK.md). It defines:
 
 ## Features
 
-- **Dark obsidian palette** with ivory text, gold structure, copper boundaries, deep indigo panels, and signal-cyan flow.
+- **Dual dark/light palettes** with obsidian or ivory surfaces, gold structure, copper boundaries, deep indigo panels, and signal-cyan flow.
 - **Canvas-first styling** for luminous cards, focused nodes, active links, and semantic map roles.
 - **Geometry helpers** for rings, flower-of-life fields, spirals, circles, live-flow cues, and framed system panels.
 - **Graph and callout styling** aligned with the same semantic colors.
@@ -85,13 +85,13 @@ Backward-compatible aliases from the original DS-Light theme remain available so
 
 ## Accessibility
 
-The theme keeps body text high contrast on dark surfaces, uses state color with borders instead of color alone where practical, and disables decorative motion when the user requests reduced motion.
+The theme keeps body text high contrast on dark and light surfaces, uses state color with borders instead of color alone where practical, and disables decorative motion when the user requests reduced motion.
 
 ## Compatibility
 
-- Theme version: `0.2.0`
+- Theme version: `0.3.0`
 - Minimum Obsidian version: `1.5.0`
-- Mode: dark only
+- Modes: dark and light
 - Obsidian Publish: not currently advertised
 
 ## Roadmap

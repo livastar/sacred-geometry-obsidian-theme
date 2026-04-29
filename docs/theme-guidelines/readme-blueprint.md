@@ -50,7 +50,7 @@ The image must be a real Obsidian capture.
 State the product clearly:
 
 ```md
-Sacred Geometry Systems is a dark Obsidian theme for living systems maps, Canvas workflows, and complex knowledge ecosystems.
+Sacred Geometry Systems is a dark and light Obsidian theme for living systems maps, Canvas workflows, and complex knowledge ecosystems.
 ```
 
 ### Who It Is For
@@ -85,7 +85,7 @@ Use exactly these public links:
 
 Keep features concrete:
 
-- Dark obsidian palette.
+- Dual obsidian and ivory atlas palettes.
 - Canvas-first styling.
 - Sacred geometry helper classes.
 - Semantic node roles.
@@ -158,7 +158,7 @@ For current release planning, use `Style Settings is planned`.
 
 Mention:
 
-- High contrast dark surfaces.
+- High contrast dark and light surfaces.
 - Visible focus states.
 - Reduced motion behavior.
 - State indicated with border/shape/contrast, not color alone where practical.
@@ -169,7 +169,7 @@ State:
 
 - Current version.
 - Minimum Obsidian version.
-- Dark-only support.
+- Dark and light mode support.
 - Whether Publish is supported.
 
 ### Roadmap

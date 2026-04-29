@@ -11,11 +11,13 @@
  * Token definitions for the Sacred Geometry Systems theme.
  *
  * The stable public palette is taken from the brand book: obsidian, ivory,
- * gold, copper, deep indigo, and signal cyan. Semantic aliases describe
- * system behavior so Canvas snippets can style intent instead of raw color.
+ * gold, copper, deep indigo, and signal cyan. Mode-aware semantic aliases
+ * describe system behavior so Canvas snippets can style intent instead of
+ * raw color.
  */
 
-:root {
+:root,
+body.theme-dark {
   /* Brand palette */
   --sg-obsidian: #03080d;
   --sg-obsidian-soft: #07121a;
@@ -31,6 +33,11 @@
   --sg-signal-cyan: #16c7e8;
   --sg-signal-cyan-soft: #66e7ff;
   --sg-orbit-violet: #8f67ff;
+
+  /* Mode surfaces */
+  --sg-bg: var(--sg-obsidian);
+  --sg-bg-soft: var(--sg-obsidian-soft);
+  --sg-bg-panel: var(--sg-obsidian-panel);
 
   /* Semantic aliases */
   --sg-glow: var(--sg-gold-bright);
@@ -50,6 +57,11 @@
   --sg-shadow-strong: rgba(0, 0, 0, 0.68);
   --sg-glow-soft: color-mix(in srgb, var(--sg-gold) 32%, transparent);
   --sg-cyan-glow-soft: color-mix(in srgb, var(--sg-signal-cyan) 28%, transparent);
+  --sg-code-bg: color-mix(in srgb, var(--sg-deep-indigo) 72%, var(--sg-bg));
+  --sg-code-text: var(--sg-signal-cyan-soft);
+  --sg-code-border: var(--sg-border-cyan);
+  --sg-selection-bg: color-mix(in srgb, var(--sg-signal-cyan) 34%, transparent);
+  --sg-selection-text: var(--sg-ivory);
 
   /* Backward-compatible aliases from DS-Light */
   --sg-ink: var(--sg-text);
@@ -79,6 +91,61 @@
   --sg-font-size-base: 16px;
   --sg-font-size-small: 0.875rem;
   --sg-font-size-large: 1.618rem;
+
+}
+
+body.theme-light {
+  /* Ivory atlas palette */
+  --sg-gold: #93631d;
+  --sg-gold-bright: #6c4612;
+  --sg-copper: #955f3f;
+  --sg-copper-bright: #713f29;
+  --sg-deep-indigo: #e6e0f2;
+  --sg-deep-indigo-light: #d7cee9;
+  --sg-signal-cyan: #00778c;
+  --sg-signal-cyan-soft: #005f72;
+  --sg-orbit-violet: #62509b;
+
+  --sg-bg: #f6eedf;
+  --sg-bg-soft: #ede0c9;
+  --sg-bg-panel: #fffaf0;
+
+  --sg-glow: var(--sg-gold-bright);
+  --sg-pulse: var(--sg-signal-cyan);
+  --sg-orbit: var(--sg-orbit-violet);
+  --sg-flow: var(--sg-signal-cyan);
+  --sg-boundary: var(--sg-copper);
+  --sg-card: var(--sg-bg-panel);
+  --sg-card-muted: #f1e5cf;
+  --sg-card-raised: #fffdf7;
+  --sg-border: color-mix(in srgb, var(--sg-gold) 34%, transparent);
+  --sg-border-cyan: color-mix(in srgb, var(--sg-signal-cyan) 34%, transparent);
+  --sg-text: #211b15;
+  --sg-text-muted: #5d5243;
+  --sg-text-faint: #877b68;
+  --sg-shadow: rgba(70, 50, 22, 0.16);
+  --sg-shadow-strong: rgba(70, 50, 22, 0.26);
+  --sg-glow-soft: color-mix(in srgb, var(--sg-gold) 18%, transparent);
+  --sg-cyan-glow-soft: color-mix(in srgb, var(--sg-signal-cyan) 16%, transparent);
+  --sg-code-bg: color-mix(in srgb, var(--sg-bg-panel) 82%, var(--sg-deep-indigo));
+  --sg-code-text: var(--sg-signal-cyan-soft);
+  --sg-code-border: var(--sg-border-cyan);
+  --sg-selection-bg: color-mix(in srgb, var(--sg-signal-cyan) 24%, var(--sg-bg-panel));
+  --sg-selection-text: var(--sg-text);
+
+  --sg-ink: var(--sg-text);
+  --sg-ink-light: var(--sg-text-muted);
+  --sg-ink-lighter: var(--sg-border);
+  --sg-teal: var(--sg-signal-cyan);
+  --sg-teal-light: var(--sg-signal-cyan-soft);
+  --sg-rose: var(--sg-copper);
+  --sg-rose-light: var(--sg-copper-bright);
+  --sg-parchment: var(--sg-card);
+  --sg-parchment-light: var(--sg-card-raised);
+  --sg-parchment-dark: var(--sg-bg-soft);
+  --sg-center-color: var(--sg-gold-bright);
+
+  color-scheme: light;
 }
 
 
@@ -87,7 +154,7 @@
  * Typography for Sacred Geometry Systems.
  *
  * Headings carry the gold structural voice. Body copy stays warm, quiet, and
- * legible on obsidian surfaces.
+ * legible across dark obsidian and light ivory surfaces.
  */
 
 .markdown-preview-view h1,
@@ -135,7 +202,7 @@
 .cm-header-4,
 .cm-header-5,
 .cm-header-6 {
-  color: var(--sg-ivory);
+  color: var(--sg-text);
   font-size: 1rem;
   font-weight: 650;
   letter-spacing: 0;
@@ -167,7 +234,7 @@ blockquote,
 .markdown-preview-view blockquote,
 .markdown-rendered blockquote {
   color: var(--sg-text-muted);
-  background-color: color-mix(in srgb, var(--sg-deep-indigo) 36%, transparent);
+  background-color: color-mix(in srgb, var(--sg-card-muted) 76%, transparent);
   border-left: 3px solid var(--sg-signal-cyan);
   border-radius: 0 var(--sg-radius-medium) var(--sg-radius-medium) 0;
   margin: 1rem 0;
@@ -181,7 +248,7 @@ hr {
 
 mark {
   background-color: color-mix(in srgb, var(--sg-gold) 34%, transparent);
-  color: var(--sg-ivory);
+  color: var(--sg-selection-text);
   border-radius: var(--sg-radius-small);
   padding: 0 0.2em;
 }
@@ -192,7 +259,7 @@ table {
 
 th {
   color: var(--sg-gold-bright);
-  background-color: color-mix(in srgb, var(--sg-deep-indigo) 54%, var(--sg-obsidian));
+  background-color: var(--sg-card-muted);
 }
 
 td,
@@ -223,7 +290,7 @@ th {
 .canvas-wrapper,
 .canvas,
 .canvas-viewport {
-  background-color: var(--sg-obsidian);
+  background-color: var(--sg-bg);
 }
 
 .canvas-wrapper {
@@ -236,7 +303,7 @@ th {
 .canvas-controls,
 .canvas-card-menu,
 .canvas-menu {
-  background-color: color-mix(in srgb, var(--sg-obsidian-panel) 88%, var(--sg-deep-indigo));
+  background-color: color-mix(in srgb, var(--sg-card) 88%, var(--sg-bg-soft));
   border: 1px solid var(--sg-border);
   border-radius: var(--sg-radius-medium);
   box-shadow: 0 10px 28px var(--sg-shadow);
@@ -313,7 +380,7 @@ th {
 
 .canvas-edge-label {
   color: var(--sg-text-muted);
-  background-color: var(--sg-obsidian-soft);
+  background-color: var(--sg-bg-soft);
   border: 1px solid var(--sg-border);
   border-radius: var(--sg-radius-small);
 }
@@ -367,7 +434,7 @@ th {
 
 .callout {
   color: var(--sg-text);
-  background-color: color-mix(in srgb, var(--sg-card) 86%, var(--sg-deep-indigo));
+  background-color: color-mix(in srgb, var(--sg-card) 86%, var(--sg-card-muted));
   border: 1px solid var(--sg-border);
   border-left: 4px solid var(--sg-gold);
   border-radius: var(--sg-card-radius);
@@ -429,7 +496,7 @@ th {
 
 .callout[data-callout="quote"] > .callout-title,
 .callout[data-callout="knowledge"] > .callout-title {
-  color: color-mix(in srgb, var(--sg-orbit-violet) 74%, var(--sg-ivory));
+  color: color-mix(in srgb, var(--sg-orbit-violet) 74%, var(--sg-text));
 }
 
 
@@ -452,7 +519,7 @@ body {
 
 .graph-view.color-fill,
 .graph-view {
-  background-color: var(--sg-obsidian);
+  background-color: var(--sg-bg);
 }
 
 .graph-view .graph-node {
@@ -597,13 +664,18 @@ body {
 }
 
 
+/* === styles/app.css === */
+/*
+ * Obsidian app shell styling for Sacred Geometry Systems.
+ */
 
 body,
 body.theme-dark {
-  --background-primary: var(--sg-obsidian);
-  --background-primary-alt: var(--sg-obsidian-soft);
-  --background-secondary: var(--sg-obsidian-soft);
-  --background-secondary-alt: var(--sg-obsidian-panel);
+  color-scheme: dark;
+  --background-primary: var(--sg-bg);
+  --background-primary-alt: var(--sg-bg-soft);
+  --background-secondary: var(--sg-bg-soft);
+  --background-secondary-alt: var(--sg-bg-panel);
   --background-modifier-border: var(--sg-border);
   --background-modifier-hover: color-mix(in srgb, var(--sg-signal-cyan) 8%, transparent);
   --background-modifier-active-hover: color-mix(in srgb, var(--sg-gold) 12%, transparent);
@@ -613,13 +685,13 @@ body.theme-dark {
   --text-faint: var(--sg-text-faint);
   --text-accent: var(--sg-signal-cyan);
   --text-accent-hover: var(--sg-gold-bright);
-  --text-on-accent: var(--sg-obsidian);
+  --text-on-accent: var(--sg-bg);
   --interactive-normal: var(--sg-card);
   --interactive-hover: color-mix(in srgb, var(--sg-signal-cyan) 12%, var(--sg-card));
   --interactive-accent: var(--sg-signal-cyan);
   --interactive-accent-hover: var(--sg-gold);
-  --titlebar-background: var(--sg-obsidian);
-  --titlebar-background-focused: var(--sg-obsidian);
+  --titlebar-background: var(--sg-bg);
+  --titlebar-background-focused: var(--sg-bg);
   --divider-color: var(--sg-border);
   --tab-outline-color: var(--sg-border);
   --radius-s: var(--sg-radius-small);
@@ -627,8 +699,17 @@ body.theme-dark {
   --radius-l: var(--sg-radius-large);
 }
 
+body.theme-light {
+  color-scheme: light;
+  --background-modifier-hover: color-mix(in srgb, var(--sg-signal-cyan) 10%, var(--sg-bg-panel));
+  --background-modifier-active-hover: color-mix(in srgb, var(--sg-gold) 14%, var(--sg-bg-panel));
+  --text-on-accent: #fffaf0;
+  --interactive-hover: color-mix(in srgb, var(--sg-signal-cyan) 10%, var(--sg-card));
+  --interactive-accent-hover: var(--sg-gold-bright);
+}
+
 body {
-  background-color: var(--sg-obsidian);
+  background-color: var(--sg-bg);
   color: var(--sg-text);
   font-size: var(--sg-font-size-base);
   line-height: 1.6;
@@ -642,7 +723,7 @@ body {
 .workspace-leaf-content,
 .markdown-source-view,
 .markdown-preview-view {
-  background-color: var(--sg-obsidian);
+  background-color: var(--sg-bg);
   color: var(--sg-text);
 }
 
@@ -657,7 +738,7 @@ body {
 .status-bar,
 .side-dock-ribbon,
 .workspace-tab-header-container {
-  background-color: var(--sg-obsidian-soft);
+  background-color: var(--sg-bg-soft);
   border-color: var(--sg-border);
 }
 
@@ -684,15 +765,15 @@ b {
 
 em,
 i {
-  color: var(--sg-ivory);
+  color: var(--sg-text-muted);
 }
 
 code,
 pre {
   font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  background-color: color-mix(in srgb, var(--sg-deep-indigo) 72%, var(--sg-obsidian));
-  color: var(--sg-signal-cyan-soft);
-  border: 1px solid var(--sg-border-cyan);
+  background-color: var(--sg-code-bg);
+  color: var(--sg-code-text);
+  border: 1px solid var(--sg-code-border);
   border-radius: var(--sg-radius-small);
 }
 
@@ -713,6 +794,6 @@ button,
 }
 
 ::selection {
-  background-color: color-mix(in srgb, var(--sg-signal-cyan) 34%, transparent);
-  color: var(--sg-ivory);
+  background-color: var(--sg-selection-bg);
+  color: var(--sg-selection-text);
 }

@@ -33,7 +33,8 @@ Only after testing:
   "repo": "livastar/sacred-geometry-obsidian-theme",
   "screenshot": "assets/screenshot-catalog.png",
   "modes": [
-    "dark"
+    "dark",
+    "light"
   ],
   "publish": true
 }

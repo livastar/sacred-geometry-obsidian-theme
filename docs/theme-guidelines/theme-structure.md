@@ -41,6 +41,7 @@ The release package that GitHub exposes to Obsidian must include at least `manif
     callouts.css
     graph.css
     sacred-geometry.css
+    app.css
   snippets/
     SG Canvas Cards.css
   templates/
@@ -61,7 +62,7 @@ The release package that GitHub exposes to Obsidian must include at least `manif
 | `BRAND_BOOK.md` | Source of truth for intention, tone, forms, palette, Canvas semantics, and SacraMap boundary. |
 | `theme.css` | Canonical release CSS. It must be self-contained for public releases. |
 | `styles/` | Development source modules. These can stay modular, but must be flattened for release. |
-| `obsidian.css` | Optional local compatibility shim only. Do not rely on it for the official release path. |
+| `styles/app.css` | Obsidian app shell variables and core UI surface styling. |
 | `manifest.json` | Release metadata. Keep it aligned with catalog name, version, min app version, and author. |
 | `versions.json` | Compatibility map from theme version to minimum Obsidian version. |
 | `README.md` | Public landing page and user install guide. |
@@ -82,6 +83,8 @@ During development, modular CSS is allowed:
 ```
 
 For release, produce a root `theme.css` that contains the imported CSS directly. Obsidian's release flow expects `theme.css` to be available as a single release artifact, so imports must not point to missing files.
+
+Do not ship a root `obsidian.css` file for current Community Themes submissions; it is only used by legacy Obsidian versions and triggers catalog validation warnings.
 
 ## Token Policy
 

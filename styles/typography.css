@@ -2,7 +2,7 @@
  * Typography for Sacred Geometry Systems.
  *
  * Headings carry the gold structural voice. Body copy stays warm, quiet, and
- * legible on obsidian surfaces.
+ * legible across dark obsidian and light ivory surfaces.
  */
 
 .markdown-preview-view h1,
@@ -50,7 +50,7 @@
 .cm-header-4,
 .cm-header-5,
 .cm-header-6 {
-  color: var(--sg-ivory);
+  color: var(--sg-text);
   font-size: 1rem;
   font-weight: 650;
   letter-spacing: 0;
@@ -82,7 +82,7 @@ blockquote,
 .markdown-preview-view blockquote,
 .markdown-rendered blockquote {
   color: var(--sg-text-muted);
-  background-color: color-mix(in srgb, var(--sg-deep-indigo) 36%, transparent);
+  background-color: color-mix(in srgb, var(--sg-card-muted) 76%, transparent);
   border-left: 3px solid var(--sg-signal-cyan);
   border-radius: 0 var(--sg-radius-medium) var(--sg-radius-medium) 0;
   margin: 1rem 0;
@@ -96,7 +96,7 @@ hr {
 
 mark {
   background-color: color-mix(in srgb, var(--sg-gold) 34%, transparent);
-  color: var(--sg-ivory);
+  color: var(--sg-selection-text);
   border-radius: var(--sg-radius-small);
   padding: 0 0.2em;
 }
@@ -107,7 +107,7 @@ table {
 
 th {
   color: var(--sg-gold-bright);
-  background-color: color-mix(in srgb, var(--sg-deep-indigo) 54%, var(--sg-obsidian));
+  background-color: var(--sg-card-muted);
 }
 
 td,

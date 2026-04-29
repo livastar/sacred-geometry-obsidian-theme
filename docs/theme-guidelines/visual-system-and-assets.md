@@ -15,7 +15,7 @@ Requirements:
 - Real Obsidian capture with Sacred Geometry Systems enabled.
 - 16:9 aspect ratio.
 - Prefer `512x288`.
-- Dark mode.
+- A supported base color scheme. For `0.3.0`, prefer light mode because it proves the Ivory atlas palette, while dark mode remains covered by visual QA.
 - No generated mockup as final proof.
 - No private vault data.
 - No personal information in visible filenames, notes, tabs, or graph labels.
@@ -43,7 +43,7 @@ Each preview should show a different promise:
 
 - Use a demo vault or sanitized vault.
 - Use the current release branch.
-- Set Obsidian base color scheme to dark.
+- Test and capture from a supported Obsidian base color scheme. For dual-mode releases, QA must cover both dark and light even if the catalog screenshot uses only one mode.
 - Disable unrelated CSS snippets unless the screenshot is specifically documenting snippets.
 - Include enough UI chrome to prove it is Obsidian.
 - Avoid oversized decorative backgrounds that obscure readability.

@@ -11,7 +11,7 @@ Short user-facing summary of the release.
 ## Compatibility
 
 - Minimum Obsidian version: `{{minAppVersion}}`
-- Mode: dark
+- Modes: dark and light
 - Publish support: not advertised unless `publish.css` is tested
 
 ## Public Token Changes

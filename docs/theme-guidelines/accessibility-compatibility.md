@@ -50,7 +50,7 @@ Rules:
 
 ## Print And PDF
 
-Print support is not a release blocker for `0.2.0`, but must not be hostile:
+Print support is not a release blocker for `0.3.0`, but must not be hostile:
 
 - Printed notes should not use near-black backgrounds by default.
 - Links and headings should remain distinguishable.

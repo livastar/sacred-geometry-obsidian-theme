@@ -14,6 +14,7 @@ Current version:
 
 ```json
 {
+  "0.3.0": "1.5.0",
   "0.2.0": "1.5.0"
 }
 ```
@@ -91,7 +92,7 @@ A change is breaking if it:
 - Removes or renames a public `--sg-*` token without alias.
 - Changes semantic Canvas role names.
 - Removes a documented snippet or template.
-- Changes dark-only support claims.
+- Changes supported mode claims.
 - Removes a documented customization hook.
 
 Breaking changes require:

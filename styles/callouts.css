@@ -4,7 +4,7 @@
 
 .callout {
   color: var(--sg-text);
-  background-color: color-mix(in srgb, var(--sg-card) 86%, var(--sg-deep-indigo));
+  background-color: color-mix(in srgb, var(--sg-card) 86%, var(--sg-card-muted));
   border: 1px solid var(--sg-border);
   border-left: 4px solid var(--sg-gold);
   border-radius: var(--sg-card-radius);
@@ -66,5 +66,5 @@
 
 .callout[data-callout="quote"] > .callout-title,
 .callout[data-callout="knowledge"] > .callout-title {
-  color: color-mix(in srgb, var(--sg-orbit-violet) 74%, var(--sg-ivory));
+  color: color-mix(in srgb, var(--sg-orbit-violet) 74%, var(--sg-text));
 }

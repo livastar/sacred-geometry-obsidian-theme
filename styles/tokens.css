@@ -2,11 +2,13 @@
  * Token definitions for the Sacred Geometry Systems theme.
  *
  * The stable public palette is taken from the brand book: obsidian, ivory,
- * gold, copper, deep indigo, and signal cyan. Semantic aliases describe
- * system behavior so Canvas snippets can style intent instead of raw color.
+ * gold, copper, deep indigo, and signal cyan. Mode-aware semantic aliases
+ * describe system behavior so Canvas snippets can style intent instead of
+ * raw color.
  */
 
-:root {
+:root,
+body.theme-dark {
   /* Brand palette */
   --sg-obsidian: #03080d;
   --sg-obsidian-soft: #07121a;
@@ -22,6 +24,11 @@
   --sg-signal-cyan: #16c7e8;
   --sg-signal-cyan-soft: #66e7ff;
   --sg-orbit-violet: #8f67ff;
+
+  /* Mode surfaces */
+  --sg-bg: var(--sg-obsidian);
+  --sg-bg-soft: var(--sg-obsidian-soft);
+  --sg-bg-panel: var(--sg-obsidian-panel);
 
   /* Semantic aliases */
   --sg-glow: var(--sg-gold-bright);
@@ -41,6 +48,11 @@
   --sg-shadow-strong: rgba(0, 0, 0, 0.68);
   --sg-glow-soft: color-mix(in srgb, var(--sg-gold) 32%, transparent);
   --sg-cyan-glow-soft: color-mix(in srgb, var(--sg-signal-cyan) 28%, transparent);
+  --sg-code-bg: color-mix(in srgb, var(--sg-deep-indigo) 72%, var(--sg-bg));
+  --sg-code-text: var(--sg-signal-cyan-soft);
+  --sg-code-border: var(--sg-border-cyan);
+  --sg-selection-bg: color-mix(in srgb, var(--sg-signal-cyan) 34%, transparent);
+  --sg-selection-text: var(--sg-ivory);
 
   /* Backward-compatible aliases from DS-Light */
   --sg-ink: var(--sg-text);
@@ -70,4 +82,59 @@
   --sg-font-size-base: 16px;
   --sg-font-size-small: 0.875rem;
   --sg-font-size-large: 1.618rem;
+
+}
+
+body.theme-light {
+  /* Ivory atlas palette */
+  --sg-gold: #93631d;
+  --sg-gold-bright: #6c4612;
+  --sg-copper: #955f3f;
+  --sg-copper-bright: #713f29;
+  --sg-deep-indigo: #e6e0f2;
+  --sg-deep-indigo-light: #d7cee9;
+  --sg-signal-cyan: #00778c;
+  --sg-signal-cyan-soft: #005f72;
+  --sg-orbit-violet: #62509b;
+
+  --sg-bg: #f6eedf;
+  --sg-bg-soft: #ede0c9;
+  --sg-bg-panel: #fffaf0;
+
+  --sg-glow: var(--sg-gold-bright);
+  --sg-pulse: var(--sg-signal-cyan);
+  --sg-orbit: var(--sg-orbit-violet);
+  --sg-flow: var(--sg-signal-cyan);
+  --sg-boundary: var(--sg-copper);
+  --sg-card: var(--sg-bg-panel);
+  --sg-card-muted: #f1e5cf;
+  --sg-card-raised: #fffdf7;
+  --sg-border: color-mix(in srgb, var(--sg-gold) 34%, transparent);
+  --sg-border-cyan: color-mix(in srgb, var(--sg-signal-cyan) 34%, transparent);
+  --sg-text: #211b15;
+  --sg-text-muted: #5d5243;
+  --sg-text-faint: #877b68;
+  --sg-shadow: rgba(70, 50, 22, 0.16);
+  --sg-shadow-strong: rgba(70, 50, 22, 0.26);
+  --sg-glow-soft: color-mix(in srgb, var(--sg-gold) 18%, transparent);
+  --sg-cyan-glow-soft: color-mix(in srgb, var(--sg-signal-cyan) 16%, transparent);
+  --sg-code-bg: color-mix(in srgb, var(--sg-bg-panel) 82%, var(--sg-deep-indigo));
+  --sg-code-text: var(--sg-signal-cyan-soft);
+  --sg-code-border: var(--sg-border-cyan);
+  --sg-selection-bg: color-mix(in srgb, var(--sg-signal-cyan) 24%, var(--sg-bg-panel));
+  --sg-selection-text: var(--sg-text);
+
+  --sg-ink: var(--sg-text);
+  --sg-ink-light: var(--sg-text-muted);
+  --sg-ink-lighter: var(--sg-border);
+  --sg-teal: var(--sg-signal-cyan);
+  --sg-teal-light: var(--sg-signal-cyan-soft);
+  --sg-rose: var(--sg-copper);
+  --sg-rose-light: var(--sg-copper-bright);
+  --sg-parchment: var(--sg-card);
+  --sg-parchment-light: var(--sg-card-raised);
+  --sg-parchment-dark: var(--sg-bg-soft);
+  --sg-center-color: var(--sg-gold-bright);
+
+  color-scheme: light;
 }

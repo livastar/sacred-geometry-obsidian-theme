@@ -1,6 +1,6 @@
 # Sacred Geometry Systems Theme Guidelines
 
-This folder is the publish-readiness operating manual for **Sacred Geometry Systems**, a dark Obsidian theme for living systems maps, Canvas workflows, and agent ecosystems.
+This folder is the publish-readiness operating manual for **Sacred Geometry Systems**, a dark and light Obsidian theme for living systems maps, Canvas workflows, and agent ecosystems.
 
 The goal is simple: every theme change should preserve the brand language, remain installable from Obsidian's Community Themes catalog, and leave future project/plugin work with stable visual contracts.
 
@@ -9,9 +9,9 @@ The goal is simple: every theme change should preserve the brand language, remai
 | Field | Value |
 | --- | --- |
 | Theme name | `Sacred Geometry Systems` |
-| Catalog modes | `["dark"]` |
+| Catalog modes | `["dark", "light"]` |
 | Repository | `livastar/sacred-geometry-obsidian-theme` |
-| Current version | `0.2.0` |
+| Current version | `0.3.0` |
 | Minimum Obsidian version | `1.5.0` |
 | Catalog screenshot | `assets/screenshot-catalog.png` |
 | Publish support | Optional-ready, not required for app theme release |
@@ -52,7 +52,7 @@ A release is not publish-ready until all of these are true:
 - Release `theme.css` is self-contained. Source modules under `styles/` are allowed, but the released root file must not depend on missing imported files.
 - CSS makes no remote network calls, uses no remote fonts/images, and contains no `!important` declarations unless a reviewer approves a documented exception.
 - Catalog screenshot is a real Obsidian capture at `assets/screenshot-catalog.png`, 16:9, preferably `512x288`.
-- Community catalog entry uses `name: "Sacred Geometry Systems"`, `repo: "livastar/sacred-geometry-obsidian-theme"`, `screenshot: "assets/screenshot-catalog.png"`, and `modes: ["dark"]`.
+- Community catalog entry uses `name: "Sacred Geometry Systems"`, `repo: "livastar/sacred-geometry-obsidian-theme"`, `screenshot: "assets/screenshot-catalog.png"`, and `modes: ["dark", "light"]`.
 - README follows [readme-blueprint.md](readme-blueprint.md) and includes creator context, useful links, install, customization, Canvas usage, accessibility, roadmap, feedback, credits, and license sections.
 - Canvas starter, snippets, templates, and `BRAND_BOOK.md` agree on the same semantic roles and public `--sg-*` tokens.
 - Visual QA has passed for notes, Canvas, graph view, callouts, modals, command palette, tabs, sidebars, and a mobile-sized viewport.

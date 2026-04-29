@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 - 2026-04-29
+
+- Added full light mode support with an ivory atlas palette, adapted text contrast, Canvas, graph, callout, code, and Obsidian app shell states.
+- Moved Obsidian app shell styling into `styles/app.css` and regenerated the self-contained release `theme.css`.
+- Removed the legacy `obsidian.css` compatibility shim so Community Themes validation no longer warns about legacy theme files.
+- Updated release metadata and documentation for dual dark/light catalog support.
+- Replaced the catalog screenshot with a multi-use-case Obsidian preview.
+
 ## 0.2.0 - 2026-04-29
 
 - Regenerated the public brand from Sacred Geometry DS-Light to Sacred Geometry Systems.

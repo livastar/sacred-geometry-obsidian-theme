@@ -11,6 +11,7 @@ Run this before opening a catalog PR or publishing a release.
 - [ ] Root `CHANGELOG.md` exists.
 - [ ] Root `LICENSE` exists.
 - [ ] `assets/screenshot-catalog.png` exists.
+- [ ] Root `obsidian.css` is absent unless intentionally supporting legacy Obsidian outside the catalog flow.
 - [ ] No required release file is hidden inside a subfolder.
 
 ## Manifest
@@ -47,7 +48,7 @@ Run this before opening a catalog PR or publishing a release.
 - [ ] Screenshot is real Obsidian UI.
 - [ ] Screenshot is 16:9.
 - [ ] Screenshot is preferably `512x288`.
-- [ ] Screenshot is dark mode.
+- [ ] Screenshot showcases supported theme use cases and contains no unsupported mode claims.
 - [ ] Screenshot contains no private data.
 - [ ] Screenshot remains legible as a thumbnail.
 
@@ -60,7 +61,7 @@ Run this before opening a catalog PR or publishing a release.
 - [ ] Has About the Creator section naming Stanislav Ivanov.
 - [ ] Links to Tripmindful, Livastar Observer, LinkedIn, and Buy Me a Coffee.
 - [ ] Explains optional snippets/templates.
-- [ ] States dark-only support.
+- [ ] States dark and light mode support.
 - [ ] States Style Settings status accurately.
 - [ ] Does not claim SacraMap is implemented.
 - [ ] Links are not broken.
@@ -71,5 +72,5 @@ Run this before opening a catalog PR or publishing a release.
 - [ ] Uses `author: "Stanislav Ivanov"`.
 - [ ] Uses `repo: "livastar/sacred-geometry-obsidian-theme"`.
 - [ ] Uses `screenshot: "assets/screenshot-catalog.png"`.
-- [ ] Uses `modes: ["dark"]`.
+- [ ] Uses `modes: ["dark", "light"]`.
 - [ ] Omits `"publish": true` unless `publish.css` passes QA.

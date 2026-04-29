@@ -24,7 +24,7 @@ Use this after preflight and visual QA pass.
 
 ## GitHub Release
 
-- [ ] Create tag matching manifest version exactly, for example `0.2.0`.
+- [ ] Create tag matching manifest version exactly, for example `0.3.0`.
 - [ ] Create GitHub release with the same title.
 - [ ] Add release notes from `templates/release-notes.template.md`.
 - [ ] Attach final `manifest.json`.

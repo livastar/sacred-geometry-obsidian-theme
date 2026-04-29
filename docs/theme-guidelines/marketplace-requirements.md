@@ -23,7 +23,7 @@ The release manifest should use official theme metadata fields:
 ```json
 {
   "name": "Sacred Geometry Systems",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "minAppVersion": "1.5.0",
   "author": "Stanislav Ivanov",
   "authorUrl": "https://github.com/livastar"
@@ -59,7 +59,7 @@ The catalog screenshot must be:
 - 16:9 aspect ratio.
 - Preferably `512x288`.
 - A real Obsidian screenshot with Sacred Geometry Systems enabled.
-- Dark-mode, because catalog mode is `["dark"]`.
+- A real Obsidian screenshot that showcases the supported mode language and multiple theme use cases.
 - Legible at thumbnail size.
 
 Generated imagery can be used for ideation or brand work, but not as the final catalog screenshot.
@@ -75,7 +75,8 @@ The entry to append to `community-css-themes.json` should be:
   "repo": "livastar/sacred-geometry-obsidian-theme",
   "screenshot": "assets/screenshot-catalog.png",
   "modes": [
-    "dark"
+    "dark",
+    "light"
   ]
 }
 ```
@@ -88,6 +89,7 @@ Only add `"publish": true` after `publish.css` exists and passes the checks in [
 
 ```json
 {
+  "0.3.0": "1.5.0",
   "0.2.0": "1.5.0"
 }
 ```
@@ -98,7 +100,7 @@ Update this file whenever `manifest.json` version changes.
 
 For every public release:
 
-- The Git tag must exactly match the `manifest.json` version, for example `0.2.0`.
+- The Git tag must exactly match the `manifest.json` version, for example `0.3.0`.
 - The release title should match the version.
 - Release notes should summarize user-facing changes and compatibility changes.
 - Attach the final release `manifest.json` and final self-contained `theme.css`.
@@ -116,9 +118,9 @@ Community themes must work offline and protect user privacy. Therefore:
 
 ## Mode Declaration
 
-Sacred Geometry Systems is dark-only for the current release.
+Sacred Geometry Systems supports dark and light modes for the current release.
 
-- Catalog `modes` must be `["dark"]`.
-- README must say the theme is dark-only.
-- QA must verify behavior when Obsidian's base color scheme is dark.
-- If light mode is added later, the catalog entry becomes `["dark", "light"]` only after `.theme-light` has full coverage and visual QA passes.
+- Catalog `modes` must be `["dark", "light"]`.
+- README must say the theme supports dark and light modes.
+- QA must verify behavior when Obsidian's base color scheme is dark and light.
+- Do not claim a supported mode in the catalog unless the matching `.theme-dark` or `.theme-light` path has full coverage and visual QA passes.

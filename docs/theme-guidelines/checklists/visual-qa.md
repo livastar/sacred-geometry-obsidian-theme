@@ -6,6 +6,7 @@ Use a clean demo vault or sanitized vault. Disable unrelated snippets unless tes
 
 - [ ] Install the theme from the current branch.
 - [ ] Enable dark base color scheme.
+- [ ] Enable light base color scheme.
 - [ ] Confirm Sacred Geometry Systems is selected.
 - [ ] Confirm optional snippets are disabled for base-theme QA.
 - [ ] Record Obsidian version and operating system.

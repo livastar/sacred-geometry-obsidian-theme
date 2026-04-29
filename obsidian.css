@@ -1,8 +1,0 @@
-/*
- * Obsidian Theme Entry Point
- *
- * Obsidian loads this file from the manifest. The actual theme is kept in
- * modular CSS files imported by theme.css.
- */
-
-@import url('./theme.css');
