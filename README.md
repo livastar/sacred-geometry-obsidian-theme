@@ -12,6 +12,17 @@ Large Obsidian vaults and Canvas maps can become visually flat: everything has t
 
 The focus is functional, not mystical. Geometry is used as a way to reveal hidden structure and help humans move between overview and detail.
 
+## About the Creator
+
+Sacred Geometry Systems is created by **Stanislav Ivanov** as part of the Livastar Observer ecosystem. The theme is designed for people who use Obsidian to map systems, projects, agent workflows, decisions, and knowledge structures with more visual clarity.
+
+Useful links:
+
+- [Tripmindful](https://tripmindful.nl/) - a related mindful preparation project.
+- [Livastar Observer](https://livastar.observer) - the wider research and product studio behind this work.
+- [LinkedIn](https://www.linkedin.com/in/ivanostanis) - connect with Stanislav Ivanov.
+- [Buy Me a Coffee](https://buymeacoffee.com/livastar) - support ongoing theme, template, and systems-mapping work.
+
 ## Brand System
 
 The source of truth lives in [BRAND_BOOK.md](BRAND_BOOK.md). It defines:

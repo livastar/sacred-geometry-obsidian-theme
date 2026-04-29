@@ -57,6 +57,8 @@ Run this before opening a catalog PR or publishing a release.
 - [ ] Has screenshot.
 - [ ] Has Marketplace install section or pre-approval note.
 - [ ] Has manual install section.
+- [ ] Has About the Creator section naming Stanislav Ivanov.
+- [ ] Links to Tripmindful, Livastar Observer, LinkedIn, and Buy Me a Coffee.
 - [ ] Explains optional snippets/templates.
 - [ ] States dark-only support.
 - [ ] States Style Settings status accurately.

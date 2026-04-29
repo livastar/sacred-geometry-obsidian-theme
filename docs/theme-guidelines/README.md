@@ -15,6 +15,16 @@ The goal is simple: every theme change should preserve the brand language, remai
 | Minimum Obsidian version | `1.5.0` |
 | Catalog screenshot | `assets/screenshot-catalog.png` |
 | Publish support | Optional-ready, not required for app theme release |
+| Creator | `Stanislav Ivanov` |
+
+## Public Useful Links
+
+These links belong in the public README theme page and any future README-derived theme page:
+
+- [Tripmindful](https://tripmindful.nl/)
+- [Livastar Observer](https://livastar.observer)
+- [LinkedIn](https://www.linkedin.com/in/ivanostanis)
+- [Buy Me a Coffee](https://buymeacoffee.com/livastar)
 
 ## Navigation
 
@@ -43,7 +53,7 @@ A release is not publish-ready until all of these are true:
 - CSS makes no remote network calls, uses no remote fonts/images, and contains no `!important` declarations unless a reviewer approves a documented exception.
 - Catalog screenshot is a real Obsidian capture at `assets/screenshot-catalog.png`, 16:9, preferably `512x288`.
 - Community catalog entry uses `name: "Sacred Geometry Systems"`, `repo: "livastar/sacred-geometry-obsidian-theme"`, `screenshot: "assets/screenshot-catalog.png"`, and `modes: ["dark"]`.
-- README follows [readme-blueprint.md](readme-blueprint.md) and includes install, customization, Canvas usage, accessibility, roadmap, feedback, credits, and license sections.
+- README follows [readme-blueprint.md](readme-blueprint.md) and includes creator context, useful links, install, customization, Canvas usage, accessibility, roadmap, feedback, credits, and license sections.
 - Canvas starter, snippets, templates, and `BRAND_BOOK.md` agree on the same semantic roles and public `--sg-*` tokens.
 - Visual QA has passed for notes, Canvas, graph view, callouts, modals, command palette, tabs, sidebars, and a mobile-sized viewport.
 - Accessibility QA has passed for contrast, focus visibility, reduced motion, and non-color state cues.

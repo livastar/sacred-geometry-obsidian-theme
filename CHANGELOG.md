@@ -7,6 +7,7 @@
 - Rebuilt the CSS token system around obsidian, ivory, gold, copper, deep indigo, and signal cyan.
 - Converted the theme to dark mode and refreshed notes, Canvas, callouts, graph view, and geometry helpers.
 - Reworked Canvas snippets, the starter Canvas, and the map-node template around agent ecosystems, flow tracing, knowledge clusters, decisions, and outcomes.
+- Added README creator context and useful links for Tripmindful, Livastar Observer, LinkedIn, and Buy Me a Coffee.
 - Documented SacraMap as a future commercial plugin concept only.
 
 ## 0.1.0

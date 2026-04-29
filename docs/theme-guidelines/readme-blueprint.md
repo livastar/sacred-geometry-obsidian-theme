@@ -10,18 +10,20 @@ Use this order for `README.md`.
 2. Catalog screenshot or hero screenshot.
 3. One-sentence promise.
 4. Short description of who the theme is for.
-5. Feature list.
-6. Preview section.
-7. Installation.
-8. Canvas workflow.
-9. Customization.
-10. Style Settings status.
-11. Accessibility.
-12. Compatibility.
-13. Roadmap.
-14. Feedback and issues.
-15. Credits.
-16. License.
+5. About the Creator.
+6. Useful links.
+7. Feature list.
+8. Preview section.
+9. Installation.
+10. Canvas workflow.
+11. Customization.
+12. Style Settings status.
+13. Accessibility.
+14. Compatibility.
+15. Roadmap.
+16. Feedback and issues.
+17. Credits.
+18. License.
 
 ## Section Requirements
 
@@ -58,6 +60,26 @@ Name the audience and use case:
 - Knowledge workers managing large vaults.
 - Canvas users mapping systems, agents, decisions, and feedback loops.
 - Builders who want a stable visual language for future project/plugin work.
+
+### About the Creator
+
+Keep this grounded and public-safe:
+
+- Name Stanislav Ivanov as the creator.
+- Connect the theme to Livastar Observer as the wider research and product studio.
+- Explain the theme as systems-mapping, Canvas, and knowledge-work infrastructure.
+- Do not imply therapeutic, medical, legal, or plugin behavior that the theme does not provide.
+
+### Useful Links
+
+Use exactly these public links:
+
+```md
+- [Tripmindful](https://tripmindful.nl/) - a related mindful preparation project.
+- [Livastar Observer](https://livastar.observer) - the wider research and product studio behind this work.
+- [LinkedIn](https://www.linkedin.com/in/ivanostanis) - connect with Stanislav Ivanov.
+- [Buy Me a Coffee](https://buymeacoffee.com/livastar) - support ongoing theme, template, and systems-mapping work.
+```
 
 ### Features
 
@@ -194,3 +216,4 @@ Do not publish if the README:
 - Claims SacraMap behavior exists inside the theme.
 - Uses remote images as the only preview media.
 - Links to missing files.
+- Omits the creator section or public useful links.

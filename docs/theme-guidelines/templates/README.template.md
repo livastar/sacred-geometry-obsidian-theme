@@ -8,6 +8,17 @@ Sacred Geometry Systems is a dark Obsidian theme for living systems maps, Canvas
 
 Use this theme if your vault contains systems maps, project constellations, agent ecosystems, decision paths, or knowledge clusters that need clear visual hierarchy.
 
+## About the Creator
+
+Sacred Geometry Systems is created by **Stanislav Ivanov** as part of the Livastar Observer ecosystem. The theme is designed for people who use Obsidian to map systems, projects, agent workflows, decisions, and knowledge structures with more visual clarity.
+
+Useful links:
+
+- [Tripmindful](https://tripmindful.nl/) - a related mindful preparation project.
+- [Livastar Observer](https://livastar.observer) - the wider research and product studio behind this work.
+- [LinkedIn](https://www.linkedin.com/in/ivanostanis) - connect with Stanislav Ivanov.
+- [Buy Me a Coffee](https://buymeacoffee.com/livastar) - support ongoing theme, template, and systems-mapping work.
+
 ## Features
 
 - Dark obsidian palette with ivory text, gold structure, copper boundaries, deep indigo panels, and signal-cyan flow.
