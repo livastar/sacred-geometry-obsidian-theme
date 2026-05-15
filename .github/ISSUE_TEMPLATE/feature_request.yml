@@ -1,0 +1,39 @@
+name: Feature request
+description: Suggest a purpose-aligned theme, Canvas, or documentation improvement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or workflow
+      description: What systems-mapping or Obsidian workflow would this improve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: Describe the smallest useful theme, template, snippet, or documentation change.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Notes and editor
+        - Canvas
+        - Graph
+        - Callouts
+        - Accessibility
+        - Documentation
+        - Release tooling
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Boundaries
+      description: Note anything that should stay out of scope, such as plugin behavior or private vault assumptions.

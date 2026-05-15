@@ -82,7 +82,7 @@ The theme targets high contrast on dark surfaces, visible focus states, and redu
 
 ## Compatibility
 
-- Theme version: `0.3.0`
+- Theme version: `0.4.0`
 - Minimum Obsidian version: `1.5.0`
 - Modes: dark and light
 - Obsidian Publish: not currently advertised

@@ -16,8 +16,7 @@
  * raw color.
  */
 
-:root,
-body.theme-dark {
+:root {
   /* Brand palette */
   --sg-obsidian: #03080d;
   --sg-obsidian-soft: #07121a;
@@ -76,6 +75,16 @@ body.theme-dark {
   --sg-parchment-dark: var(--sg-obsidian-soft);
   --sg-center-color: var(--sg-gold-bright);
 
+  /* Semantic role tokens for living systems maps */
+  --sg-role-mission: var(--sg-gold-bright);
+  --sg-role-core-system: var(--sg-gold);
+  --sg-role-agent: var(--sg-signal-cyan);
+  --sg-role-resource: color-mix(in srgb, var(--sg-ivory) 42%, var(--sg-gold));
+  --sg-role-interaction: var(--sg-signal-cyan-soft);
+  --sg-role-knowledge: var(--sg-orbit-violet);
+  --sg-role-decision: var(--sg-copper);
+  --sg-role-outcome: color-mix(in srgb, var(--sg-gold) 62%, var(--sg-signal-cyan));
+
   /* Geometry constants */
   --sg-golden-ratio: 1.618;
   --sg-radius-small: 4px;
@@ -91,6 +100,16 @@ body.theme-dark {
   --sg-font-size-base: 16px;
   --sg-font-size-small: 0.875rem;
   --sg-font-size-large: 1.618rem;
+
+  /* Canvas constants */
+  --canvas-color-node: var(--sg-card);
+  --canvas-color-node-border: var(--sg-border);
+  --canvas-color-node-focused: var(--sg-role-mission);
+  --canvas-color-node-hover: var(--sg-role-agent);
+  --canvas-color-line: var(--sg-flow);
+  --canvas-color-line-highlight: var(--sg-role-outcome);
+  --canvas-node-radius: var(--sg-card-radius);
+  --canvas-node-padding: 0.75rem;
 
 }
 
@@ -276,17 +295,6 @@ th {
  * marks live flow, copper marks decision boundaries.
  */
 
-:root {
-  --canvas-color-node: var(--sg-card);
-  --canvas-color-node-border: var(--sg-border);
-  --canvas-color-node-focused: var(--sg-gold-bright);
-  --canvas-color-node-hover: var(--sg-signal-cyan);
-  --canvas-color-line: var(--sg-flow);
-  --canvas-color-line-highlight: var(--sg-gold);
-  --canvas-node-radius: var(--sg-card-radius);
-  --canvas-node-padding: 0.75rem;
-}
-
 .canvas-wrapper,
 .canvas,
 .canvas-viewport {
@@ -395,6 +403,52 @@ th {
   fill: var(--sg-signal-cyan);
 }
 
+.canvas-node.node-mission,
+.canvas-node.node-core-system,
+.canvas-node.node-agent,
+.canvas-node.node-resource,
+.canvas-node.node-interaction,
+.canvas-node.node-knowledge,
+.canvas-node.node-decision,
+.canvas-node.node-outcome {
+  border-width: 1.5px;
+}
+
+.canvas-node.node-mission {
+  border-color: var(--sg-role-mission);
+  box-shadow: 0 0 20px var(--sg-glow-soft), 0 16px 38px var(--sg-shadow);
+}
+
+.canvas-node.node-core-system {
+  border-color: var(--sg-role-core-system);
+  background-color: color-mix(in srgb, var(--sg-role-core-system) 8%, var(--sg-card));
+}
+
+.canvas-node.node-agent,
+.canvas-node.node-interaction {
+  border-color: var(--sg-role-agent);
+  box-shadow: 0 0 18px var(--sg-cyan-glow-soft), 0 14px 34px var(--sg-shadow);
+}
+
+.canvas-node.node-resource {
+  border-color: var(--sg-role-resource);
+}
+
+.canvas-node.node-knowledge {
+  border-color: var(--sg-role-knowledge);
+}
+
+.canvas-node.node-decision {
+  border-color: var(--sg-role-decision);
+}
+
+.canvas-node.node-outcome {
+  border-color: var(--sg-role-outcome);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--sg-role-outcome) 12%, transparent), transparent 44%),
+    var(--sg-card);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .canvas-node.is-focused {
     animation: sg-focus-pulse 4s ease-in-out infinite;
@@ -456,26 +510,35 @@ th {
 
 .callout[data-callout="tip"],
 .callout[data-callout="success"],
-.callout[data-callout="flow"] {
-  border-left-color: var(--sg-signal-cyan);
+.callout[data-callout="flow"],
+.callout[data-callout="agent"],
+.callout[data-callout="interaction"] {
+  border-left-color: var(--sg-role-agent);
 }
 
 .callout[data-callout="tip"] > .callout-title,
 .callout[data-callout="success"] > .callout-title,
-.callout[data-callout="flow"] > .callout-title {
+.callout[data-callout="flow"] > .callout-title,
+.callout[data-callout="agent"] > .callout-title,
+.callout[data-callout="interaction"] > .callout-title {
   color: var(--sg-signal-cyan-soft);
 }
 
 .callout[data-callout="info"],
 .callout[data-callout="map"],
-.callout[data-callout="agent"] {
-  border-left-color: var(--sg-gold);
+.callout[data-callout="mission"],
+.callout[data-callout="system"] {
+  border-left-color: var(--sg-role-mission);
+}
+
+.callout[data-callout="resource"] {
+  border-left-color: var(--sg-role-resource);
 }
 
 .callout[data-callout="warning"],
 .callout[data-callout="decision"] {
-  border-left-color: var(--sg-copper);
-  background-color: color-mix(in srgb, var(--sg-copper) 10%, var(--sg-card));
+  border-left-color: var(--sg-role-decision);
+  background-color: color-mix(in srgb, var(--sg-role-decision) 10%, var(--sg-card));
 }
 
 .callout[data-callout="warning"] > .callout-title,
@@ -491,7 +554,7 @@ th {
 
 .callout[data-callout="quote"],
 .callout[data-callout="knowledge"] {
-  border-left-color: var(--sg-orbit-violet);
+  border-left-color: var(--sg-role-knowledge);
 }
 
 .callout[data-callout="quote"] > .callout-title,
@@ -504,18 +567,6 @@ th {
 /*
  * Graph view styling for Sacred Geometry Systems.
  */
-
-body {
-  --graph-line-color: var(--sg-flow);
-  --graph-node-fill: var(--sg-card-raised);
-  --graph-node-fill-hover: var(--sg-gold);
-  --graph-node-fill-selected: var(--sg-gold-bright);
-  --graph-node-fill-tag: var(--sg-orbit-violet);
-  --graph-node-stroke-width: 1.5px;
-  --graph-node-border-color: var(--sg-border);
-  --graph-edge-width: 1px;
-  --graph-text: var(--sg-text-muted);
-}
 
 .graph-view.color-fill,
 .graph-view {
@@ -669,8 +720,7 @@ body {
  * Obsidian app shell styling for Sacred Geometry Systems.
  */
 
-body,
-body.theme-dark {
+body {
   color-scheme: dark;
   --background-primary: var(--sg-bg);
   --background-primary-alt: var(--sg-bg-soft);
@@ -697,23 +747,25 @@ body.theme-dark {
   --radius-s: var(--sg-radius-small);
   --radius-m: var(--sg-radius-medium);
   --radius-l: var(--sg-radius-large);
-}
 
-body.theme-light {
-  color-scheme: light;
-  --background-modifier-hover: color-mix(in srgb, var(--sg-signal-cyan) 10%, var(--sg-bg-panel));
-  --background-modifier-active-hover: color-mix(in srgb, var(--sg-gold) 14%, var(--sg-bg-panel));
-  --text-on-accent: #fffaf0;
-  --interactive-hover: color-mix(in srgb, var(--sg-signal-cyan) 10%, var(--sg-card));
-  --interactive-accent-hover: var(--sg-gold-bright);
-}
+  --font-interface-theme: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-text-theme: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-monospace-theme: "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
 
-body {
+  --graph-line-color: var(--sg-flow);
+  --graph-node-fill: var(--sg-card-raised);
+  --graph-node-fill-hover: var(--sg-role-mission);
+  --graph-node-fill-selected: var(--sg-role-outcome);
+  --graph-node-fill-tag: var(--sg-role-knowledge);
+  --graph-node-stroke-width: 1.5px;
+  --graph-node-border-color: var(--sg-border);
+  --graph-edge-width: 1px;
+  --graph-text: var(--sg-text-muted);
+
   background-color: var(--sg-bg);
   color: var(--sg-text);
   font-size: var(--sg-font-size-base);
   line-height: 1.6;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -770,7 +822,7 @@ i {
 
 code,
 pre {
-  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-family: var(--font-monospace);
   background-color: var(--sg-code-bg);
   color: var(--sg-code-text);
   border: 1px solid var(--sg-code-border);

@@ -11,7 +11,7 @@ The goal is simple: every theme change should preserve the brand language, remai
 | Theme name | `Sacred Geometry Systems` |
 | Catalog modes | `["dark", "light"]` |
 | Repository | `livastar/sacred-geometry-obsidian-theme` |
-| Current version | `0.3.0` |
+| Current version | `0.4.0` |
 | Minimum Obsidian version | `1.5.0` |
 | Catalog screenshot | `assets/screenshot-catalog.png` |
 | Publish support | Optional-ready, not required for app theme release |
@@ -61,8 +61,8 @@ A release is not publish-ready until all of these are true:
 ## Current Repo Actions Before Catalog Submission
 
 - Keep `manifest.json` normalized to official theme metadata fields and aligned with the public repository name `livastar/sacred-geometry-obsidian-theme`.
-- Add `assets/screenshot-catalog.png` from a real Obsidian screenshot. Existing generated images can be references, but not the final catalog proof.
-- Decide the release packaging path: either flatten modular CSS into root `theme.css`, or include an automated release step that always produces a self-contained `theme.css`.
+- Keep `assets/screenshot-catalog.png` as a real Obsidian screenshot. Generated images can be references, but not the final catalog proof.
+- Use `npm run build` to flatten modular CSS into root `theme.css`, and `npm run check` before release.
 - Treat Style Settings support as a roadmap item unless a valid `/* @settings */` block is added and tested.
 - Keep Obsidian Publish support optional until `publish.css` is created, tested, and cataloged with `"publish": true`.
 

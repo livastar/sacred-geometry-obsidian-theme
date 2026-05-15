@@ -4,41 +4,44 @@
  * Enable this snippet to add semantic card roles on top of the base theme.
  */
 
+.canvas-node.node-mission,
 .canvas-node.node-focus,
+.canvas-node.node-core-system,
 .canvas-node.node-system {
-  border-color: var(--sg-gold-bright);
-  background-color: color-mix(in srgb, var(--sg-gold) 9%, var(--sg-card));
+  border-color: var(--sg-role-mission);
+  background-color: color-mix(in srgb, var(--sg-role-core-system) 9%, var(--sg-card));
   box-shadow: 0 0 20px var(--sg-glow-soft);
 }
 
 .canvas-node.node-flow,
 .canvas-node.node-agent,
+.canvas-node.node-interaction,
 .canvas-node.node-live {
-  border-color: var(--sg-signal-cyan);
-  background-color: color-mix(in srgb, var(--sg-signal-cyan) 8%, var(--sg-card));
+  border-color: var(--sg-role-agent);
+  background-color: color-mix(in srgb, var(--sg-role-agent) 8%, var(--sg-card));
   box-shadow: 0 0 18px var(--sg-cyan-glow-soft);
 }
 
 .canvas-node.node-risk,
 .canvas-node.node-decision {
-  border-color: var(--sg-copper);
-  background-color: color-mix(in srgb, var(--sg-copper) 10%, var(--sg-card));
+  border-color: var(--sg-role-decision);
+  background-color: color-mix(in srgb, var(--sg-role-decision) 10%, var(--sg-card));
 }
 
 .canvas-node.node-knowledge {
-  border-color: var(--sg-orbit-violet);
-  background-color: color-mix(in srgb, var(--sg-orbit-violet) 9%, var(--sg-card));
+  border-color: var(--sg-role-knowledge);
+  background-color: color-mix(in srgb, var(--sg-role-knowledge) 9%, var(--sg-card));
 }
 
 .canvas-node.node-resource {
-  border-color: color-mix(in srgb, var(--sg-ivory) 42%, var(--sg-gold));
+  border-color: var(--sg-role-resource);
   background-color: color-mix(in srgb, var(--sg-ivory) 6%, var(--sg-card));
 }
 
 .canvas-node.node-outcome {
-  border-color: var(--sg-gold);
+  border-color: var(--sg-role-outcome);
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--sg-gold) 14%, transparent), transparent 46%),
+    linear-gradient(135deg, color-mix(in srgb, var(--sg-role-outcome) 14%, transparent), transparent 46%),
     var(--sg-card);
 }
 
@@ -51,8 +54,11 @@
 @media (prefers-reduced-motion: reduce) {
   .canvas-node.node-focus,
   .canvas-node.node-system,
+  .canvas-node.node-mission,
+  .canvas-node.node-core-system,
   .canvas-node.node-flow,
   .canvas-node.node-agent,
+  .canvas-node.node-interaction,
   .canvas-node.node-live {
     box-shadow: 0 0 0 1px currentColor;
   }

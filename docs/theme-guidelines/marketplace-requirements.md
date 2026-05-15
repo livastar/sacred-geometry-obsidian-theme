@@ -23,7 +23,7 @@ The release manifest should use official theme metadata fields:
 ```json
 {
   "name": "Sacred Geometry Systems",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "minAppVersion": "1.5.0",
   "author": "Stanislav Ivanov",
   "authorUrl": "https://github.com/livastar"
@@ -89,6 +89,7 @@ Only add `"publish": true` after `publish.css` exists and passes the checks in [
 
 ```json
 {
+  "0.4.0": "1.5.0",
   "0.3.0": "1.5.0",
   "0.2.0": "1.5.0"
 }
@@ -100,7 +101,7 @@ Update this file whenever `manifest.json` version changes.
 
 For every public release:
 
-- The Git tag must exactly match the `manifest.json` version, for example `0.3.0`.
+- The Git tag must exactly match the `manifest.json` version, for example `0.4.0`.
 - The release title should match the version.
 - Release notes should summarize user-facing changes and compatibility changes.
 - Attach the final release `manifest.json` and final self-contained `theme.css`.

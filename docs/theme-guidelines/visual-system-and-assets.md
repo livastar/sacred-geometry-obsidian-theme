@@ -15,7 +15,7 @@ Requirements:
 - Real Obsidian capture with Sacred Geometry Systems enabled.
 - 16:9 aspect ratio.
 - Prefer `512x288`.
-- A supported base color scheme. For `0.3.0`, prefer light mode because it proves the Ivory atlas palette, while dark mode remains covered by visual QA.
+- A supported base color scheme. For dual-mode releases, pick the mode that best proves the newest change while covering both dark and light in visual QA.
 - No generated mockup as final proof.
 - No private vault data.
 - No personal information in visible filenames, notes, tabs, or graph labels.

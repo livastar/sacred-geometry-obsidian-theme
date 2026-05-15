@@ -5,17 +5,6 @@
  * marks live flow, copper marks decision boundaries.
  */
 
-:root {
-  --canvas-color-node: var(--sg-card);
-  --canvas-color-node-border: var(--sg-border);
-  --canvas-color-node-focused: var(--sg-gold-bright);
-  --canvas-color-node-hover: var(--sg-signal-cyan);
-  --canvas-color-line: var(--sg-flow);
-  --canvas-color-line-highlight: var(--sg-gold);
-  --canvas-node-radius: var(--sg-card-radius);
-  --canvas-node-padding: 0.75rem;
-}
-
 .canvas-wrapper,
 .canvas,
 .canvas-viewport {
@@ -122,6 +111,52 @@
 
 .canvas-edge-marker {
   fill: var(--sg-signal-cyan);
+}
+
+.canvas-node.node-mission,
+.canvas-node.node-core-system,
+.canvas-node.node-agent,
+.canvas-node.node-resource,
+.canvas-node.node-interaction,
+.canvas-node.node-knowledge,
+.canvas-node.node-decision,
+.canvas-node.node-outcome {
+  border-width: 1.5px;
+}
+
+.canvas-node.node-mission {
+  border-color: var(--sg-role-mission);
+  box-shadow: 0 0 20px var(--sg-glow-soft), 0 16px 38px var(--sg-shadow);
+}
+
+.canvas-node.node-core-system {
+  border-color: var(--sg-role-core-system);
+  background-color: color-mix(in srgb, var(--sg-role-core-system) 8%, var(--sg-card));
+}
+
+.canvas-node.node-agent,
+.canvas-node.node-interaction {
+  border-color: var(--sg-role-agent);
+  box-shadow: 0 0 18px var(--sg-cyan-glow-soft), 0 14px 34px var(--sg-shadow);
+}
+
+.canvas-node.node-resource {
+  border-color: var(--sg-role-resource);
+}
+
+.canvas-node.node-knowledge {
+  border-color: var(--sg-role-knowledge);
+}
+
+.canvas-node.node-decision {
+  border-color: var(--sg-role-decision);
+}
+
+.canvas-node.node-outcome {
+  border-color: var(--sg-role-outcome);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--sg-role-outcome) 12%, transparent), transparent 44%),
+    var(--sg-card);
 }
 
 @media (prefers-reduced-motion: no-preference) {
