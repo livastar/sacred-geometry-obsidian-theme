@@ -2,6 +2,7 @@
 
 ## 0.4.0 - 2026-05-15
 
+- Added Atlas Controls through a tested Style Settings block for structure gold, signal cyan, boundary copper, orbit violet, reduced glow, disabled geometry texture, and stronger focus boundaries.
 - Fixed Community Themes scan warnings by removing unsupported extended system font tokens and consolidating duplicate `body`, `body.theme-dark`, and `body.theme-light` selectors in the release CSS.
 - Added release checks and a no-dependency build script to keep root `theme.css` self-contained and aligned with the modular source files under `styles/`.
 - Added public semantic role tokens for living systems maps: mission, core system, agent, resource, interaction, knowledge, decision, and outcome.

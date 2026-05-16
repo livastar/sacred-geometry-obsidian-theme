@@ -1,6 +1,6 @@
 /*
  * Optional Style Settings block for Sacred Geometry Systems.
- * Add only after testing with the Style Settings plugin.
+ * Keep this template aligned with the tested Atlas Controls release block.
  */
 
 /* @settings
@@ -9,48 +9,63 @@ id: sacred-geometry-systems
 settings:
   -
     id: sgs-info
-    title: Sacred Geometry Systems
-    description: Theme controls for Canvas-first systems maps.
+    title: Atlas Controls
+    description: Tune glow, flow, and geometry presence for long writing sessions and living Canvas maps.
     type: info-text
     markdown: true
   -
     id: sgs-colors
-    title: Colors
+    title: Signal Colors
     type: heading
     level: 2
     collapsed: true
   -
     id: sg-gold
     title: Structure gold
-    type: variable-color
+    type: variable-themed-color
     format: hex
-    default: '#d8a84f'
+    default-light: '#93631d'
+    default-dark: '#d8a84f'
   -
     id: sg-signal-cyan
     title: Signal cyan
-    type: variable-color
+    type: variable-themed-color
     format: hex
-    default: '#16c7e8'
+    default-light: '#00778c'
+    default-dark: '#16c7e8'
   -
     id: sg-copper
     title: Boundary copper
-    type: variable-color
+    type: variable-themed-color
     format: hex
-    default: '#b87345'
+    default-light: '#955f3f'
+    default-dark: '#b87345'
   -
-    id: sgs-canvas
-    title: Canvas
+    id: sg-orbit-violet
+    title: Orbit violet
+    type: variable-themed-color
+    format: hex
+    default-light: '#62509b'
+    default-dark: '#8f67ff'
+  -
+    id: sgs-atlas-controls
+    title: Atlas Controls
     type: heading
     level: 2
     collapsed: true
   -
-    id: sgs-disable-canvas-grid
-    title: Disable Canvas grid texture
+    id: sgs-reduce-glow
+    title: Reduce glow intensity
     type: class-toggle
     default: false
   -
-    id: sgs-reduce-glow
-    title: Reduce glow intensity
+    id: sgs-disable-geometry-texture
+    title: Disable geometry texture
+    type: class-toggle
+    default: false
+  -
+    id: sgs-strong-focus-boundaries
+    title: Stronger focus boundaries
     type: class-toggle
     default: false
 */

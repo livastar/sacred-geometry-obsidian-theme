@@ -63,7 +63,7 @@ A release is not publish-ready until all of these are true:
 - Keep `manifest.json` normalized to official theme metadata fields and aligned with the public repository name `livastar/sacred-geometry-obsidian-theme`.
 - Keep `assets/screenshot-catalog.png` as a real Obsidian screenshot. Generated images can be references, but not the final catalog proof.
 - Use `npm run build` to flatten modular CSS into root `theme.css`, and `npm run check` before release.
-- Treat Style Settings support as a roadmap item unless a valid `/* @settings */` block is added and tested.
+- Keep Style Settings support limited to tested controls that preserve the public `--sg-*` token contract and dark/light behavior.
 - Keep Obsidian Publish support optional until `publish.css` is created, tested, and cataloged with `"publish": true`.
 
 ## Source Links

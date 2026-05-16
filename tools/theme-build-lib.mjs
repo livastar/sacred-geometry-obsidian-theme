@@ -9,6 +9,7 @@ export const themeModules = [
   "styles/graph.css",
   "styles/sacred-geometry.css",
   "styles/app.css",
+  "styles/style-settings.css",
 ];
 
 export function buildThemeCss(repoRoot) {
