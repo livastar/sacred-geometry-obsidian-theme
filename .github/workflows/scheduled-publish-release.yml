@@ -1,0 +1,104 @@
+name: Scheduled Publish Release
+
+on:
+  schedule:
+    - cron: "0 8 * * 5"
+  workflow_dispatch:
+    inputs:
+      date_override:
+        description: Optional Europe/Amsterdam date override in YYYY-MM-DD format
+        required: false
+        type: string
+      dry_run:
+        description: Validate without publishing
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  scheduled-publish:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      DATE_OVERRIDE: ${{ inputs.date_override }}
+    steps:
+      - name: Check out default branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build release CSS
+        run: npm run build
+
+      - name: Verify release files
+        run: npm run check
+
+      - name: Verify release operating system
+        run: npm run check:release-os
+
+      - name: Select due release
+        id: select
+        run: |
+          if [ -n "$DATE_OVERRIDE" ]; then
+            node tools/select-scheduled-release.mjs --date "$DATE_OVERRIDE" >> "$GITHUB_OUTPUT"
+          else
+            node tools/select-scheduled-release.mjs >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Report no-op
+        if: steps.select.outputs.found != 'true'
+        run: echo "${{ steps.select.outputs.reason }}"
+
+      - name: Verify scheduled release readiness
+        if: steps.select.outputs.found == 'true'
+        run: node tools/check-release-draft.mjs --version "${{ steps.select.outputs.version }}" --require-approved
+
+      - name: Ensure build is committed
+        if: steps.select.outputs.found == 'true'
+        run: git diff --exit-code -- theme.css
+
+      - name: Ensure tag does not already exist
+        if: steps.select.outputs.found == 'true'
+        run: |
+          if git ls-remote --exit-code --tags origin "${{ steps.select.outputs.version }}"; then
+            echo "Tag ${{ steps.select.outputs.version }} already exists."
+            exit 1
+          fi
+
+      - name: Ensure GitHub release does not already exist
+        if: steps.select.outputs.found == 'true'
+        run: |
+          if gh release view "${{ steps.select.outputs.version }}" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "GitHub release ${{ steps.select.outputs.version }} already exists."
+            exit 1
+          fi
+
+      - name: Prepare release notes
+        if: steps.select.outputs.found == 'true'
+        run: node tools/extract-release-notes.mjs --version "${{ steps.select.outputs.version }}" --output release-notes.md
+
+      - name: Dry-run summary
+        if: steps.select.outputs.found == 'true' && github.event_name == 'workflow_dispatch' && inputs.dry_run == true
+        run: |
+          echo "Dry run only. Would publish Sacred Geometry Systems ${{ steps.select.outputs.version }}."
+          cat release-notes.md
+
+      - name: Create GitHub release
+        if: steps.select.outputs.found == 'true' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false)
+        run: |
+          gh release create "${{ steps.select.outputs.version }}" \
+            manifest.json \
+            theme.css \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Sacred Geometry Systems ${{ steps.select.outputs.version }}" \
+            --notes-file release-notes.md \
+            --target "$GITHUB_SHA" \
+            --latest

@@ -1,0 +1,54 @@
+name: PR Release Guard
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  release-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base branch
+        run: git fetch origin "${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check release guard scripts
+        run: |
+          for file in tools/*.mjs; do
+            node --check "$file"
+          done
+
+      - name: Build release CSS
+        run: npm run build
+
+      - name: Verify release files
+        run: npm run check
+
+      - name: Verify release operating system
+        run: npm run check:release-os
+
+      - name: Ensure build is committed
+        run: git diff --exit-code -- theme.css
+
+      - name: Check whitespace
+        run: git diff --check "origin/${{ github.base_ref }}...HEAD"
+
+      - name: Check scheduled release readiness when version is planned
+        run: |
+          version="$(node -e "console.log(JSON.parse(require('fs').readFileSync('manifest.json', 'utf8')).version)")"
+          if node -e "const calendar = JSON.parse(require('fs').readFileSync('docs/roadmap/release-calendar.json', 'utf8')); process.exit(calendar.releases.some((entry) => entry.kind === 'release' && entry.version === '$version') ? 0 : 1)"; then
+            node tools/check-release-draft.mjs --version "$version"
+          else
+            echo "Manifest version $version is not a scheduled roadmap release; skipping draft release guard."
+          fi

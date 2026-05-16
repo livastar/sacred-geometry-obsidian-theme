@@ -1,0 +1,46 @@
+name: Post Release Verify
+
+on:
+  release:
+    types:
+      - published
+
+permissions:
+  contents: read
+
+jobs:
+  post-release-verify:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RELEASE_VERSION: ${{ github.event.release.tag_name }}
+    steps:
+      - name: Check out release tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build release CSS
+        run: npm run build
+
+      - name: Verify release files
+        run: npm run check
+
+      - name: Download release assets
+        run: |
+          mkdir -p release-assets
+          gh release download "$RELEASE_VERSION" \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern manifest.json \
+            --pattern theme.css \
+            --dir release-assets \
+            --clobber
+
+      - name: Verify release artifacts
+        run: node tools/verify-release-artifacts.mjs --version "$RELEASE_VERSION" --asset-dir release-assets

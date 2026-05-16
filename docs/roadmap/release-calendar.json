@@ -1,0 +1,70 @@
+{
+  "timezone": "Europe/Amsterdam",
+  "scheduledPublishCron": "0 8 * * 5",
+  "releases": [
+    {
+      "kind": "release",
+      "version": "0.5.0",
+      "slug": "living-map-templates",
+      "title": "Living Map Templates",
+      "releaseDate": "2026-05-22",
+      "localTime": "10:00",
+      "branch": "codex/v0.5.0-living-map-templates",
+      "releaseBrief": "docs/roadmap/releases/v0.5.0-living-map-templates.md",
+      "type": "minor",
+      "status": "planned",
+      "visualQaRequired": true,
+      "publicHook": "Start from guided Canvas patterns for projects, agents, decisions, knowledge, and feedback loops."
+    },
+    {
+      "kind": "release",
+      "version": "0.6.0",
+      "slug": "semantic-note-language",
+      "title": "Semantic Note Language",
+      "releaseDate": "2026-05-29",
+      "localTime": "10:00",
+      "branch": "codex/v0.6.0-semantic-note-language",
+      "releaseBrief": "docs/roadmap/releases/v0.6.0-semantic-note-language.md",
+      "type": "minor",
+      "status": "planned",
+      "visualQaRequired": true,
+      "publicHook": "Bring mission, decision, knowledge, and outcome cues into everyday notes."
+    },
+    {
+      "kind": "buffer",
+      "title": "Feedback And Bugfix Buffer",
+      "releaseDate": "2026-06-05",
+      "localTime": "10:00",
+      "status": "reserved",
+      "publicHook": "Use this week for user feedback, Marketplace issues, and patch releases if needed."
+    },
+    {
+      "kind": "release",
+      "version": "0.7.0",
+      "slug": "constellation-graph",
+      "title": "Constellation Graph",
+      "releaseDate": "2026-06-12",
+      "localTime": "10:00",
+      "branch": "codex/v0.7.0-constellation-graph",
+      "releaseBrief": "docs/roadmap/releases/v0.7.0-constellation-graph.md",
+      "type": "minor",
+      "status": "planned",
+      "visualQaRequired": true,
+      "publicHook": "Make vault relationships feel more readable, intentional, and alive."
+    },
+    {
+      "kind": "release",
+      "version": "0.8.0",
+      "slug": "sacred-atlas-demo-vault",
+      "title": "Sacred Atlas Demo Vault",
+      "releaseDate": "2026-06-19",
+      "localTime": "10:00",
+      "branch": "codex/v0.8.0-sacred-atlas-demo-vault",
+      "releaseBrief": "docs/roadmap/releases/v0.8.0-sacred-atlas-demo-vault.md",
+      "type": "minor",
+      "status": "planned",
+      "visualQaRequired": true,
+      "publicHook": "Explore a working example vault built around systems mapping, project clarity, and knowledge evolution."
+    }
+  ]
+}
