@@ -12,8 +12,9 @@
       "branch": "codex/v0.5.0-living-map-templates",
       "releaseBrief": "docs/roadmap/releases/v0.5.0-living-map-templates.md",
       "type": "minor",
-      "status": "planned",
+      "status": "approved",
       "visualQaRequired": true,
+      "visualQaEvidence": "docs/theme-guidelines/checklists/v0.5.0-living-map-templates-visual-qa.md",
       "publicHook": "Start from guided Canvas patterns for projects, agents, decisions, knowledge, and feedback loops."
     },
     {

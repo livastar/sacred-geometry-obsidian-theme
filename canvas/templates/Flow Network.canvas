@@ -1,0 +1,152 @@
+{
+  "type": "canvas",
+  "version": "0.2.1",
+  "nodes": [
+    {
+      "id": "mission",
+      "type": "text",
+      "text": "Mission\nFlow Purpose\n\nWhy does this movement of work or information matter?",
+      "x": -150,
+      "y": -500,
+      "width": 300,
+      "height": 150,
+      "color": "6"
+    },
+    {
+      "id": "trigger",
+      "type": "text",
+      "text": "Interaction\nTrigger\n\nThe event, request, signal, or scheduled moment that starts the flow.",
+      "x": -590,
+      "y": -260,
+      "width": 300,
+      "height": 160,
+      "color": "3"
+    },
+    {
+      "id": "core-system",
+      "type": "text",
+      "text": "Core System\nFlow Spine\n\nThe process that receives, routes, transforms, or coordinates the work.",
+      "x": -150,
+      "y": -260,
+      "width": 300,
+      "height": 170,
+      "color": "5"
+    },
+    {
+      "id": "agent",
+      "type": "text",
+      "text": "Agent\nProcessor\n\nHuman, script, model, integration, or team responsible for action.",
+      "x": 290,
+      "y": -260,
+      "width": 300,
+      "height": 160,
+      "color": "3"
+    },
+    {
+      "id": "resource",
+      "type": "text",
+      "text": "Resource\nPayload\n\nInputs, data, files, forms, context, prompts, or source material.",
+      "x": -590,
+      "y": 10,
+      "width": 300,
+      "height": 160,
+      "color": "2"
+    },
+    {
+      "id": "decision",
+      "type": "text",
+      "text": "Decision\nGate\n\nWhere the flow branches, pauses, escalates, or gets approved.",
+      "x": -150,
+      "y": 10,
+      "width": 300,
+      "height": 160,
+      "color": "1"
+    },
+    {
+      "id": "knowledge",
+      "type": "text",
+      "text": "Knowledge\nTrace\n\nWhat the system learns, records, cites, or reuses from this flow.",
+      "x": 290,
+      "y": 10,
+      "width": 300,
+      "height": 160,
+      "color": "4"
+    },
+    {
+      "id": "outcome",
+      "type": "text",
+      "text": "Outcome\nDelivery & Feedback\n\nThe output, recipient, quality signal, and return loop.",
+      "x": -150,
+      "y": 300,
+      "width": 300,
+      "height": 165,
+      "color": "6"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-mission-core",
+      "fromNode": "mission",
+      "fromSide": "bottom",
+      "toNode": "core-system",
+      "toSide": "top",
+      "color": "6"
+    },
+    {
+      "id": "edge-trigger-core",
+      "fromNode": "trigger",
+      "fromSide": "right",
+      "toNode": "core-system",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "edge-core-agent",
+      "fromNode": "core-system",
+      "fromSide": "right",
+      "toNode": "agent",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "edge-resource-core",
+      "fromNode": "resource",
+      "fromSide": "top",
+      "toNode": "core-system",
+      "toSide": "bottom",
+      "color": "2"
+    },
+    {
+      "id": "edge-agent-decision",
+      "fromNode": "agent",
+      "fromSide": "bottom",
+      "toNode": "decision",
+      "toSide": "right",
+      "color": "1"
+    },
+    {
+      "id": "edge-decision-knowledge",
+      "fromNode": "decision",
+      "fromSide": "right",
+      "toNode": "knowledge",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "edge-decision-outcome",
+      "fromNode": "decision",
+      "fromSide": "bottom",
+      "toNode": "outcome",
+      "toSide": "top",
+      "color": "6"
+    },
+    {
+      "id": "edge-outcome-core",
+      "fromNode": "outcome",
+      "fromSide": "top",
+      "toNode": "core-system",
+      "toSide": "bottom",
+      "color": "6"
+    }
+  ]
+}

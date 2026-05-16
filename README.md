@@ -4,7 +4,7 @@
 
 **Sacred Geometry Systems** is a dark and light Obsidian theme for complex knowledge maps, Canvas systems, and agent ecosystems. It turns the language of sacred geometry into a practical interface grammar: intersections, origins, ecosystems, architecture, progression, and feedback loops.
 
-This repo contains the theme, a maintainable brand book, Canvas starter material, a map-node template, and semantic Canvas snippets.
+This repo contains the theme, a maintainable brand book, Canvas starter material, guided Living Map templates, a map-node template, and semantic Canvas snippets.
 
 ## What This Theme Solves
 
@@ -42,15 +42,15 @@ The source of truth lives in [BRAND_BOOK.md](https://github.com/livastar/sacred-
 - **Geometry helpers** for rings, flower-of-life fields, spirals, circles, live-flow cues, and framed system panels.
 - **Graph and callout styling** aligned with the same semantic colors.
 - **Accessible motion behavior** through `prefers-reduced-motion`.
-- **Starter artifacts** under `canvas/`, `templates/`, and `snippets/`.
+- **Starter artifacts** under `canvas/`, including guided Living Map templates, plus reusable note templates and snippets.
 
 ## Current Release
 
-Current version: `0.4.1` released on May 16, 2026.
+Current version: `0.5.0`, scheduled for May 22, 2026.
 
-This patch keeps the Community Themes metadata aligned with the published catalog author and preserves the current app compatibility contract: Obsidian `1.5.0` or newer, dark mode, and light mode.
+This release adds guided Living Map Canvas templates for projects, agents, decisions, knowledge, flow networks, and resources while preserving the current app compatibility contract: Obsidian `1.5.0` or newer, dark mode, and light mode.
 
-The latest feature milestone is `0.4.0`, which shipped Atlas Controls through Style Settings for structure gold, signal cyan, boundary copper, orbit violet, reduced glow, disabled geometry texture, and stronger focus boundaries.
+The previous patch, `0.4.1`, kept the Community Themes metadata aligned with the published catalog author. The latest controls milestone, `0.4.0`, shipped Atlas Controls through Style Settings for structure gold, signal cyan, boundary copper, orbit violet, reduced glow, disabled geometry texture, and stronger focus boundaries.
 
 Release assets are available from the [GitHub releases page](https://github.com/livastar/sacred-geometry-obsidian-theme/releases).
 
@@ -75,7 +75,7 @@ Release assets are available from the [GitHub releases page](https://github.com/
 3. Restart Obsidian.
 4. Open **Settings > Appearance** and select **Sacred Geometry Systems**.
 
-Optional: copy the starter Canvas and template into a working vault and enable `snippets/SG Canvas Cards.css` under **Settings > Appearance > CSS snippets**.
+Optional: copy the starter Canvas, guided templates, and map-node template into a working vault and enable `snippets/SG Canvas Cards.css` under **Settings > Appearance > CSS snippets**.
 
 ## Working With Canvas
 
@@ -91,6 +91,17 @@ Use the starter Canvas as a model for systems maps:
 - Flow tracing and decision paths.
 
 Use `templates/map-node.md` for reusable note-backed nodes. Use semantic classes such as `.node-mission`, `.node-core-system`, `.node-agent`, `.node-resource`, `.node-interaction`, `.node-knowledge`, `.node-decision`, and `.node-outcome` to give cards role-based styling. Older aliases such as `.node-system`, `.node-flow`, and `.node-focus` remain supported.
+
+Guided Living Map templates live in `canvas/templates/`:
+
+| Template | Use when |
+| --- | --- |
+| `Agent Ecosystem.canvas` | You need to map people, automations, models, tools, and handoffs. |
+| `Project Constellation.canvas` | You need a project overview that keeps workstreams, decisions, and delivery connected. |
+| `Decision Tree.canvas` | You need to compare options and leave a clear decision record. |
+| `Knowledge Atlas.canvas` | You need to organize sources, concepts, evidence, gaps, and synthesis. |
+| `Flow Network.canvas` | You need to trace movement of work, data, requests, or feedback. |
+| `Resource Map.canvas` | You need to organize tools, references, assets, owners, and readiness. |
 
 ## Customization
 
@@ -134,7 +145,7 @@ The theme keeps body text high contrast on dark and light surfaces, uses state c
 
 ## Compatibility
 
-- Theme version: `0.4.1`
+- Theme version: `0.5.0`
 - Minimum Obsidian version: `1.5.0`
 - Modes: dark and light
 - Obsidian Publish: not currently advertised
@@ -149,7 +160,7 @@ Sacred Geometry Systems will keep evolving as a practical visual language for co
 
 Planned release dates are target dates and can move if visual QA, Community Themes checks, or user feedback reveal a release blocker.
 
-- **0.5.0 Living Map Templates** - planned for May 22, 2026. Start from guided Canvas patterns for projects, agents, decisions, knowledge, and feedback loops.
+- **0.5.0 Living Map Templates** - scheduled for May 22, 2026. Start from guided Canvas patterns for projects, agents, decisions, knowledge, and feedback loops.
 - **0.6.0 Semantic Note Language** - planned for May 29, 2026. Bring the same mission, decision, knowledge, and outcome cues from Canvas into everyday notes.
 - **Feedback and bugfix buffer** - reserved for June 5, 2026. Use this week for user feedback, Marketplace issues, and patch releases if needed.
 - **0.7.0 Constellation Graph** - planned for June 12, 2026. Make vault relationships feel more readable, intentional, and alive.

@@ -1,0 +1,152 @@
+{
+  "type": "canvas",
+  "version": "0.2.1",
+  "nodes": [
+    {
+      "id": "mission",
+      "type": "text",
+      "text": "Mission\nResource Purpose\n\nWhat capability, project, or decision do these resources support?",
+      "x": -150,
+      "y": -500,
+      "width": 300,
+      "height": 150,
+      "color": "6"
+    },
+    {
+      "id": "core-system",
+      "type": "text",
+      "text": "Core System\nResource Hub\n\nThe place where inputs are evaluated, organized, and made usable.",
+      "x": -150,
+      "y": -230,
+      "width": 300,
+      "height": 160,
+      "color": "5"
+    },
+    {
+      "id": "primary-resources",
+      "type": "text",
+      "text": "Resources\nPrimary Inputs\n\nFiles, notes, links, APIs, datasets, tools, or assets used most often.",
+      "x": -590,
+      "y": -320,
+      "width": 300,
+      "height": 160,
+      "color": "2"
+    },
+    {
+      "id": "supporting-resources",
+      "type": "text",
+      "text": "Resources\nSupporting Material\n\nBackground references, examples, templates, archives, or backup sources.",
+      "x": -590,
+      "y": -40,
+      "width": 300,
+      "height": 165,
+      "color": "2"
+    },
+    {
+      "id": "agent",
+      "type": "text",
+      "text": "Agent\nOwner & Steward\n\nWho maintains, validates, or decides when resources are ready?",
+      "x": 290,
+      "y": -320,
+      "width": 300,
+      "height": 160,
+      "color": "3"
+    },
+    {
+      "id": "knowledge",
+      "type": "text",
+      "text": "Knowledge\nUsage Notes\n\nHow resources should be interpreted, cited, refreshed, or retired.",
+      "x": 290,
+      "y": -40,
+      "width": 300,
+      "height": 165,
+      "color": "4"
+    },
+    {
+      "id": "decision",
+      "type": "text",
+      "text": "Decision\nReadiness Gate\n\nWhat makes a resource approved, blocked, risky, or stale?",
+      "x": -150,
+      "y": 100,
+      "width": 300,
+      "height": 160,
+      "color": "1"
+    },
+    {
+      "id": "outcome",
+      "type": "text",
+      "text": "Outcome\nReusable Kit\n\nThe final organized set, action, checklist, or working library.",
+      "x": -150,
+      "y": 360,
+      "width": 300,
+      "height": 160,
+      "color": "6"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-mission-core",
+      "fromNode": "mission",
+      "fromSide": "bottom",
+      "toNode": "core-system",
+      "toSide": "top",
+      "color": "6"
+    },
+    {
+      "id": "edge-primary-core",
+      "fromNode": "primary-resources",
+      "fromSide": "right",
+      "toNode": "core-system",
+      "toSide": "left",
+      "color": "2"
+    },
+    {
+      "id": "edge-supporting-core",
+      "fromNode": "supporting-resources",
+      "fromSide": "right",
+      "toNode": "core-system",
+      "toSide": "left",
+      "color": "2"
+    },
+    {
+      "id": "edge-core-agent",
+      "fromNode": "core-system",
+      "fromSide": "right",
+      "toNode": "agent",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "edge-agent-knowledge",
+      "fromNode": "agent",
+      "fromSide": "bottom",
+      "toNode": "knowledge",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "edge-knowledge-decision",
+      "fromNode": "knowledge",
+      "fromSide": "left",
+      "toNode": "decision",
+      "toSide": "right",
+      "color": "1"
+    },
+    {
+      "id": "edge-core-decision",
+      "fromNode": "core-system",
+      "fromSide": "bottom",
+      "toNode": "decision",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "edge-decision-outcome",
+      "fromNode": "decision",
+      "fromSide": "bottom",
+      "toNode": "outcome",
+      "toSide": "top",
+      "color": "6"
+    }
+  ]
+}

@@ -48,6 +48,13 @@ The release package that GitHub exposes to Obsidian must include at least `manif
     map-node.md
   canvas/
     Sacred Atlas Starter.canvas
+    templates/
+      Agent Ecosystem.canvas
+      Project Constellation.canvas
+      Decision Tree.canvas
+      Knowledge Atlas.canvas
+      Flow Network.canvas
+      Resource Map.canvas
   docs/
     theme-guidelines/
   publish.css
@@ -70,7 +77,7 @@ The release package that GitHub exposes to Obsidian must include at least `manif
 | `assets/` | Catalog screenshot and README preview media. |
 | `snippets/` | Optional CSS snippets that extend the base theme. |
 | `templates/` | Optional note templates for Canvas-backed workflows. |
-| `canvas/` | Optional starter Canvas and demo maps. |
+| `canvas/` | Optional starter Canvas, guided Living Map templates, and demo maps. |
 | `docs/theme-guidelines/` | Maintainer and contributor publication rules. |
 
 ## Release CSS Policy

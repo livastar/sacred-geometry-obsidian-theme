@@ -69,7 +69,7 @@ Before adding a feature to the public roadmap, assign it one of these states:
 
 Current roadmap defaults:
 
-- More Canvas templates: `Planned`.
+- More Canvas templates: `Released`.
 - Demo vault: `Planned`.
 - Style Settings support: `Released`.
 - Optional Publish theme: `Exploring`.

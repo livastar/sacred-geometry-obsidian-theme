@@ -132,3 +132,61 @@ Verification evidence:
 Remaining risk:
 
 - The Community page will reflect the README improvements only after the repository change is pushed and the Community directory refreshes from GitHub.
+
+# Living Map Templates 0.5.0 Checklist
+
+- [x] Create a clean `origin/main` worktree for `codex/v0.5.0-living-map-templates`.
+- [x] Run baseline `npm run build`.
+- [x] Run baseline `npm run check`.
+- [x] Run baseline `npm run check:release-os`.
+- [x] Read the `0.5.0` release brief and Canvas role docs.
+- [x] Add guided Living Map Canvas templates.
+- [x] Update README and Canvas ecosystem docs.
+- [x] Update release metadata, changelog, and release calendar approval evidence.
+- [x] Expand release checks to validate every Canvas file.
+- [x] Run release validation.
+- [x] Review final diff and open the `0.5.0` PR.
+
+## Result
+
+Changed files:
+
+- `canvas/templates/`
+- `docs/theme-guidelines/checklists/v0.5.0-living-map-templates-visual-qa.md`
+- `README.md`
+- `CHANGELOG.md`
+- `docs/theme-guidelines/canvas-project-ecosystem.md`
+- `docs/theme-guidelines/release-and-evolution.md`
+- `docs/theme-guidelines/theme-structure.md`
+- `manifest.json`
+- `package.json`
+- `versions.json`
+- `docs/roadmap/release-calendar.json`
+- `tools/check-release.mjs`
+- `tools/extract-release-notes.mjs`
+- `tasks/todo.md`
+- `tasks/lessons.md`
+
+Verification evidence:
+
+- `for file in tools/*.mjs; do node --check "$file"; done` passed.
+- `npm run build` passed.
+- `npm run check` passed.
+- `npm run check:release-os` passed.
+- `node tools/check-release-draft.mjs --version 0.5.0` passed.
+- `node tools/check-release-draft.mjs --version 0.5.0 --require-approved` passed.
+- `node tools/select-scheduled-release.mjs --date 2026-05-22` selected `0.5.0`.
+- `node tools/extract-release-notes.mjs --version 0.5.0 --output /tmp/sgs-0.5.0-release-notes.md` wrote non-empty notes.
+- `find canvas -name '*.canvas' ... JSON.parse(...)` passed.
+- `npx --yes github-actionlint@1.7.12 .github/workflows/*.yml` passed.
+- `git diff --exit-code -- theme.css` passed.
+- `git diff --check origin/main...HEAD` passed.
+- Manual Obsidian desktop smoke passed on 2026-05-16 in a clean temporary vault with all `0.5.0` templates opened in dark and light mode and `snippets/SG Canvas Cards.css` enabled.
+
+Remaining risk:
+
+- Keep public marketplace or marketing announcement manual on release day; repository QA and desktop smoke evidence are recorded in `docs/theme-guidelines/checklists/v0.5.0-living-map-templates-visual-qa.md`.
+
+PR:
+
+- https://github.com/livastar/sacred-geometry-obsidian-theme/pull/5

@@ -41,6 +41,24 @@ function selectorLines(css) {
   return results;
 }
 
+function listFilesRecursive(directoryPath, predicate) {
+  const absoluteDirectory = path.join(repoRoot, directoryPath);
+  if (!fs.existsSync(absoluteDirectory)) {
+    return [];
+  }
+
+  const results = [];
+  for (const entry of fs.readdirSync(absoluteDirectory, { withFileTypes: true })) {
+    const relativePath = path.join(directoryPath, entry.name);
+    if (entry.isDirectory()) {
+      results.push(...listFilesRecursive(relativePath, predicate));
+    } else if (predicate(relativePath)) {
+      results.push(relativePath);
+    }
+  }
+  return results;
+}
+
 function checkThemeCss() {
   const css = read("theme.css");
 
@@ -84,7 +102,6 @@ function checkThemeCss() {
 function checkMetadata() {
   const manifest = parseJson("manifest.json");
   const versions = parseJson("versions.json");
-  parseJson("canvas/Sacred Atlas Starter.canvas");
 
   if (!manifest || !versions) {
     return;
@@ -112,6 +129,67 @@ function checkMetadata() {
   }
 }
 
+function checkCanvasFiles() {
+  const canvasFiles = listFilesRecursive("canvas", (filePath) => filePath.endsWith(".canvas"));
+
+  if (canvasFiles.length === 0) {
+    fail("At least one Canvas file is required under canvas/.");
+  }
+
+  for (const filePath of canvasFiles) {
+    const canvas = parseJson(filePath);
+    if (!canvas) {
+      continue;
+    }
+
+    if (canvas.type !== "canvas") {
+      fail(`${filePath} must use type "canvas".`);
+    }
+
+    if (canvas.version !== "0.2.1") {
+      fail(`${filePath} must use Canvas version "0.2.1".`);
+    }
+
+    if (!Array.isArray(canvas.nodes)) {
+      fail(`${filePath} must contain a nodes array.`);
+      continue;
+    }
+
+    const nodeIds = new Set();
+    for (const node of canvas.nodes) {
+      if (!node.id || nodeIds.has(node.id)) {
+        fail(`${filePath} contains a missing or duplicate node id: ${node.id ?? "(missing)"}.`);
+      }
+      nodeIds.add(node.id);
+
+      if (typeof node.text === "string" && node.text.length > 260) {
+        fail(`${filePath} node "${node.id}" text is too long for overview-scale scanning.`);
+      }
+    }
+
+    if (!Array.isArray(canvas.edges)) {
+      fail(`${filePath} must contain an edges array.`);
+      continue;
+    }
+
+    const edgeIds = new Set();
+    for (const edge of canvas.edges) {
+      if (!edge.id || edgeIds.has(edge.id)) {
+        fail(`${filePath} contains a missing or duplicate edge id: ${edge.id ?? "(missing)"}.`);
+      }
+      edgeIds.add(edge.id);
+
+      if (!nodeIds.has(edge.fromNode)) {
+        fail(`${filePath} edge "${edge.id}" references missing fromNode "${edge.fromNode}".`);
+      }
+
+      if (!nodeIds.has(edge.toNode)) {
+        fail(`${filePath} edge "${edge.id}" references missing toNode "${edge.toNode}".`);
+      }
+    }
+  }
+}
+
 function checkHygiene() {
   const requiredFiles = [
     "README.md",
@@ -119,6 +197,13 @@ function checkHygiene() {
     "LICENSE",
     "CONTRIBUTING.md",
     "assets/screenshot-catalog.png",
+    "canvas/templates/README.md",
+    "canvas/templates/Agent Ecosystem.canvas",
+    "canvas/templates/Project Constellation.canvas",
+    "canvas/templates/Decision Tree.canvas",
+    "canvas/templates/Knowledge Atlas.canvas",
+    "canvas/templates/Flow Network.canvas",
+    "canvas/templates/Resource Map.canvas",
     ".github/ISSUE_TEMPLATE/bug_report.yml",
     ".github/ISSUE_TEMPLATE/feature_request.yml",
   ];
@@ -144,6 +229,7 @@ function checkHygiene() {
 
 checkThemeCss();
 checkMetadata();
+checkCanvasFiles();
 checkHygiene();
 
 if (failures.length > 0) {
