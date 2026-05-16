@@ -74,7 +74,7 @@ Stable public tokens live under the `--sg-*` prefix. Start with:
 
 ## Style Settings
 
-Style Settings is planned. Until it ships, customize the theme with CSS snippets that override public `--sg-*` tokens.
+Sacred Geometry Systems includes optional Style Settings controls for structure gold, signal cyan, boundary copper, orbit violet, reduced glow, disabled geometry texture, and stronger focus boundaries.
 
 ## Accessibility
 
@@ -82,7 +82,7 @@ The theme targets high contrast on dark surfaces, visible focus states, and redu
 
 ## Compatibility
 
-- Theme version: `0.4.0`
+- Theme version: `0.4.1`
 - Minimum Obsidian version: `1.5.0`
 - Modes: dark and light
 - Obsidian Publish: not currently advertised

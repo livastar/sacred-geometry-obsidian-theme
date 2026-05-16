@@ -23,6 +23,7 @@ Run this before opening a catalog PR or publishing a release.
 - [ ] `authorUrl` is present.
 - [ ] Manifest version matches `versions.json`.
 - [ ] Manifest name matches README and catalog entry.
+- [ ] Manifest author matches the Community Themes catalog author.
 - [ ] Any legacy `ds-light` fields are removed or documented before submission.
 
 ## Versions
@@ -69,7 +70,7 @@ Run this before opening a catalog PR or publishing a release.
 ## Catalog Entry
 
 - [ ] Uses `name: "Sacred Geometry Systems"`.
-- [ ] Uses `author: "Stanislav Ivanov"`.
+- [ ] Uses `author: "livastar"`.
 - [ ] Uses `repo: "livastar/sacred-geometry-obsidian-theme"`.
 - [ ] Uses `screenshot: "assets/screenshot-catalog.png"`.
 - [ ] Uses `modes: ["dark", "light"]`.

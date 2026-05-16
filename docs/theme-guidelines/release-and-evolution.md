@@ -14,6 +14,7 @@ Current version:
 
 ```json
 {
+  "0.4.1": "1.5.0",
   "0.4.0": "1.5.0",
   "0.3.0": "1.5.0",
   "0.2.0": "1.5.0"
@@ -70,7 +71,7 @@ Current roadmap defaults:
 
 - More Canvas templates: `Planned`.
 - Demo vault: `Planned`.
-- Style Settings support: `Planned`.
+- Style Settings support: `Released`.
 - Optional Publish theme: `Exploring`.
 - SacraMap plugin: `Exploring`, separate project.
 
