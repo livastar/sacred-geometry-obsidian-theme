@@ -7,8 +7,7 @@
  * raw color.
  */
 
-:root,
-body.theme-dark {
+:root {
   /* Brand palette */
   --sg-obsidian: #03080d;
   --sg-obsidian-soft: #07121a;
@@ -67,6 +66,16 @@ body.theme-dark {
   --sg-parchment-dark: var(--sg-obsidian-soft);
   --sg-center-color: var(--sg-gold-bright);
 
+  /* Semantic role tokens for living systems maps */
+  --sg-role-mission: var(--sg-gold-bright);
+  --sg-role-core-system: var(--sg-gold);
+  --sg-role-agent: var(--sg-signal-cyan);
+  --sg-role-resource: color-mix(in srgb, var(--sg-ivory) 42%, var(--sg-gold));
+  --sg-role-interaction: var(--sg-signal-cyan-soft);
+  --sg-role-knowledge: var(--sg-orbit-violet);
+  --sg-role-decision: var(--sg-copper);
+  --sg-role-outcome: color-mix(in srgb, var(--sg-gold) 62%, var(--sg-signal-cyan));
+
   /* Geometry constants */
   --sg-golden-ratio: 1.618;
   --sg-radius-small: 4px;
@@ -82,6 +91,16 @@ body.theme-dark {
   --sg-font-size-base: 16px;
   --sg-font-size-small: 0.875rem;
   --sg-font-size-large: 1.618rem;
+
+  /* Canvas constants */
+  --canvas-color-node: var(--sg-card);
+  --canvas-color-node-border: var(--sg-border);
+  --canvas-color-node-focused: var(--sg-role-mission);
+  --canvas-color-node-hover: var(--sg-role-agent);
+  --canvas-color-line: var(--sg-flow);
+  --canvas-color-line-highlight: var(--sg-role-outcome);
+  --canvas-node-radius: var(--sg-card-radius);
+  --canvas-node-padding: 0.75rem;
 
 }
 

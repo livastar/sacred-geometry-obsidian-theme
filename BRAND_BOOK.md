@@ -1,6 +1,6 @@
 # Sacred Geometry Systems Brand Book
 
-Sacred Geometry Systems is a dark Obsidian theme language for turning complex work into living maps. The system uses sacred-geometry forms as visual grammar: not as mysticism, but as a precise way to show origin, intersection, progression, feedback, and intelligence.
+Sacred Geometry Systems is a dark and light Obsidian theme language for turning complex work into living maps. The system uses sacred-geometry forms as visual grammar: not as mysticism, but as a precise way to show origin, intersection, progression, feedback, and intelligence.
 
 Tagline: Geometry is frozen music. Systems are living symphonies.
 
@@ -57,6 +57,8 @@ Canvas maps should expose nested structure at a glance:
 - Decision paths use copper or gold links to mark choice points and outcomes.
 
 The default starter map is organized around a mission node, a core system, agent roles, resources, interactions, decisions, outcomes, and knowledge clusters.
+
+Public role tokens and Canvas classes should preserve this vocabulary: mission, core-system, agent, resource, interaction, knowledge, decision, and outcome.
 
 ## Live Maps & Animation Principles
 

@@ -46,10 +46,26 @@ The source of truth lives in [BRAND_BOOK.md](BRAND_BOOK.md). It defines:
 
 ## Installation
 
-1. Copy this repository folder into your vault's `.obsidian/themes/` directory.
-2. Restart Obsidian.
-3. Open **Settings > Appearance** and select **Sacred Geometry Systems**.
-4. Optional: copy the starter Canvas and template into a working vault and enable `snippets/SG Canvas Cards.css` under **Settings > Appearance > CSS snippets**.
+### Marketplace
+
+1. In Obsidian, open **Settings > Appearance**.
+2. Select **Manage** next to Themes.
+3. Search for **Sacred Geometry Systems**.
+4. Install and select the theme.
+
+### Manual Install
+
+1. Download the latest release from GitHub.
+2. Copy `manifest.json`, `theme.css`, and `versions.json` into:
+
+   ```text
+   <vault>/.obsidian/themes/Sacred Geometry Systems/
+   ```
+
+3. Restart Obsidian.
+4. Open **Settings > Appearance** and select **Sacred Geometry Systems**.
+
+Optional: copy the starter Canvas and template into a working vault and enable `snippets/SG Canvas Cards.css` under **Settings > Appearance > CSS snippets**.
 
 ## Working With Canvas
 
@@ -64,7 +80,7 @@ Use the starter Canvas as a model for systems maps:
 - Decisions and outcomes.
 - Flow tracing and decision paths.
 
-Use `templates/map-node.md` for reusable note-backed nodes. Use snippet classes such as `.node-agent`, `.node-resource`, `.node-decision`, `.node-system`, and `.node-knowledge` to give cards semantic styling.
+Use `templates/map-node.md` for reusable note-backed nodes. Use semantic classes such as `.node-mission`, `.node-core-system`, `.node-agent`, `.node-resource`, `.node-interaction`, `.node-knowledge`, `.node-decision`, and `.node-outcome` to give cards role-based styling. Older aliases such as `.node-system`, `.node-flow`, and `.node-focus` remain supported.
 
 ## Customization
 
@@ -78,10 +94,17 @@ The main brand tokens live in `styles/tokens.css`. Stable public tokens include:
   --sg-copper: #b87345;
   --sg-deep-indigo: #12122d;
   --sg-signal-cyan: #16c7e8;
+  --sg-role-mission: var(--sg-gold-bright);
+  --sg-role-agent: var(--sg-signal-cyan);
+  --sg-role-decision: var(--sg-copper);
 }
 ```
 
 Backward-compatible aliases from the original DS-Light theme remain available so older snippets keep rendering.
+
+## Style Settings
+
+Style Settings support is planned, but not shipped yet. Until a tested `/* @settings */` block is released, customize the theme with CSS snippets that override public `--sg-*` tokens.
 
 ## Accessibility
 
@@ -89,14 +112,19 @@ The theme keeps body text high contrast on dark and light surfaces, uses state c
 
 ## Compatibility
 
-- Theme version: `0.3.0`
+- Theme version: `0.4.0`
 - Minimum Obsidian version: `1.5.0`
 - Modes: dark and light
 - Obsidian Publish: not currently advertised
 
+## Contributing
+
+Use [CONTRIBUTING.md](CONTRIBUTING.md) for issue quality, design principles, local checks, and scope boundaries. Visual bugs should include Obsidian version, theme version, platform, base color scheme, enabled snippets/plugins, reproduction steps, and a sanitized screenshot.
+
 ## Roadmap
 
 - Expand the Canvas template library with separate Agent Ecosystem, Project Constellation, Decision Tree, Knowledge Atlas, Flow Network, and Resource Map examples.
+- Add tested Style Settings controls for role colors and Canvas intensity.
 - Add a demo vault that shows the full brand language in real notes.
 - Explore the SacraMap concept as a separate plugin project. SacraMap is documented here as a product direction, not implemented in this theme repo.
 

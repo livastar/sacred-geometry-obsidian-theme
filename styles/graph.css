@@ -2,18 +2,6 @@
  * Graph view styling for Sacred Geometry Systems.
  */
 
-body {
-  --graph-line-color: var(--sg-flow);
-  --graph-node-fill: var(--sg-card-raised);
-  --graph-node-fill-hover: var(--sg-gold);
-  --graph-node-fill-selected: var(--sg-gold-bright);
-  --graph-node-fill-tag: var(--sg-orbit-violet);
-  --graph-node-stroke-width: 1.5px;
-  --graph-node-border-color: var(--sg-border);
-  --graph-edge-width: 1px;
-  --graph-text: var(--sg-text-muted);
-}
-
 .graph-view.color-fill,
 .graph-view {
   background-color: var(--sg-bg);

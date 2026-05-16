@@ -26,26 +26,35 @@
 
 .callout[data-callout="tip"],
 .callout[data-callout="success"],
-.callout[data-callout="flow"] {
-  border-left-color: var(--sg-signal-cyan);
+.callout[data-callout="flow"],
+.callout[data-callout="agent"],
+.callout[data-callout="interaction"] {
+  border-left-color: var(--sg-role-agent);
 }
 
 .callout[data-callout="tip"] > .callout-title,
 .callout[data-callout="success"] > .callout-title,
-.callout[data-callout="flow"] > .callout-title {
+.callout[data-callout="flow"] > .callout-title,
+.callout[data-callout="agent"] > .callout-title,
+.callout[data-callout="interaction"] > .callout-title {
   color: var(--sg-signal-cyan-soft);
 }
 
 .callout[data-callout="info"],
 .callout[data-callout="map"],
-.callout[data-callout="agent"] {
-  border-left-color: var(--sg-gold);
+.callout[data-callout="mission"],
+.callout[data-callout="system"] {
+  border-left-color: var(--sg-role-mission);
+}
+
+.callout[data-callout="resource"] {
+  border-left-color: var(--sg-role-resource);
 }
 
 .callout[data-callout="warning"],
 .callout[data-callout="decision"] {
-  border-left-color: var(--sg-copper);
-  background-color: color-mix(in srgb, var(--sg-copper) 10%, var(--sg-card));
+  border-left-color: var(--sg-role-decision);
+  background-color: color-mix(in srgb, var(--sg-role-decision) 10%, var(--sg-card));
 }
 
 .callout[data-callout="warning"] > .callout-title,
@@ -61,7 +70,7 @@
 
 .callout[data-callout="quote"],
 .callout[data-callout="knowledge"] {
-  border-left-color: var(--sg-orbit-violet);
+  border-left-color: var(--sg-role-knowledge);
 }
 
 .callout[data-callout="quote"] > .callout-title,

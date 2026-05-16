@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0 - 2026-05-15
+
+- Fixed Community Themes scan warnings by removing unsupported extended system font tokens and consolidating duplicate `body`, `body.theme-dark`, and `body.theme-light` selectors in the release CSS.
+- Added release checks and a no-dependency build script to keep root `theme.css` self-contained and aligned with the modular source files under `styles/`.
+- Added public semantic role tokens for living systems maps: mission, core system, agent, resource, interaction, knowledge, decision, and outcome.
+- Improved Canvas and callout role styling with clearer semantic state cues, reduced-motion behavior, and backward-compatible Canvas snippet aliases.
+- Added contributor hygiene with `CONTRIBUTING.md`, issue templates, and `.DS_Store` ignore rules.
+- Updated README installation, Style Settings status, compatibility, and contribution guidance now that the theme is available in the Community Themes catalog.
+
 ## 0.3.0 - 2026-04-29
 
 - Added full light mode support with an ivory atlas palette, adapted text contrast, Canvas, graph, callout, code, and Obsidian app shell states.

@@ -1,9 +1,11 @@
 ---
 title: ""
 type: "systems-map-node"
+cssclasses:
+  - node-core-system
 geometry:
   form: "flower-of-life" # vesica-piscis, seed-of-life, flower-of-life, metatron-cube, fibonacci-spiral, torus
-  layer: "core"          # mission, core, agent, resource, interaction, knowledge, decision, outcome
+  layer: "core-system"   # mission, core-system, agent, resource, interaction, knowledge, decision, outcome
   ring: 0                # 0 = center, larger numbers move outward
 map:
   role: "core-system"

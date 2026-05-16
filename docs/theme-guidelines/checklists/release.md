@@ -24,7 +24,7 @@ Use this after preflight and visual QA pass.
 
 ## GitHub Release
 
-- [ ] Create tag matching manifest version exactly, for example `0.3.0`.
+- [ ] Create tag matching manifest version exactly, for example `0.4.0`.
 - [ ] Create GitHub release with the same title.
 - [ ] Add release notes from `templates/release-notes.template.md`.
 - [ ] Attach final `manifest.json`.
@@ -41,6 +41,6 @@ Use this after preflight and visual QA pass.
 
 ## After Approval
 
-- [ ] Update README install section from beta/manual to Marketplace-first.
+- [ ] Confirm README install section is Marketplace-first.
 - [ ] Announce release only after the theme appears in Obsidian.
 - [ ] Watch issues for install, contrast, mobile, and Canvas regressions.
