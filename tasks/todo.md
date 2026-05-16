@@ -37,3 +37,15 @@ Verification evidence:
 Remaining risk:
 
 - Manual Obsidian visual QA with the Style Settings plugin still needs to be run before release tagging.
+
+# Community Release Alignment Checklist
+
+- [x] Read Obsidian's May 12, 2026 Community update.
+- [x] Verify the live Community Themes catalog entry.
+- [x] Compare catalog metadata with the released manifest.
+- [x] Align manifest author with the catalog author.
+- [x] Add release-check coverage for catalog author alignment.
+- [x] Run `npm run build`.
+- [x] Run `npm run check`.
+- [x] Run `git diff --check`.
+- [ ] Publish the aligned patch release.

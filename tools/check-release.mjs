@@ -94,6 +94,10 @@ function checkMetadata() {
     fail('manifest.json name must be "Sacred Geometry Systems".');
   }
 
+  if (manifest.author !== "livastar") {
+    fail('manifest.json author must match the Community Themes catalog author "livastar".');
+  }
+
   if (!/^\d+\.\d+\.\d+$/.test(manifest.version)) {
     fail("manifest.json version must use x.y.z semantic versioning.");
   }

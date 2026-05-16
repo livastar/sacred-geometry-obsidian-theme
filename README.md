@@ -124,7 +124,7 @@ The theme keeps body text high contrast on dark and light surfaces, uses state c
 
 ## Compatibility
 
-- Theme version: `0.4.0`
+- Theme version: `0.4.1`
 - Minimum Obsidian version: `1.5.0`
 - Modes: dark and light
 - Obsidian Publish: not currently advertised

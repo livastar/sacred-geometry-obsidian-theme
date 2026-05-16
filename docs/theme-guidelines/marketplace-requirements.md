@@ -23,9 +23,9 @@ The release manifest should use official theme metadata fields:
 ```json
 {
   "name": "Sacred Geometry Systems",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "minAppVersion": "1.5.0",
-  "author": "Stanislav Ivanov",
+  "author": "livastar",
   "authorUrl": "https://github.com/livastar"
 }
 ```
@@ -35,6 +35,7 @@ Rules:
 - `name` is the public display name and must match the catalog entry.
 - `version` must be semantic versioning in `x.y.z` form.
 - `minAppVersion` must match the value in `versions.json` for the same release.
+- `author` must match the Community Themes catalog entry.
 - Avoid plugin-only fields in the release manifest unless Obsidian theme review explicitly accepts them.
 - If legacy fields remain in source, document why and verify that the catalog still loads the theme.
 
@@ -71,7 +72,7 @@ The entry to append to `community-css-themes.json` should be:
 ```json
 {
   "name": "Sacred Geometry Systems",
-  "author": "Stanislav Ivanov",
+  "author": "livastar",
   "repo": "livastar/sacred-geometry-obsidian-theme",
   "screenshot": "assets/screenshot-catalog.png",
   "modes": [
@@ -89,6 +90,7 @@ Only add `"publish": true` after `publish.css` exists and passes the checks in [
 
 ```json
 {
+  "0.4.1": "1.5.0",
   "0.4.0": "1.5.0",
   "0.3.0": "1.5.0",
   "0.2.0": "1.5.0"

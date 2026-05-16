@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1 - 2026-05-16
+
+- Aligned release metadata with Obsidian's current Community Themes catalog entry by matching the manifest author to `livastar`.
+- Added release-check coverage so future manifests keep the catalog author, package version, and compatibility mapping aligned.
+
 ## 0.4.0 - 2026-05-15
 
 - Added Atlas Controls through a tested Style Settings block for structure gold, signal cyan, boundary copper, orbit violet, reduced glow, disabled geometry texture, and stronger focus boundaries.
