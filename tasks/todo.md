@@ -98,3 +98,12 @@ Remaining risk:
 PR:
 
 - https://github.com/livastar/sacred-geometry-obsidian-theme/pull/4
+
+# Image Asset Cleanup Checklist
+
+- [x] Inspect root image files and release screenshot requirements.
+- [x] Move root PNG files into `assets/` with descriptive names.
+- [x] Keep `assets/screenshot-catalog.png` as the real Obsidian catalog screenshot path.
+- [x] Add the new Atlas Controls artwork to README release visibility.
+- [x] Record the asset cleanup in the changelog and visual-assets guide.
+- [x] Verify no root PNG files remain and referenced assets exist.

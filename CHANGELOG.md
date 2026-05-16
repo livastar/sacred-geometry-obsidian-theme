@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Moved generated root images into `assets/` with stable, descriptive filenames.
+- Added `assets/sacred-geometry-systems-atlas-controls-release-preview.png` as release preview artwork while preserving `assets/screenshot-catalog.png` as the catalog screenshot path.
+
 ## 0.4.1 - 2026-05-16
 
 - Aligned release metadata with Obsidian's current Community Themes catalog entry by matching the manifest author to `livastar`.

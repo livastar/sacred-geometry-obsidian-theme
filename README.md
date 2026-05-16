@@ -6,6 +6,12 @@
 
 This repo contains the theme, a maintainable brand book, Canvas starter material, a map-node template, and semantic Canvas snippets.
 
+## Release Artwork
+
+![Sacred Geometry Systems Atlas Controls release preview](assets/sacred-geometry-systems-atlas-controls-release-preview.png)
+
+The release artwork is illustrative. The Community Themes catalog screenshot remains `assets/screenshot-catalog.png`, which should be a real Obsidian capture.
+
 ## What This Theme Solves
 
 Large Obsidian vaults and Canvas maps can become visually flat: everything has the same weight, flow is hard to trace, and the center of a system disappears. Sacred Geometry Systems gives complex work a darker, luminous structure with clear focus states, readable cards, meaningful edge colors, and repeatable map roles.

@@ -39,6 +39,16 @@ Each preview should show a different promise:
 - Callouts: info, flow, decision, warning, knowledge.
 - Mobile: sidebars, editor, toolbar, and readable text in a narrow viewport.
 
+## Generated Brand And Release Artwork
+
+```text
+assets/sacred-geometry-systems-atlas-controls-release-preview.png
+assets/sacred-geometry-systems-brand-board-wide.png
+assets/sacred-geometry-systems-brand-board-square.png
+```
+
+These files are illustrative brand and release assets. Keep them in `assets/` with descriptive names, but do not use them as the final catalog screenshot unless they are replaced by real Obsidian captures.
+
 ## Screenshot Capture Rules
 
 - Use a demo vault or sanitized vault.
