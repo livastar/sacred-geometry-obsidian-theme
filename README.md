@@ -25,7 +25,7 @@ Useful links:
 
 ## Brand System
 
-The source of truth lives in [BRAND_BOOK.md](BRAND_BOOK.md). It defines:
+The source of truth lives in [BRAND_BOOK.md](https://github.com/livastar/sacred-geometry-obsidian-theme/blob/main/BRAND_BOOK.md). It defines:
 
 - Core intention and tone.
 - Sacred geometry language.
@@ -44,6 +44,16 @@ The source of truth lives in [BRAND_BOOK.md](BRAND_BOOK.md). It defines:
 - **Accessible motion behavior** through `prefers-reduced-motion`.
 - **Starter artifacts** under `canvas/`, `templates/`, and `snippets/`.
 
+## Current Release
+
+Current version: `0.4.1` released on May 16, 2026.
+
+This patch keeps the Community Themes metadata aligned with the published catalog author and preserves the current app compatibility contract: Obsidian `1.5.0` or newer, dark mode, and light mode.
+
+The latest feature milestone is `0.4.0`, which shipped Atlas Controls through Style Settings for structure gold, signal cyan, boundary copper, orbit violet, reduced glow, disabled geometry texture, and stronger focus boundaries.
+
+Release assets are available from the [GitHub releases page](https://github.com/livastar/sacred-geometry-obsidian-theme/releases).
+
 ## Installation
 
 ### Marketplace
@@ -55,7 +65,7 @@ The source of truth lives in [BRAND_BOOK.md](BRAND_BOOK.md). It defines:
 
 ### Manual Install
 
-1. Download the latest release from GitHub.
+1. Download the latest release from [GitHub releases](https://github.com/livastar/sacred-geometry-obsidian-theme/releases).
 2. Copy `manifest.json`, `theme.css`, and `versions.json` into:
 
    ```text
@@ -131,17 +141,21 @@ The theme keeps body text high contrast on dark and light surfaces, uses state c
 
 ## Contributing
 
-Use [CONTRIBUTING.md](CONTRIBUTING.md) for issue quality, design principles, local checks, and scope boundaries. Visual bugs should include Obsidian version, theme version, platform, base color scheme, enabled snippets/plugins, reproduction steps, and a sanitized screenshot.
+Use [CONTRIBUTING.md](https://github.com/livastar/sacred-geometry-obsidian-theme/blob/main/CONTRIBUTING.md) for issue quality, design principles, local checks, and scope boundaries. Visual bugs should include Obsidian version, theme version, platform, base color scheme, enabled snippets/plugins, reproduction steps, and a sanitized screenshot.
 
 ## Roadmap
 
 Sacred Geometry Systems will keep evolving as a practical visual language for complex thinking in Obsidian.
 
-- **Atlas Controls** - tune glow, flow, and geometry presence for your own thinking style.
-- **Living Map Templates** - start from guided Canvas patterns for projects, agents, decisions, knowledge, and feedback loops.
-- **Semantic Note Language** - bring the same mission, decision, knowledge, and outcome cues from Canvas into everyday notes.
-- **Constellation Graph** - make vault relationships feel more readable, intentional, and alive.
-- **Sacred Atlas Demo Vault** - explore a working example vault built around systems mapping, project clarity, and knowledge evolution.
+Planned release dates are target dates and can move if visual QA, Community Themes checks, or user feedback reveal a release blocker.
+
+- **0.5.0 Living Map Templates** - planned for May 22, 2026. Start from guided Canvas patterns for projects, agents, decisions, knowledge, and feedback loops.
+- **0.6.0 Semantic Note Language** - planned for May 29, 2026. Bring the same mission, decision, knowledge, and outcome cues from Canvas into everyday notes.
+- **Feedback and bugfix buffer** - reserved for June 5, 2026. Use this week for user feedback, Marketplace issues, and patch releases if needed.
+- **0.7.0 Constellation Graph** - planned for June 12, 2026. Make vault relationships feel more readable, intentional, and alive.
+- **0.8.0 Sacred Atlas Demo Vault** - planned for June 19, 2026. Explore a working example vault built around systems mapping, project clarity, and knowledge evolution.
+
+The full release operating plan lives in the [release roadmap](https://github.com/livastar/sacred-geometry-obsidian-theme/blob/main/docs/roadmap/README.md).
 
 Future work will stay grounded in the same principle: geometry should reveal structure before it decorates.
 

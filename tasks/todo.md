@@ -48,7 +48,7 @@ Remaining risk:
 - [x] Run `npm run build`.
 - [x] Run `npm run check`.
 - [x] Run `git diff --check`.
-- [ ] Publish the aligned patch release.
+- [x] Publish the aligned patch release.
 
 # Release Operating System Checklist
 
@@ -98,3 +98,37 @@ Remaining risk:
 PR:
 
 - https://github.com/livastar/sacred-geometry-obsidian-theme/pull/4
+
+# Community Page Content Audit
+
+- [x] Inspect live Community page overview, scorecard, updates, and image metadata.
+- [x] Compare live page version with `manifest.json`, `package.json`, `versions.json`, Git tag, and GitHub release assets.
+- [x] Verify catalog screenshot dimensions and source asset.
+- [x] Add a current release section to `README.md`.
+- [x] Replace Community-broken relative README links with absolute GitHub links.
+- [x] Add dated future roadmap entries to `README.md`.
+- [x] Run `npm run build`.
+- [x] Run `npm run check`.
+- [x] Run `git diff --check`.
+
+## Result
+
+Changed files:
+
+- `README.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
+
+Verification evidence:
+
+- Live Community page showed current version `0.4.1`, 4 releases, 100% health, and review passed.
+- `0.4.1` GitHub release exists with `manifest.json`, `theme.css`, `versions.json`, and `screenshot-catalog.png` assets.
+- Catalog screenshot is `512x288`, matching the recommended Community directory dimensions.
+- `npm run build` passed: `Built theme.css from 8 source modules.`
+- `npm run check` passed: `Release checks passed.`
+- `git diff --check` passed.
+- `git diff --exit-code -- theme.css` passed after the build.
+
+Remaining risk:
+
+- The Community page will reflect the README improvements only after the repository change is pushed and the Community directory refreshes from GitHub.
