@@ -104,7 +104,19 @@ Backward-compatible aliases from the original DS-Light theme remain available so
 
 ## Style Settings
 
-Style Settings support is planned, but not shipped yet. Until a tested `/* @settings */` block is released, customize the theme with CSS snippets that override public `--sg-*` tokens.
+Sacred Geometry Systems includes optional Style Settings controls for users who want to tune the theme without writing custom CSS.
+
+Current controls include:
+
+- Structure gold.
+- Signal cyan.
+- Boundary copper.
+- Orbit violet.
+- Reduced glow intensity.
+- Disabled geometry texture.
+- Stronger focus boundaries.
+
+These controls are designed to preserve the theme's symbolic language while making the vault more comfortable for long writing sessions, dense Canvas maps, and everyday knowledge work.
 
 ## Accessibility
 
@@ -123,10 +135,15 @@ Use [CONTRIBUTING.md](CONTRIBUTING.md) for issue quality, design principles, loc
 
 ## Roadmap
 
-- Expand the Canvas template library with separate Agent Ecosystem, Project Constellation, Decision Tree, Knowledge Atlas, Flow Network, and Resource Map examples.
-- Add tested Style Settings controls for role colors and Canvas intensity.
-- Add a demo vault that shows the full brand language in real notes.
-- Explore the SacraMap concept as a separate plugin project. SacraMap is documented here as a product direction, not implemented in this theme repo.
+Sacred Geometry Systems will keep evolving as a practical visual language for complex thinking in Obsidian.
+
+- **Atlas Controls** - tune glow, flow, and geometry presence for your own thinking style.
+- **Living Map Templates** - start from guided Canvas patterns for projects, agents, decisions, knowledge, and feedback loops.
+- **Semantic Note Language** - bring the same mission, decision, knowledge, and outcome cues from Canvas into everyday notes.
+- **Constellation Graph** - make vault relationships feel more readable, intentional, and alive.
+- **Sacred Atlas Demo Vault** - explore a working example vault built around systems mapping, project clarity, and knowledge evolution.
+
+Future work will stay grounded in the same principle: geometry should reveal structure before it decorates.
 
 ## License
 
