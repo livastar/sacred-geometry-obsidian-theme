@@ -4,3 +4,5 @@
 - Keep the machine-readable `manifest.json` author aligned with the Community Themes catalog author. The public README can still name the human creator separately.
 - Keep scheduled release automation on the default branch, use UTC cron, and gate the release against a Europe/Amsterdam calendar entry before publishing.
 - Use absolute GitHub links for README references to repo files that need to work on the Obsidian Community theme page; relative Markdown links can resolve under `community.obsidian.md/themes/` instead of the GitHub repository.
+- Canvas template releases should stay portable: valid `.canvas` JSON, overview-readable node text, stable role vocabulary, and no claims of plugin-only behavior.
+- For Obsidian desktop smoke tests, register a temporary vault in Obsidian's local vault registry and restart the app before using `obsidian://open` URLs; run screenshot capture under `caffeinate` if macOS returns black images after the display idles.

@@ -1,0 +1,162 @@
+{
+  "type": "canvas",
+  "version": "0.2.1",
+  "nodes": [
+    {
+      "id": "mission",
+      "type": "text",
+      "text": "Mission\nDecision Purpose\n\nName the outcome this decision must protect.",
+      "x": -150,
+      "y": -520,
+      "width": 300,
+      "height": 150,
+      "color": "6"
+    },
+    {
+      "id": "decision",
+      "type": "text",
+      "text": "Decision\nChoice Point\n\nState the exact question. Keep it narrow enough to answer.",
+      "x": -150,
+      "y": -250,
+      "width": 300,
+      "height": 160,
+      "color": "1"
+    },
+    {
+      "id": "option-a",
+      "type": "text",
+      "text": "Decision\nOption A\n\nWhat this path makes easier, harder, safer, or riskier.",
+      "x": -610,
+      "y": -20,
+      "width": 300,
+      "height": 155,
+      "color": "1"
+    },
+    {
+      "id": "option-b",
+      "type": "text",
+      "text": "Decision\nOption B\n\nWhat this path changes in scope, cost, quality, or timing.",
+      "x": -150,
+      "y": -20,
+      "width": 300,
+      "height": 155,
+      "color": "1"
+    },
+    {
+      "id": "option-c",
+      "type": "text",
+      "text": "Decision\nOption C\n\nA fallback, staged path, or intentionally delayed decision.",
+      "x": 310,
+      "y": -20,
+      "width": 300,
+      "height": 155,
+      "color": "1"
+    },
+    {
+      "id": "resources",
+      "type": "text",
+      "text": "Resources\nEvidence\n\nFacts, constraints, estimates, examples, risks, and user signals.",
+      "x": -610,
+      "y": -300,
+      "width": 300,
+      "height": 160,
+      "color": "2"
+    },
+    {
+      "id": "knowledge",
+      "type": "text",
+      "text": "Knowledge\nCriteria\n\nWhat the team has learned and how success should be judged.",
+      "x": 310,
+      "y": -300,
+      "width": 300,
+      "height": 160,
+      "color": "4"
+    },
+    {
+      "id": "interaction",
+      "type": "text",
+      "text": "Interaction\nReview Loop\n\nWho needs to review, challenge, or accept this decision?",
+      "x": -150,
+      "y": 220,
+      "width": 300,
+      "height": 150,
+      "color": "3"
+    },
+    {
+      "id": "outcome",
+      "type": "text",
+      "text": "Outcome\nDecision Record\n\nWrite the selected path, next action, owner, and feedback signal.",
+      "x": -150,
+      "y": 470,
+      "width": 300,
+      "height": 160,
+      "color": "6"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-mission-decision",
+      "fromNode": "mission",
+      "fromSide": "bottom",
+      "toNode": "decision",
+      "toSide": "top",
+      "color": "6"
+    },
+    {
+      "id": "edge-resources-decision",
+      "fromNode": "resources",
+      "fromSide": "right",
+      "toNode": "decision",
+      "toSide": "left",
+      "color": "2"
+    },
+    {
+      "id": "edge-knowledge-decision",
+      "fromNode": "knowledge",
+      "fromSide": "left",
+      "toNode": "decision",
+      "toSide": "right",
+      "color": "4"
+    },
+    {
+      "id": "edge-decision-option-a",
+      "fromNode": "decision",
+      "fromSide": "bottom",
+      "toNode": "option-a",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "edge-decision-option-b",
+      "fromNode": "decision",
+      "fromSide": "bottom",
+      "toNode": "option-b",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "edge-decision-option-c",
+      "fromNode": "decision",
+      "fromSide": "bottom",
+      "toNode": "option-c",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "edge-options-review",
+      "fromNode": "option-b",
+      "fromSide": "bottom",
+      "toNode": "interaction",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "edge-review-outcome",
+      "fromNode": "interaction",
+      "fromSide": "bottom",
+      "toNode": "outcome",
+      "toSide": "top",
+      "color": "6"
+    }
+  ]
+}

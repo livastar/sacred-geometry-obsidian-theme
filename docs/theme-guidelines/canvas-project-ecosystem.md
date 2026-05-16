@@ -33,10 +33,31 @@ Canvas support should help users map complex systems:
 The optional Canvas ecosystem should include:
 
 - `canvas/Sacred Atlas Starter.canvas`
+- `canvas/templates/Agent Ecosystem.canvas`
+- `canvas/templates/Project Constellation.canvas`
+- `canvas/templates/Decision Tree.canvas`
+- `canvas/templates/Knowledge Atlas.canvas`
+- `canvas/templates/Flow Network.canvas`
+- `canvas/templates/Resource Map.canvas`
 - `templates/map-node.md`
 - `snippets/SG Canvas Cards.css`
 
 These must stay synchronized with `BRAND_BOOK.md`.
+
+## Living Map Templates
+
+Use the templates as starting structures, not finished doctrine.
+
+| Template | Best for | Primary roles |
+| --- | --- | --- |
+| Agent Ecosystem | Mapping people, automations, tools, and handoffs. | `mission`, `core-system`, `agent`, `resource`, `knowledge`, `interaction`, `decision`, `outcome`. |
+| Project Constellation | Keeping workstreams, decisions, cadence, and delivery connected. | `mission`, `core-system`, `agent`, `resource`, `knowledge`, `decision`, `interaction`, `outcome`. |
+| Decision Tree | Comparing options and leaving a clear decision record. | `mission`, `decision`, `resource`, `knowledge`, `interaction`, `outcome`. |
+| Knowledge Atlas | Organizing sources, concepts, evidence, gaps, and synthesis. | `mission`, `core-system`, `resource`, `knowledge`, `decision`, `interaction`, `outcome`. |
+| Flow Network | Tracing movement of work, data, requests, or feedback. | `mission`, `interaction`, `core-system`, `agent`, `resource`, `decision`, `knowledge`, `outcome`. |
+| Resource Map | Organizing tools, references, assets, owners, and readiness. | `mission`, `core-system`, `resource`, `agent`, `knowledge`, `decision`, `outcome`. |
+
+Each template should stay small enough to inspect in one Canvas view before users adapt it.
 
 ## Template Rules
 

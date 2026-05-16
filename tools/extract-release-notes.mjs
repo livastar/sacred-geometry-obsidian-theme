@@ -25,8 +25,9 @@ if (failures.length > 0) {
 const notes = `# Sacred Geometry Systems ${version}\n\n${section}\n\n## Release Files\n\n- manifest.json\n- theme.css\n`;
 
 if (output) {
-  fs.mkdirSync(path.dirname(path.join(repoRoot, output)), { recursive: true });
-  fs.writeFileSync(path.join(repoRoot, output), notes);
+  const outputPath = path.isAbsolute(output) ? output : path.join(repoRoot, output);
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  fs.writeFileSync(outputPath, notes);
   console.log(`Wrote release notes to ${output}.`);
 } else {
   process.stdout.write(notes);

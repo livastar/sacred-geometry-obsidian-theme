@@ -1,0 +1,152 @@
+{
+  "type": "canvas",
+  "version": "0.2.1",
+  "nodes": [
+    {
+      "id": "mission",
+      "type": "text",
+      "text": "Mission\nInquiry\n\nWhat question should this atlas help answer?",
+      "x": -150,
+      "y": -510,
+      "width": 300,
+      "height": 145,
+      "color": "6"
+    },
+    {
+      "id": "core-system",
+      "type": "text",
+      "text": "Core System\nAtlas Center\n\nThe main topic, problem space, product area, or research thread.",
+      "x": -150,
+      "y": -240,
+      "width": 300,
+      "height": 160,
+      "color": "5"
+    },
+    {
+      "id": "source-cluster",
+      "type": "text",
+      "text": "Resource\nSource Cluster\n\nDocs, books, papers, interviews, specs, examples, or datasets.",
+      "x": -590,
+      "y": -340,
+      "width": 300,
+      "height": 160,
+      "color": "2"
+    },
+    {
+      "id": "concept-cluster",
+      "type": "text",
+      "text": "Knowledge\nConcept Cluster\n\nTerms, models, patterns, claims, and distinctions worth preserving.",
+      "x": 290,
+      "y": -340,
+      "width": 300,
+      "height": 160,
+      "color": "4"
+    },
+    {
+      "id": "evidence",
+      "type": "text",
+      "text": "Knowledge\nEvidence Notes\n\nSignals that support, weaken, or refine the current understanding.",
+      "x": -590,
+      "y": -70,
+      "width": 300,
+      "height": 160,
+      "color": "4"
+    },
+    {
+      "id": "gaps",
+      "type": "text",
+      "text": "Decision\nOpen Gaps\n\nUnknowns, contradictions, weak assumptions, and questions to revisit.",
+      "x": 290,
+      "y": -70,
+      "width": 300,
+      "height": 160,
+      "color": "1"
+    },
+    {
+      "id": "synthesis",
+      "type": "text",
+      "text": "Interaction\nSynthesis Path\n\nHow the sources, concepts, and gaps turn into usable understanding.",
+      "x": -150,
+      "y": 130,
+      "width": 300,
+      "height": 160,
+      "color": "3"
+    },
+    {
+      "id": "outcome",
+      "type": "text",
+      "text": "Outcome\nReusable Knowledge\n\nA note, decision, guide, prompt, map, or next research direction.",
+      "x": -150,
+      "y": 390,
+      "width": 300,
+      "height": 160,
+      "color": "6"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-mission-core",
+      "fromNode": "mission",
+      "fromSide": "bottom",
+      "toNode": "core-system",
+      "toSide": "top",
+      "color": "6"
+    },
+    {
+      "id": "edge-sources-core",
+      "fromNode": "source-cluster",
+      "fromSide": "right",
+      "toNode": "core-system",
+      "toSide": "left",
+      "color": "2"
+    },
+    {
+      "id": "edge-concepts-core",
+      "fromNode": "concept-cluster",
+      "fromSide": "left",
+      "toNode": "core-system",
+      "toSide": "right",
+      "color": "4"
+    },
+    {
+      "id": "edge-sources-evidence",
+      "fromNode": "source-cluster",
+      "fromSide": "bottom",
+      "toNode": "evidence",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "edge-concepts-gaps",
+      "fromNode": "concept-cluster",
+      "fromSide": "bottom",
+      "toNode": "gaps",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "edge-evidence-synthesis",
+      "fromNode": "evidence",
+      "fromSide": "right",
+      "toNode": "synthesis",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "edge-gaps-synthesis",
+      "fromNode": "gaps",
+      "fromSide": "left",
+      "toNode": "synthesis",
+      "toSide": "right",
+      "color": "3"
+    },
+    {
+      "id": "edge-synthesis-outcome",
+      "fromNode": "synthesis",
+      "fromSide": "bottom",
+      "toNode": "outcome",
+      "toSide": "top",
+      "color": "6"
+    }
+  ]
+}

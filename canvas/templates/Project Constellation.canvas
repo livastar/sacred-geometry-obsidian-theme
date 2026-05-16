@@ -1,0 +1,170 @@
+{
+  "type": "canvas",
+  "version": "0.2.1",
+  "nodes": [
+    {
+      "id": "mission",
+      "type": "text",
+      "text": "Mission\nNorth Star\n\nWhat change should this project create, and for whom?",
+      "x": -150,
+      "y": -520,
+      "width": 300,
+      "height": 160,
+      "color": "6"
+    },
+    {
+      "id": "core-system",
+      "type": "text",
+      "text": "Core System\nProject Spine\n\nDefine the main workstream, release, or operating rhythm.",
+      "x": -150,
+      "y": -240,
+      "width": 300,
+      "height": 165,
+      "color": "5"
+    },
+    {
+      "id": "workstream-a",
+      "type": "text",
+      "text": "Agent\nWorkstream A\n\nPrimary builder, team, or implementation lane.",
+      "x": 270,
+      "y": -360,
+      "width": 280,
+      "height": 145,
+      "color": "3"
+    },
+    {
+      "id": "workstream-b",
+      "type": "text",
+      "text": "Agent\nWorkstream B\n\nParallel support lane, review owner, or dependency owner.",
+      "x": 270,
+      "y": -90,
+      "width": 280,
+      "height": 145,
+      "color": "3"
+    },
+    {
+      "id": "resources",
+      "type": "text",
+      "text": "Resources\nInputs\n\nSpecs, constraints, research, design assets, environments, and tools.",
+      "x": -580,
+      "y": -360,
+      "width": 290,
+      "height": 160,
+      "color": "2"
+    },
+    {
+      "id": "knowledge",
+      "type": "text",
+      "text": "Knowledge\nContext\n\nLessons learned, prior decisions, user feedback, and reference systems.",
+      "x": -580,
+      "y": -90,
+      "width": 290,
+      "height": 160,
+      "color": "4"
+    },
+    {
+      "id": "decision",
+      "type": "text",
+      "text": "Decision\nRelease Gate\n\nWhat must be true before the project can move forward?",
+      "x": -150,
+      "y": 80,
+      "width": 300,
+      "height": 160,
+      "color": "1"
+    },
+    {
+      "id": "outcome",
+      "type": "text",
+      "text": "Outcome\nDelivered Value\n\nThe measurable result, user proof, quality signal, or launch milestone.",
+      "x": -150,
+      "y": 340,
+      "width": 300,
+      "height": 165,
+      "color": "6"
+    },
+    {
+      "id": "interaction",
+      "type": "text",
+      "text": "Interaction\nProject Cadence\n\nRituals, reviews, check-ins, reports, demos, and feedback loops.",
+      "x": 270,
+      "y": 190,
+      "width": 280,
+      "height": 160,
+      "color": "3"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-mission-core",
+      "fromNode": "mission",
+      "fromSide": "bottom",
+      "toNode": "core-system",
+      "toSide": "top",
+      "color": "6"
+    },
+    {
+      "id": "edge-resources-core",
+      "fromNode": "resources",
+      "fromSide": "right",
+      "toNode": "core-system",
+      "toSide": "left",
+      "color": "2"
+    },
+    {
+      "id": "edge-knowledge-core",
+      "fromNode": "knowledge",
+      "fromSide": "right",
+      "toNode": "core-system",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "edge-core-workstream-a",
+      "fromNode": "core-system",
+      "fromSide": "right",
+      "toNode": "workstream-a",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "edge-core-workstream-b",
+      "fromNode": "core-system",
+      "fromSide": "right",
+      "toNode": "workstream-b",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "edge-workstreams-interaction",
+      "fromNode": "workstream-b",
+      "fromSide": "bottom",
+      "toNode": "interaction",
+      "toSide": "top",
+      "color": "3"
+    },
+    {
+      "id": "edge-core-decision",
+      "fromNode": "core-system",
+      "fromSide": "bottom",
+      "toNode": "decision",
+      "toSide": "top",
+      "color": "1"
+    },
+    {
+      "id": "edge-decision-outcome",
+      "fromNode": "decision",
+      "fromSide": "bottom",
+      "toNode": "outcome",
+      "toSide": "top",
+      "color": "6"
+    },
+    {
+      "id": "edge-interaction-outcome",
+      "fromNode": "interaction",
+      "fromSide": "left",
+      "toNode": "outcome",
+      "toSide": "right",
+      "color": "6"
+    }
+  ]
+}

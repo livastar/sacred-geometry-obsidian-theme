@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0 - 2026-05-22
+
+- Added six guided Living Map Canvas templates: Agent Ecosystem, Project Constellation, Decision Tree, Knowledge Atlas, Flow Network, and Resource Map.
+- Added template usage documentation so users can choose the right starting map for projects, agents, decisions, knowledge, flow, and resource planning.
+- Preserved the existing Canvas role vocabulary and kept the release template-only, with no theme CSS or public token changes.
+- Added release QA notes for the new Canvas templates and expanded release checks to validate every `.canvas` file under `canvas/`.
+
 ## 0.4.1 - 2026-05-16
 
 - Aligned release metadata with Obsidian's current Community Themes catalog entry by matching the manifest author to `livastar`.

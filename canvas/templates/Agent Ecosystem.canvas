@@ -1,0 +1,170 @@
+{
+  "type": "canvas",
+  "version": "0.2.1",
+  "nodes": [
+    {
+      "id": "mission",
+      "type": "text",
+      "text": "Mission\nShared Direction\n\nName the purpose this ecosystem serves and the user value it must protect.",
+      "x": -150,
+      "y": -500,
+      "width": 300,
+      "height": 170,
+      "color": "6"
+    },
+    {
+      "id": "core-system",
+      "type": "text",
+      "text": "Core System\nOrchestration Center\n\nDescribe the workflow, product, or service that routes agent work.",
+      "x": -150,
+      "y": -210,
+      "width": 300,
+      "height": 180,
+      "color": "5"
+    },
+    {
+      "id": "human-agents",
+      "type": "text",
+      "text": "Agents\nHuman Roles\n\nOwners, reviewers, operators, customers, or collaborators.",
+      "x": 280,
+      "y": -360,
+      "width": 290,
+      "height": 155,
+      "color": "3"
+    },
+    {
+      "id": "automation-agents",
+      "type": "text",
+      "text": "Agents\nAutomation & Models\n\nBots, scheduled jobs, assistants, scripts, or model-backed workers.",
+      "x": 280,
+      "y": -90,
+      "width": 290,
+      "height": 160,
+      "color": "3"
+    },
+    {
+      "id": "resources",
+      "type": "text",
+      "text": "Resources\nInputs & Tools\n\nPrompts, documents, APIs, datasets, credentials, design references, or runbooks.",
+      "x": -590,
+      "y": -360,
+      "width": 300,
+      "height": 170,
+      "color": "2"
+    },
+    {
+      "id": "knowledge",
+      "type": "text",
+      "text": "Knowledge\nMemory & Evidence\n\nLessons, sources, decisions, context, and reusable examples.",
+      "x": -590,
+      "y": -90,
+      "width": 300,
+      "height": 160,
+      "color": "4"
+    },
+    {
+      "id": "interaction",
+      "type": "text",
+      "text": "Interaction\nHandoff Surface\n\nWhere agents exchange work: issues, PRs, docs, chat, dashboards, or queues.",
+      "x": -150,
+      "y": 90,
+      "width": 300,
+      "height": 170,
+      "color": "3"
+    },
+    {
+      "id": "decision",
+      "type": "text",
+      "text": "Decision\nGovernance Gate\n\nWho decides when the system should proceed, pause, escalate, or revise?",
+      "x": -590,
+      "y": 210,
+      "width": 300,
+      "height": 165,
+      "color": "1"
+    },
+    {
+      "id": "outcome",
+      "type": "text",
+      "text": "Outcome\nFeedback Signal\n\nWhat proves the ecosystem is useful, safe, and improving?",
+      "x": 280,
+      "y": 210,
+      "width": 290,
+      "height": 165,
+      "color": "6"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-mission-core",
+      "fromNode": "mission",
+      "fromSide": "bottom",
+      "toNode": "core-system",
+      "toSide": "top",
+      "color": "6"
+    },
+    {
+      "id": "edge-resources-core",
+      "fromNode": "resources",
+      "fromSide": "right",
+      "toNode": "core-system",
+      "toSide": "left",
+      "color": "2"
+    },
+    {
+      "id": "edge-knowledge-core",
+      "fromNode": "knowledge",
+      "fromSide": "right",
+      "toNode": "core-system",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "edge-core-human-agents",
+      "fromNode": "core-system",
+      "fromSide": "right",
+      "toNode": "human-agents",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "edge-core-automation-agents",
+      "fromNode": "core-system",
+      "fromSide": "right",
+      "toNode": "automation-agents",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "edge-agents-interaction",
+      "fromNode": "automation-agents",
+      "fromSide": "bottom",
+      "toNode": "interaction",
+      "toSide": "right",
+      "color": "3"
+    },
+    {
+      "id": "edge-interaction-decision",
+      "fromNode": "interaction",
+      "fromSide": "left",
+      "toNode": "decision",
+      "toSide": "right",
+      "color": "1"
+    },
+    {
+      "id": "edge-interaction-outcome",
+      "fromNode": "interaction",
+      "fromSide": "right",
+      "toNode": "outcome",
+      "toSide": "left",
+      "color": "6"
+    },
+    {
+      "id": "edge-outcome-core",
+      "fromNode": "outcome",
+      "fromSide": "top",
+      "toNode": "core-system",
+      "toSide": "bottom",
+      "color": "6"
+    }
+  ]
+}
