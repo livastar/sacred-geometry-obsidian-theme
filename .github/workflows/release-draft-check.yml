@@ -1,0 +1,73 @@
+name: Release Draft Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version to validate
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  release-draft-check:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RELEASE_VERSION: ${{ inputs.version }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check release guard scripts
+        run: |
+          for file in tools/*.mjs; do
+            node --check "$file"
+          done
+
+      - name: Build release CSS
+        run: npm run build
+
+      - name: Verify release files
+        run: npm run check
+
+      - name: Verify release operating system
+        run: npm run check:release-os
+
+      - name: Verify draft release readiness
+        run: node tools/check-release-draft.mjs --version "$RELEASE_VERSION"
+
+      - name: Ensure build is committed
+        run: git diff --exit-code -- theme.css
+
+      - name: Ensure tag does not already exist
+        run: |
+          if git ls-remote --exit-code --tags origin "$RELEASE_VERSION"; then
+            echo "Tag $RELEASE_VERSION already exists."
+            exit 1
+          fi
+
+      - name: Ensure GitHub release does not already exist
+        run: |
+          if gh release view "$RELEASE_VERSION" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "GitHub release $RELEASE_VERSION already exists."
+            exit 1
+          fi
+
+      - name: Prepare release notes preview
+        run: node tools/extract-release-notes.mjs --version "$RELEASE_VERSION" --output release-notes.md
+
+      - name: Upload release notes preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-notes-${{ inputs.version }}
+          path: release-notes.md

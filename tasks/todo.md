@@ -49,3 +49,52 @@ Remaining risk:
 - [x] Run `npm run check`.
 - [x] Run `git diff --check`.
 - [ ] Publish the aligned patch release.
+
+# Release Operating System Checklist
+
+- [x] Create a clean `origin/main` worktree for `codex/release-operating-system`.
+- [x] Run baseline `npm run build`.
+- [x] Run baseline `npm run check`.
+- [x] Add release roadmap, release calendar, release briefs, and templates.
+- [x] Add release guard scripts.
+- [x] Add GitHub Actions workflows for PR guard, draft check, scheduled publish, and post-release verification.
+- [x] Run `npm run build`.
+- [x] Run `npm run check`.
+- [x] Run release guard validation.
+- [x] Run `git diff --check`.
+- [x] Review final diff and open the release operating system PR.
+
+## Result
+
+Changed files:
+
+- `.github/PULL_REQUEST_TEMPLATE.md`
+- `.github/workflows/pr-release-guard.yml`
+- `.github/workflows/release-draft-check.yml`
+- `.github/workflows/scheduled-publish-release.yml`
+- `.github/workflows/post-release-verify.yml`
+- `docs/roadmap/`
+- `docs/release/templates/`
+- `tools/*release*.mjs`
+- `package.json`
+- `tasks/todo.md`
+- `tasks/lessons.md`
+
+Verification evidence:
+
+- `for file in tools/*.mjs; do node --check "$file"; done` passed.
+- `npm run build` passed.
+- `npm run check` passed.
+- `npm run check:release-os` passed.
+- `node tools/check-release-os.mjs --release-system-scope` passed.
+- `npx --yes github-actionlint@1.7.12 .github/workflows/*.yml` passed.
+- `git diff --check` passed.
+- `git diff --exit-code -- theme.css` passed.
+
+Remaining risk:
+
+- Scheduled publishing remains a no-op until a future feature PR updates its calendar entry to `approved` with visual QA evidence and matching release metadata.
+
+PR:
+
+- https://github.com/livastar/sacred-geometry-obsidian-theme/pull/4
